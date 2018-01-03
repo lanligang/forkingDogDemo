@@ -1,0 +1,557 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		8FE02EDB1FFCADAB00CE62F1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FE02EDA1FFCADAB00CE62F1 /* AppDelegate.m */; };
+		8FE02EDE1FFCADAC00CE62F1 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FE02EDD1FFCADAC00CE62F1 /* ViewController.m */; };
+		8FE02EE11FFCADAC00CE62F1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8FE02EDF1FFCADAC00CE62F1 /* Main.storyboard */; };
+		8FE02EE31FFCADAC00CE62F1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8FE02EE21FFCADAC00CE62F1 /* Assets.xcassets */; };
+		8FE02EE61FFCADAC00CE62F1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8FE02EE41FFCADAC00CE62F1 /* LaunchScreen.storyboard */; };
+		8FE02EE91FFCADAC00CE62F1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FE02EE81FFCADAC00CE62F1 /* main.m */; };
+		8FE02EF31FFCADAC00CE62F1 /* ForkingDogDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FE02EF21FFCADAC00CE62F1 /* ForkingDogDemoTests.m */; };
+		8FE02EFE1FFCADAC00CE62F1 /* ForkingDogDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FE02EFD1FFCADAC00CE62F1 /* ForkingDogDemoUITests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		8FE02EEF1FFCADAC00CE62F1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8FE02ECE1FFCADAB00CE62F1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8FE02ED51FFCADAB00CE62F1;
+			remoteInfo = ForkingDogDemo;
+		};
+		8FE02EFA1FFCADAC00CE62F1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8FE02ECE1FFCADAB00CE62F1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8FE02ED51FFCADAB00CE62F1;
+			remoteInfo = ForkingDogDemo;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		8FE02ED61FFCADAB00CE62F1 /* ForkingDogDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ForkingDogDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8FE02ED91FFCADAB00CE62F1 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		8FE02EDA1FFCADAB00CE62F1 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		8FE02EDC1FFCADAB00CE62F1 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		8FE02EDD1FFCADAC00CE62F1 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		8FE02EE01FFCADAC00CE62F1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		8FE02EE21FFCADAC00CE62F1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		8FE02EE51FFCADAC00CE62F1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		8FE02EE71FFCADAC00CE62F1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8FE02EE81FFCADAC00CE62F1 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		8FE02EEE1FFCADAC00CE62F1 /* ForkingDogDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ForkingDogDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		8FE02EF21FFCADAC00CE62F1 /* ForkingDogDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ForkingDogDemoTests.m; sourceTree = "<group>"; };
+		8FE02EF41FFCADAC00CE62F1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8FE02EF91FFCADAC00CE62F1 /* ForkingDogDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ForkingDogDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		8FE02EFD1FFCADAC00CE62F1 /* ForkingDogDemoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ForkingDogDemoUITests.m; sourceTree = "<group>"; };
+		8FE02EFF1FFCADAC00CE62F1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8FE02ED31FFCADAB00CE62F1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8FE02EEB1FFCADAC00CE62F1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8FE02EF61FFCADAC00CE62F1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		8FE02ECD1FFCADAB00CE62F1 = {
+			isa = PBXGroup;
+			children = (
+				8FE02ED81FFCADAB00CE62F1 /* ForkingDogDemo */,
+				8FE02EF11FFCADAC00CE62F1 /* ForkingDogDemoTests */,
+				8FE02EFC1FFCADAC00CE62F1 /* ForkingDogDemoUITests */,
+				8FE02ED71FFCADAB00CE62F1 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		8FE02ED71FFCADAB00CE62F1 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8FE02ED61FFCADAB00CE62F1 /* ForkingDogDemo.app */,
+				8FE02EEE1FFCADAC00CE62F1 /* ForkingDogDemoTests.xctest */,
+				8FE02EF91FFCADAC00CE62F1 /* ForkingDogDemoUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		8FE02ED81FFCADAB00CE62F1 /* ForkingDogDemo */ = {
+			isa = PBXGroup;
+			children = (
+				8FE02ED91FFCADAB00CE62F1 /* AppDelegate.h */,
+				8FE02EDA1FFCADAB00CE62F1 /* AppDelegate.m */,
+				8FE02EDC1FFCADAB00CE62F1 /* ViewController.h */,
+				8FE02EDD1FFCADAC00CE62F1 /* ViewController.m */,
+				8FE02EDF1FFCADAC00CE62F1 /* Main.storyboard */,
+				8FE02EE21FFCADAC00CE62F1 /* Assets.xcassets */,
+				8FE02EE41FFCADAC00CE62F1 /* LaunchScreen.storyboard */,
+				8FE02EE71FFCADAC00CE62F1 /* Info.plist */,
+				8FE02EE81FFCADAC00CE62F1 /* main.m */,
+			);
+			path = ForkingDogDemo;
+			sourceTree = "<group>";
+		};
+		8FE02EF11FFCADAC00CE62F1 /* ForkingDogDemoTests */ = {
+			isa = PBXGroup;
+			children = (
+				8FE02EF21FFCADAC00CE62F1 /* ForkingDogDemoTests.m */,
+				8FE02EF41FFCADAC00CE62F1 /* Info.plist */,
+			);
+			path = ForkingDogDemoTests;
+			sourceTree = "<group>";
+		};
+		8FE02EFC1FFCADAC00CE62F1 /* ForkingDogDemoUITests */ = {
+			isa = PBXGroup;
+			children = (
+				8FE02EFD1FFCADAC00CE62F1 /* ForkingDogDemoUITests.m */,
+				8FE02EFF1FFCADAC00CE62F1 /* Info.plist */,
+			);
+			path = ForkingDogDemoUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8FE02ED51FFCADAB00CE62F1 /* ForkingDogDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8FE02F021FFCADAC00CE62F1 /* Build configuration list for PBXNativeTarget "ForkingDogDemo" */;
+			buildPhases = (
+				8FE02ED21FFCADAB00CE62F1 /* Sources */,
+				8FE02ED31FFCADAB00CE62F1 /* Frameworks */,
+				8FE02ED41FFCADAB00CE62F1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ForkingDogDemo;
+			productName = ForkingDogDemo;
+			productReference = 8FE02ED61FFCADAB00CE62F1 /* ForkingDogDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
+		8FE02EED1FFCADAC00CE62F1 /* ForkingDogDemoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8FE02F051FFCADAC00CE62F1 /* Build configuration list for PBXNativeTarget "ForkingDogDemoTests" */;
+			buildPhases = (
+				8FE02EEA1FFCADAC00CE62F1 /* Sources */,
+				8FE02EEB1FFCADAC00CE62F1 /* Frameworks */,
+				8FE02EEC1FFCADAC00CE62F1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8FE02EF01FFCADAC00CE62F1 /* PBXTargetDependency */,
+			);
+			name = ForkingDogDemoTests;
+			productName = ForkingDogDemoTests;
+			productReference = 8FE02EEE1FFCADAC00CE62F1 /* ForkingDogDemoTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		8FE02EF81FFCADAC00CE62F1 /* ForkingDogDemoUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8FE02F081FFCADAC00CE62F1 /* Build configuration list for PBXNativeTarget "ForkingDogDemoUITests" */;
+			buildPhases = (
+				8FE02EF51FFCADAC00CE62F1 /* Sources */,
+				8FE02EF61FFCADAC00CE62F1 /* Frameworks */,
+				8FE02EF71FFCADAC00CE62F1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8FE02EFB1FFCADAC00CE62F1 /* PBXTargetDependency */,
+			);
+			name = ForkingDogDemoUITests;
+			productName = ForkingDogDemoUITests;
+			productReference = 8FE02EF91FFCADAC00CE62F1 /* ForkingDogDemoUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		8FE02ECE1FFCADAB00CE62F1 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0910;
+				ORGANIZATIONNAME = "石家庄光耀";
+				TargetAttributes = {
+					8FE02ED51FFCADAB00CE62F1 = {
+						CreatedOnToolsVersion = 9.1;
+						ProvisioningStyle = Automatic;
+					};
+					8FE02EED1FFCADAC00CE62F1 = {
+						CreatedOnToolsVersion = 9.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 8FE02ED51FFCADAB00CE62F1;
+					};
+					8FE02EF81FFCADAC00CE62F1 = {
+						CreatedOnToolsVersion = 9.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 8FE02ED51FFCADAB00CE62F1;
+					};
+				};
+			};
+			buildConfigurationList = 8FE02ED11FFCADAB00CE62F1 /* Build configuration list for PBXProject "ForkingDogDemo" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 8FE02ECD1FFCADAB00CE62F1;
+			productRefGroup = 8FE02ED71FFCADAB00CE62F1 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8FE02ED51FFCADAB00CE62F1 /* ForkingDogDemo */,
+				8FE02EED1FFCADAC00CE62F1 /* ForkingDogDemoTests */,
+				8FE02EF81FFCADAC00CE62F1 /* ForkingDogDemoUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8FE02ED41FFCADAB00CE62F1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8FE02EE61FFCADAC00CE62F1 /* LaunchScreen.storyboard in Resources */,
+				8FE02EE31FFCADAC00CE62F1 /* Assets.xcassets in Resources */,
+				8FE02EE11FFCADAC00CE62F1 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8FE02EEC1FFCADAC00CE62F1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8FE02EF71FFCADAC00CE62F1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8FE02ED21FFCADAB00CE62F1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8FE02EDE1FFCADAC00CE62F1 /* ViewController.m in Sources */,
+				8FE02EE91FFCADAC00CE62F1 /* main.m in Sources */,
+				8FE02EDB1FFCADAB00CE62F1 /* AppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8FE02EEA1FFCADAC00CE62F1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8FE02EF31FFCADAC00CE62F1 /* ForkingDogDemoTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8FE02EF51FFCADAC00CE62F1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8FE02EFE1FFCADAC00CE62F1 /* ForkingDogDemoUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		8FE02EF01FFCADAC00CE62F1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8FE02ED51FFCADAB00CE62F1 /* ForkingDogDemo */;
+			targetProxy = 8FE02EEF1FFCADAC00CE62F1 /* PBXContainerItemProxy */;
+		};
+		8FE02EFB1FFCADAC00CE62F1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8FE02ED51FFCADAB00CE62F1 /* ForkingDogDemo */;
+			targetProxy = 8FE02EFA1FFCADAC00CE62F1 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		8FE02EDF1FFCADAC00CE62F1 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8FE02EE01FFCADAC00CE62F1 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		8FE02EE41FFCADAC00CE62F1 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8FE02EE51FFCADAC00CE62F1 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		8FE02F001FFCADAC00CE62F1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		8FE02F011FFCADAC00CE62F1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		8FE02F031FFCADAC00CE62F1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4SR2P5NBA9;
+				INFOPLIST_FILE = ForkingDogDemo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = CustomRefresh.ForkingDogDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		8FE02F041FFCADAC00CE62F1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4SR2P5NBA9;
+				INFOPLIST_FILE = ForkingDogDemo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = CustomRefresh.ForkingDogDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		8FE02F061FFCADAC00CE62F1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4SR2P5NBA9;
+				INFOPLIST_FILE = ForkingDogDemoTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = CustomRefresh.ForkingDogDemoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ForkingDogDemo.app/ForkingDogDemo";
+			};
+			name = Debug;
+		};
+		8FE02F071FFCADAC00CE62F1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4SR2P5NBA9;
+				INFOPLIST_FILE = ForkingDogDemoTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = CustomRefresh.ForkingDogDemoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ForkingDogDemo.app/ForkingDogDemo";
+			};
+			name = Release;
+		};
+		8FE02F091FFCADAC00CE62F1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4SR2P5NBA9;
+				INFOPLIST_FILE = ForkingDogDemoUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = CustomRefresh.ForkingDogDemoUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = ForkingDogDemo;
+			};
+			name = Debug;
+		};
+		8FE02F0A1FFCADAC00CE62F1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4SR2P5NBA9;
+				INFOPLIST_FILE = ForkingDogDemoUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = CustomRefresh.ForkingDogDemoUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = ForkingDogDemo;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		8FE02ED11FFCADAB00CE62F1 /* Build configuration list for PBXProject "ForkingDogDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8FE02F001FFCADAC00CE62F1 /* Debug */,
+				8FE02F011FFCADAC00CE62F1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8FE02F021FFCADAC00CE62F1 /* Build configuration list for PBXNativeTarget "ForkingDogDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8FE02F031FFCADAC00CE62F1 /* Debug */,
+				8FE02F041FFCADAC00CE62F1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8FE02F051FFCADAC00CE62F1 /* Build configuration list for PBXNativeTarget "ForkingDogDemoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8FE02F061FFCADAC00CE62F1 /* Debug */,
+				8FE02F071FFCADAC00CE62F1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8FE02F081FFCADAC00CE62F1 /* Build configuration list for PBXNativeTarget "ForkingDogDemoUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8FE02F091FFCADAC00CE62F1 /* Debug */,
+				8FE02F0A1FFCADAC00CE62F1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 8FE02ECE1FFCADAB00CE62F1 /* Project object */;
+}
