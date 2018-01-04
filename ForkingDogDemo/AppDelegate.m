@@ -16,7 +16,18 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+   
+    if (@available(iOS 11.0,*)) {
+        [UIScrollView appearance].contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
+        [UITableView appearance].estimatedRowHeight = 0;
+        [UITableView appearance].estimatedSectionFooterHeight = 0;
+        [UITableView appearance].estimatedSectionHeaderHeight = 0;
+    }
+    if (@available(iOS 8.0,*)) {
+        //设置导航的透明度为NO
+        [UINavigationBar appearance].translucent = NO;
+    }
+    
     return YES;
 }
 
