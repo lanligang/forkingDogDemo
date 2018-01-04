@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8FCAC2851FFE717E005128BB /* MasTextCellTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FCAC2841FFE717E005128BB /* MasTextCellTableViewCell.m */; };
 		8FE02EDB1FFCADAB00CE62F1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FE02EDA1FFCADAB00CE62F1 /* AppDelegate.m */; };
 		8FE02EDE1FFCADAC00CE62F1 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FE02EDD1FFCADAC00CE62F1 /* ViewController.m */; };
 		8FE02EE11FFCADAC00CE62F1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8FE02EDF1FFCADAC00CE62F1 /* Main.storyboard */; };
@@ -94,6 +95,8 @@
 /* Begin PBXFileReference section */
 		2A28FB669D84D5F3715BBCEB /* libPods-ForkingDogDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ForkingDogDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		76E884D6F752559CDFEE7788 /* Pods-ForkingDogDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ForkingDogDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-ForkingDogDemo/Pods-ForkingDogDemo.release.xcconfig"; sourceTree = "<group>"; };
+		8FCAC2831FFE717E005128BB /* MasTextCellTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MasTextCellTableViewCell.h; sourceTree = "<group>"; };
+		8FCAC2841FFE717E005128BB /* MasTextCellTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MasTextCellTableViewCell.m; sourceTree = "<group>"; };
 		8FE02ED61FFCADAB00CE62F1 /* ForkingDogDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ForkingDogDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8FE02ED91FFCADAB00CE62F1 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		8FE02EDA1FFCADAB00CE62F1 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -227,6 +230,8 @@
 				8FE02F131FFCB36600CE62F1 /* MixTableViewCell.h */,
 				8FE02F141FFCB36600CE62F1 /* MixTableViewCell.m */,
 				8FE02F151FFCB36600CE62F1 /* MixTableViewCell.xib */,
+				8FCAC2831FFE717E005128BB /* MasTextCellTableViewCell.h */,
+				8FCAC2841FFE717E005128BB /* MasTextCellTableViewCell.m */,
 				8FE02F181FFCEF4100CE62F1 /* SDWebImage */,
 				8FE02EDF1FFCADAC00CE62F1 /* Main.storyboard */,
 				8FE02EE21FFCADAC00CE62F1 /* Assets.xcassets */,
@@ -504,6 +509,7 @@
 				8FE02F5A1FFCEF4100CE62F1 /* UIButton+WebCache.m in Sources */,
 				8FE02F601FFCEF4100CE62F1 /* UIImage+MultiFormat.m in Sources */,
 				8FE02F571FFCEF4100CE62F1 /* SDWebImagePrefetcher.m in Sources */,
+				8FCAC2851FFE717E005128BB /* MasTextCellTableViewCell.m in Sources */,
 				8FE02F0D1FFCB13000CE62F1 /* BaseTableViewCell.m in Sources */,
 				8FE02F6C1FFCEF4100CE62F1 /* UIView+WebCacheOperation.m in Sources */,
 				8FE02F421FFCEF4100CE62F1 /* SDImageCache.m in Sources */,

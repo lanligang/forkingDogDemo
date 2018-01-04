@@ -28,8 +28,8 @@
                             <constraint firstAttribute="height" constant="30" id="W5b-iI-kfc"/>
                         </constraints>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="张三" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uHB-x7-eJm">
-                        <rect key="frame" x="40" y="15.5" width="29" height="10"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="我是xibCell" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uHB-x7-eJm">
+                        <rect key="frame" x="40" y="15" width="72" height="10"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="10" id="9cQ-Aj-haz"/>
                         </constraints>
@@ -129,7 +129,7 @@
                 <outlet property="imgView3" destination="HTh-xm-6Ws" id="wN0-Rk-lag"/>
                 <outlet property="mixLable" destination="zmz-EJ-WBQ" id="cKy-Jg-cKQ"/>
             </connections>
-            <point key="canvasLocation" x="449" y="100"/>
+            <point key="canvasLocation" x="93" y="78"/>
         </tableViewCell>
     </objects>
 </document>
