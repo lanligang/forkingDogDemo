@@ -7,7 +7,9 @@
 //
 
 #import "AppDelegate.h"
-
+#import "LgMenuViewController.h"
+#import "LeftViewController.h"
+#import "ViewController.h"
 @interface AppDelegate ()
 
 @end
@@ -27,7 +29,20 @@
         //设置导航的透明度为NO
         [UINavigationBar appearance].translucent = NO;
     }
-    
+
+ self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
+ self.window.backgroundColor =[UIColor whiteColor];
+ 
+  [self.window makeKeyAndVisible];
+
+ LeftViewController *leftVc = [[LeftViewController alloc]init];
+
+ ViewController *vc = [[ViewController alloc]init];
+
+ UINavigationController *nav = [[UINavigationController alloc]initWithRootViewController:vc];
+ LgMenuViewController *menuVc = [[LgMenuViewController alloc]initWithLeftViewController:leftVc andMainViewController:nav];
+ self.window.rootViewController = menuVc;
+
     return YES;
 }
 

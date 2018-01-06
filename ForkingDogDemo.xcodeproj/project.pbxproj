@@ -8,9 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		8FCAC2851FFE717E005128BB /* MasTextCellTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FCAC2841FFE717E005128BB /* MasTextCellTableViewCell.m */; };
+		8FCAC28A200066A8005128BB /* LgMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FCAC289200066A8005128BB /* LgMenuViewController.m */; };
+		8FCAC28D20006D7F005128BB /* LeftViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FCAC28C20006D7F005128BB /* LeftViewController.m */; };
+		8FCAC29020007302005128BB /* UIView+LgMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FCAC28F20007302005128BB /* UIView+LgMenu.m */; };
+		8FCAC29320007B99005128BB /* UIViewController+LgMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FCAC29220007B99005128BB /* UIViewController+LgMenu.m */; };
 		8FE02EDB1FFCADAB00CE62F1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FE02EDA1FFCADAB00CE62F1 /* AppDelegate.m */; };
 		8FE02EDE1FFCADAC00CE62F1 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FE02EDD1FFCADAC00CE62F1 /* ViewController.m */; };
-		8FE02EE11FFCADAC00CE62F1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8FE02EDF1FFCADAC00CE62F1 /* Main.storyboard */; };
 		8FE02EE31FFCADAC00CE62F1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8FE02EE21FFCADAC00CE62F1 /* Assets.xcassets */; };
 		8FE02EE61FFCADAC00CE62F1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8FE02EE41FFCADAC00CE62F1 /* LaunchScreen.storyboard */; };
 		8FE02EE91FFCADAC00CE62F1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FE02EE81FFCADAC00CE62F1 /* main.m */; };
@@ -97,12 +100,19 @@
 		76E884D6F752559CDFEE7788 /* Pods-ForkingDogDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ForkingDogDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-ForkingDogDemo/Pods-ForkingDogDemo.release.xcconfig"; sourceTree = "<group>"; };
 		8FCAC2831FFE717E005128BB /* MasTextCellTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MasTextCellTableViewCell.h; sourceTree = "<group>"; };
 		8FCAC2841FFE717E005128BB /* MasTextCellTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MasTextCellTableViewCell.m; sourceTree = "<group>"; };
+		8FCAC288200066A8005128BB /* LgMenuViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LgMenuViewController.h; sourceTree = "<group>"; };
+		8FCAC289200066A8005128BB /* LgMenuViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LgMenuViewController.m; sourceTree = "<group>"; };
+		8FCAC28B20006D7F005128BB /* LeftViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LeftViewController.h; sourceTree = "<group>"; };
+		8FCAC28C20006D7F005128BB /* LeftViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LeftViewController.m; sourceTree = "<group>"; };
+		8FCAC28E20007302005128BB /* UIView+LgMenu.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+LgMenu.h"; sourceTree = "<group>"; };
+		8FCAC28F20007302005128BB /* UIView+LgMenu.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+LgMenu.m"; sourceTree = "<group>"; };
+		8FCAC29120007B99005128BB /* UIViewController+LgMenu.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIViewController+LgMenu.h"; sourceTree = "<group>"; };
+		8FCAC29220007B99005128BB /* UIViewController+LgMenu.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+LgMenu.m"; sourceTree = "<group>"; };
 		8FE02ED61FFCADAB00CE62F1 /* ForkingDogDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ForkingDogDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8FE02ED91FFCADAB00CE62F1 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		8FE02EDA1FFCADAB00CE62F1 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		8FE02EDC1FFCADAB00CE62F1 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		8FE02EDD1FFCADAC00CE62F1 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		8FE02EE01FFCADAC00CE62F1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8FE02EE21FFCADAC00CE62F1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8FE02EE51FFCADAC00CE62F1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8FE02EE71FFCADAC00CE62F1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -193,6 +203,19 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		8FCAC28720006692005128BB /* LgMenu */ = {
+			isa = PBXGroup;
+			children = (
+				8FCAC288200066A8005128BB /* LgMenuViewController.h */,
+				8FCAC289200066A8005128BB /* LgMenuViewController.m */,
+				8FCAC28E20007302005128BB /* UIView+LgMenu.h */,
+				8FCAC28F20007302005128BB /* UIView+LgMenu.m */,
+				8FCAC29120007B99005128BB /* UIViewController+LgMenu.h */,
+				8FCAC29220007B99005128BB /* UIViewController+LgMenu.m */,
+			);
+			path = LgMenu;
+			sourceTree = "<group>";
+		};
 		8FE02ECD1FFCADAB00CE62F1 = {
 			isa = PBXGroup;
 			children = (
@@ -218,10 +241,13 @@
 		8FE02ED81FFCADAB00CE62F1 /* ForkingDogDemo */ = {
 			isa = PBXGroup;
 			children = (
+				8FCAC28720006692005128BB /* LgMenu */,
 				8FE02ED91FFCADAB00CE62F1 /* AppDelegate.h */,
 				8FE02EDA1FFCADAB00CE62F1 /* AppDelegate.m */,
 				8FE02EDC1FFCADAB00CE62F1 /* ViewController.h */,
 				8FE02EDD1FFCADAC00CE62F1 /* ViewController.m */,
+				8FCAC28B20006D7F005128BB /* LeftViewController.h */,
+				8FCAC28C20006D7F005128BB /* LeftViewController.m */,
 				8FE02F0B1FFCB13000CE62F1 /* BaseTableViewCell.h */,
 				8FE02F0C1FFCB13000CE62F1 /* BaseTableViewCell.m */,
 				8FE02F0E1FFCB21500CE62F1 /* TextTableViewCell.h */,
@@ -233,7 +259,6 @@
 				8FCAC2831FFE717E005128BB /* MasTextCellTableViewCell.h */,
 				8FCAC2841FFE717E005128BB /* MasTextCellTableViewCell.m */,
 				8FE02F181FFCEF4100CE62F1 /* SDWebImage */,
-				8FE02EDF1FFCADAC00CE62F1 /* Main.storyboard */,
 				8FE02EE21FFCADAC00CE62F1 /* Assets.xcassets */,
 				8FE02EE41FFCADAC00CE62F1 /* LaunchScreen.storyboard */,
 				8FE02EE71FFCADAC00CE62F1 /* Info.plist */,
@@ -423,7 +448,6 @@
 				8FE02EE61FFCADAC00CE62F1 /* LaunchScreen.storyboard in Resources */,
 				8FE02EE31FFCADAC00CE62F1 /* Assets.xcassets in Resources */,
 				8FE02F121FFCB21500CE62F1 /* TextTableViewCell.xib in Resources */,
-				8FE02EE11FFCADAC00CE62F1 /* Main.storyboard in Resources */,
 				8FE02F171FFCB36600CE62F1 /* MixTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -514,13 +538,17 @@
 				8FE02F6C1FFCEF4100CE62F1 /* UIView+WebCacheOperation.m in Sources */,
 				8FE02F421FFCEF4100CE62F1 /* SDImageCache.m in Sources */,
 				8FE02EDE1FFCADAC00CE62F1 /* ViewController.m in Sources */,
+				8FCAC28D20006D7F005128BB /* LeftViewController.m in Sources */,
 				8FE02F511FFCEF4100CE62F1 /* SDWebImageDownloaderOperation.m in Sources */,
 				8FE02F4B1FFCEF4100CE62F1 /* SDWebImageDecoder.m in Sources */,
 				8FE02F111FFCB21500CE62F1 /* TextTableViewCell.m in Sources */,
 				8FE02F661FFCEF4100CE62F1 /* UIImageView+WebCache.m in Sources */,
+				8FCAC28A200066A8005128BB /* LgMenuViewController.m in Sources */,
 				8FE02EE91FFCADAC00CE62F1 /* main.m in Sources */,
 				8FE02F4E1FFCEF4100CE62F1 /* SDWebImageDownloader.m in Sources */,
 				8FE02F451FFCEF4100CE62F1 /* SDImageCacheConfig.m in Sources */,
+				8FCAC29320007B99005128BB /* UIViewController+LgMenu.m in Sources */,
+				8FCAC29020007302005128BB /* UIView+LgMenu.m in Sources */,
 				8FE02F3C1FFCEF4100CE62F1 /* NSData+ImageContentType.m in Sources */,
 				8FE02F161FFCB36600CE62F1 /* MixTableViewCell.m in Sources */,
 				8FE02F541FFCEF4100CE62F1 /* SDWebImageManager.m in Sources */,
@@ -596,14 +624,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		8FE02EDF1FFCADAC00CE62F1 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				8FE02EE01FFCADAC00CE62F1 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		8FE02EE41FFCADAC00CE62F1 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
