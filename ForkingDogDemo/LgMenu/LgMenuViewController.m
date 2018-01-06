@@ -43,8 +43,10 @@
 
  self.view.backgroundColor = [UIColor whiteColor];
 
- _leftViewController.view.frame = self.view.bounds;
- _rightViewController.view.frame = self.view.bounds;
+ _leftViewController.view.frame = [UIScreen mainScreen].bounds;
+ _rightViewController.view.frame = [UIScreen mainScreen].bounds;
+ _rightViewController.view.clipsToBounds = YES;
+ _rightViewController.view.backgroundColor = [UIColor whiteColor];
  UIPanGestureRecognizer *panGesture = [[UIPanGestureRecognizer alloc]initWithTarget:self action:@selector(swipView:)];
  panGesture.delegate  = self;
  [self.view addGestureRecognizer:panGesture];
@@ -120,6 +122,27 @@
  if(_isCanMove){
   return YES;
  }
+//判断控制器是否可以相应侧滑
+ if([self.rightViewController isKindOfClass:[UITabBarController class]])
+{
+  UITabBarController *tabBarVc = (UITabBarController *)self.rightViewController;
+  if(tabBarVc.selectedIndex>=1){
+   return NO;
+  }else{
+  UIViewController *firstVc =  tabBarVc.viewControllers.firstObject;
+   if([firstVc isKindOfClass:[UINavigationController class]]){
+    UINavigationController *nav = (UINavigationController *)firstVc;
+    if(nav.viewControllers.count>1){
+     return NO;
+    }
+   }
+ }
+}else if ([self.rightViewController isKindOfClass:[UINavigationController class]]){
+ UINavigationController *nav = (UINavigationController *)self.rightViewController;
+ if(nav.viewControllers.count>1){
+  return NO;
+ }
+}
  if(touchPoint.x<=20.0f){
   _isCanMove = YES;
   return YES;

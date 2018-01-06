@@ -40,6 +40,7 @@
     
     [_myTableView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.mas_equalTo(self.view);
+     make.bottom.mas_equalTo(0);
     }];
  UIView *titleView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 100, 44.0f)];
  
@@ -112,7 +113,12 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    
+ UIViewController *vc = [[UIViewController alloc]init];
+ vc.hidesBottomBarWhenPushed = YES;
+ //原则上是不能这样写的
+ vc.view.backgroundColor = [UIColor whiteColor];
+
+ [self.navigationController pushViewController:vc animated:YES];
 }
 
 
