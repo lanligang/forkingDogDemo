@@ -27,15 +27,22 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+
+ UIImageView *bgImagView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"bgImg"]];
+ bgImagView.frame = [UIScreen mainScreen].bounds;
+ [self.view addSubview:bgImagView];
+
+
+
     self.view.backgroundColor = [UIColor whiteColor];
     [self.view addSubview:self.myTableView];
  [self.myTableView mas_makeConstraints:^(MASConstraintMaker *make) {
   make.left.mas_equalTo(0);
   if(@available(iOS 11.0,*)){
-   make.top.mas_equalTo(self.view.safeAreaInsets.top);
+   make.top.mas_equalTo(self.view.safeAreaInsets.top).offset(80.0f);
    make.bottom.mas_equalTo(self.view.safeAreaInsets.bottom);
   }else{
-   make.top.and.bottom.mas_equalTo(0);
+   make.top.and.bottom.mas_equalTo(80.0f);
   }
   make.width.mas_equalTo(200.0f);
  }];

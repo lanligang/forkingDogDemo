@@ -41,6 +41,7 @@
 
  UINavigationController *nav = [[UINavigationController alloc]initWithRootViewController:vc];
  LgMenuViewController *menuVc = [[LgMenuViewController alloc]initWithLeftViewController:leftVc andMainViewController:nav];
+ menuVc.isScale = YES;
  self.window.rootViewController = menuVc;
 
     return YES;

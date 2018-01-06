@@ -11,6 +11,8 @@
 #define MAXOPEN_LEFT 200.0f
 
 @interface LgMenuViewController : UIViewController
+//是否缩放
+@property (nonatomic, assign) BOOL isScale;
 
 -(instancetype)initWithLeftViewController:(UIViewController *)leftViewController andMainViewController:(UIViewController *)mainViewController;
 

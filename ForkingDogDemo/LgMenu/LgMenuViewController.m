@@ -69,6 +69,10 @@
   }
   [mainView bringSubviewToFront:_effectView];
   _effectView.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:mainView.x/MAXOPEN_LEFT*0.5];
+
+  if(_isScale){
+   mainView.transform = CGAffineTransformMakeScale(1.0-mainView.x/MAXOPEN_LEFT*0.3,1.0-mainView.x/MAXOPEN_LEFT*0.3);
+  }
   _lastPoint = aPoint;
  }else if (panges.state==UIGestureRecognizerStateEnded){
   UIView *mainView =self.rightViewController.view;
@@ -85,6 +89,9 @@
  [mainView bringSubviewToFront:_effectView];
 
  [UIView animateWithDuration:0.3 animations:^{
+  if(_isScale){
+   mainView.transform = CGAffineTransformMakeScale(1.0-0.3,1.0-0.3);
+  }
   mainView.x = MAXOPEN_LEFT;
    _effectView.backgroundColor =[[UIColor blackColor]colorWithAlphaComponent:0.5];
  }];
@@ -95,6 +102,9 @@
 {
   UIView *mainView =self.rightViewController.view;
  [UIView animateWithDuration:0.3 animations:^{
+  if(_isScale){
+   mainView.transform = CGAffineTransformMakeScale(1.0,1.0);
+  }
    mainView.x = 0;
    _effectView.backgroundColor =[[UIColor blackColor]colorWithAlphaComponent:0];
  }];
@@ -107,7 +117,6 @@
 {
   UIWindow *window =  [[UIApplication sharedApplication].delegate window];
   CGPoint touchPoint = [touch locationInView:window];
- NSLog(@"下面");
  if(_isCanMove){
   return YES;
  }
