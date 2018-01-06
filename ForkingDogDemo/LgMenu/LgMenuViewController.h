@@ -2,13 +2,10 @@
 //  LgMenuViewController.h
 //  ForkingDogDemo
 //
-//  Created by Macx on 2018/1/6.
-//  Copyright © 2018年 石家庄光耀. All rights reserved.
+//  Created by LenSky on 2018/1/6.
 //
 
 #import <UIKit/UIKit.h>
-
-#define MAXOPEN_LEFT 200.0f
 
 @interface LgMenuViewController : UIViewController
 //是否缩放

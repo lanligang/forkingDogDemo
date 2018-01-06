@@ -108,6 +108,8 @@
 		8FCAC28F20007302005128BB /* UIView+LgMenu.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+LgMenu.m"; sourceTree = "<group>"; };
 		8FCAC29120007B99005128BB /* UIViewController+LgMenu.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIViewController+LgMenu.h"; sourceTree = "<group>"; };
 		8FCAC29220007B99005128BB /* UIViewController+LgMenu.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+LgMenu.m"; sourceTree = "<group>"; };
+		8FCAC29420012F11005128BB /* LgMenuHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LgMenuHeader.h; sourceTree = "<group>"; };
+		8FCAC29520012FCA005128BB /* LgMenuMacro.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LgMenuMacro.h; sourceTree = "<group>"; };
 		8FE02ED61FFCADAB00CE62F1 /* ForkingDogDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ForkingDogDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8FE02ED91FFCADAB00CE62F1 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		8FE02EDA1FFCADAB00CE62F1 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -212,6 +214,8 @@
 				8FCAC28F20007302005128BB /* UIView+LgMenu.m */,
 				8FCAC29120007B99005128BB /* UIViewController+LgMenu.h */,
 				8FCAC29220007B99005128BB /* UIViewController+LgMenu.m */,
+				8FCAC29520012FCA005128BB /* LgMenuMacro.h */,
+				8FCAC29420012F11005128BB /* LgMenuHeader.h */,
 			);
 			path = LgMenu;
 			sourceTree = "<group>";

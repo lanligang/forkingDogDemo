@@ -17,7 +17,7 @@
 #import "MixTableViewCell.h"
 //masCell
 #import "MasTextCellTableViewCell.h"
-#import "UIViewController+LgMenu.h"
+#import "LgMenuHeader.h"
 
 @interface ViewController ()<UITableViewDelegate,UITableViewDataSource>
 
@@ -31,10 +31,56 @@
 
 @implementation ViewController
 
+
+-(void)setTitleView
+{
+ UIView *titleView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 0, 44.0f)];
+
+ self.navigationItem.titleView  = titleView;
+
+ NSArray *titles =@[@"消息",@"通知"];
+ for (int i = 0; i<2; i++)
+ {
+ UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
+ [btn setTitleColor:[UIColor redColor] forState:UIControlStateSelected];
+ [btn setTitle:titles[i] forState:UIControlStateNormal];
+ [btn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+ [titleView addSubview:btn];
+ if(i==0){
+  btn.selected = YES;
+  UIView *lineView = [UIView new];
+  lineView.backgroundColor =[UIColor lightGrayColor];
+  [titleView addSubview:lineView];
+  [lineView mas_makeConstraints:^(MASConstraintMaker *make) {
+   make.centerX.mas_equalTo(0);
+   make.centerY.mas_equalTo(0);
+   make.height.mas_equalTo(20.0f);
+   make.width.mas_equalTo(1.0f);
+  }];
+ }
+ [btn mas_makeConstraints:^(MASConstraintMaker *make) {
+  if(i==0){
+   make.right.mas_equalTo(titleView.mas_centerX);
+  }else{
+   make.left.mas_equalTo(titleView.mas_centerX);
+  }
+  make.width.mas_equalTo(60.0f);
+  make.height.mas_equalTo(44.0f);
+  make.centerY.mas_equalTo(0);
+ }];
+ }
+ UIView *spaceView = [UIView new];
+ spaceView.bounds =CGRectMake(0, 0, 44, 44);
+ UIBarButtonItem *item = [[UIBarButtonItem alloc]initWithCustomView:spaceView];
+ self.navigationItem.rightBarButtonItem =item;
+
+}
+
+
 - (void)viewDidLoad {
     
     [super viewDidLoad];
-
+    [self setTitleView];
     self.view.backgroundColor = [UIColor whiteColor];
     [self.view addSubview:self.myTableView];
     
@@ -42,43 +88,6 @@
         make.edges.mas_equalTo(self.view);
      make.bottom.mas_equalTo(0);
     }];
- UIView *titleView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 100, 44.0f)];
- 
- titleView.autoresizesSubviews = YES;
- 
- self.navigationItem.titleView  = titleView;
- 
- NSArray *titles =@[@"消息",@"通知"];
- for (int i = 0; i<2; i++)
-{
-  UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
-  [btn setTitleColor:[UIColor redColor] forState:UIControlStateSelected];
-  [btn setTitle:titles[i] forState:UIControlStateNormal];
-  [btn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-  [titleView addSubview:btn];
-  if(i==0){
-	btn.selected = YES;
-	UIView *lineView = [UIView new];
-	lineView.backgroundColor =[UIColor lightGrayColor];
-	[titleView addSubview:lineView];
-	[lineView mas_makeConstraints:^(MASConstraintMaker *make) {
-	 make.centerX.mas_equalTo(-20);
-	 make.centerY.mas_equalTo(0);
-	 make.height.mas_equalTo(20.0f);
-	 make.width.mas_equalTo(1.0f);
-	}];
-  }
-  [btn mas_makeConstraints:^(MASConstraintMaker *make) {
-	if(i==0){
-	 make.right.mas_equalTo(titleView.mas_centerX).offset(-30);
-	}else{
-	 make.left.mas_equalTo(titleView.mas_centerX).offset(-10);
-	}
-	make.width.mas_equalTo(60.0f);
-	make.height.mas_equalTo(44.0f);
-	make.centerY.mas_equalTo(0);
-  }];
- }
 
  UIBarButtonItem *rightItem = [[UIBarButtonItem alloc]initWithImage:[[UIImage imageNamed:@"header_left"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] style:UIBarButtonItemStylePlain target:self action:@selector(openAction:)];
  self.navigationItem.leftBarButtonItem = rightItem;

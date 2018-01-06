@@ -2,12 +2,12 @@
 //  LgMenuViewController.m
 //  ForkingDogDemo
 //
-//  Created by Macx on 2018/1/6.
-//  Copyright © 2018年 石家庄光耀. All rights reserved.
+//  Created by LenSky on 2018/1/6.
 //
 
 #import "LgMenuViewController.h"
 #import "UIView+LgMenu.h"
+#import "LgMenuMacro.h"
 
 @interface LgMenuViewController ()<UIGestureRecognizerDelegate>
 
@@ -51,6 +51,7 @@
  panGesture.delegate  = self;
  [self.view addGestureRecognizer:panGesture];
  _isCanMove = NO;
+ 
  
 }
 -(void)swipView:(UISwipeGestureRecognizer *)panges
