@@ -12,11 +12,16 @@
 
 
 @interface LeftViewController ()<UITableViewDelegate,UITableViewDataSource>
+{
+ UIImageView *_animationImageView;
+ CGFloat _speedX;
+ CGFloat _speedY;
+}
 @property (nonatomic,strong)UITableView *myTableView;
 
-
 @property (nonatomic,strong)NSMutableArray *dataSource;
-;
+
+@property (nonatomic, strong) CADisplayLink  *time;
 @end
 
 @implementation LeftViewController
@@ -26,7 +31,9 @@
 
  UIImageView *bgImagView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"bgImg"]];
  bgImagView.frame = [UIScreen mainScreen].bounds;
+ bgImagView.transform = CGAffineTransformMakeScale(1.3, 1.3);
  [self.view addSubview:bgImagView];
+ _animationImageView = bgImagView;
  [self.view addSubview:self.myTableView];
 
 
@@ -55,6 +62,28 @@
   make.height.mas_equalTo(44);
   make.bottom.mas_equalTo(-5);
  }];
+ _speedX = 0.1;
+ _speedY =-0.06;
+
+ _time = [CADisplayLink displayLinkWithTarget:self selector:@selector(animationBgView:)];
+
+[_time addToRunLoop:[NSRunLoop currentRunLoop] forMode:NSRunLoopCommonModes];
+}
+-(void)animationBgView:(id)sender
+{
+    CGFloat screenWidth =  [UIScreen mainScreen].bounds.size.width;
+    CGFloat spaceWidth = (screenWidth*0.3)/2.0f;
+    CGFloat screenHeight =  [UIScreen mainScreen].bounds.size.height;
+    CGFloat spaceHeight = (screenHeight*0.3)/2.0f;
+ if (_animationImageView.center.x>(screenWidth/2.0f+spaceWidth)||_animationImageView.center.x<(screenWidth/2.0f-spaceWidth))
+ {
+   _speedX = -_speedX;
+ }
+ if (_animationImageView.center.y>(screenHeight/2.0f+spaceHeight)||_animationImageView.center.y<(screenHeight/2.0f-spaceHeight)) {
+  _speedY = -_speedY;
+ }
+ _animationImageView.center = (CGPoint){_animationImageView.center.x+_speedX,_animationImageView.center.y+_speedY};
+
 }
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
