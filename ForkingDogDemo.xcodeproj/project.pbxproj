@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8F5E639E20035286005E21A4 /* LgTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F5E639D20035286005E21A4 /* LgTabBar.m */; };
+		8F5E63A120035343005E21A4 /* LgTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F5E63A020035343005E21A4 /* LgTabBarViewController.m */; };
 		8FCAC2851FFE717E005128BB /* MasTextCellTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FCAC2841FFE717E005128BB /* MasTextCellTableViewCell.m */; };
 		8FCAC28A200066A8005128BB /* LgMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FCAC289200066A8005128BB /* LgMenuViewController.m */; };
 		8FCAC28D20006D7F005128BB /* LeftViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FCAC28C20006D7F005128BB /* LeftViewController.m */; };
@@ -98,6 +100,10 @@
 /* Begin PBXFileReference section */
 		2A28FB669D84D5F3715BBCEB /* libPods-ForkingDogDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ForkingDogDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		76E884D6F752559CDFEE7788 /* Pods-ForkingDogDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ForkingDogDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-ForkingDogDemo/Pods-ForkingDogDemo.release.xcconfig"; sourceTree = "<group>"; };
+		8F5E639C20035286005E21A4 /* LgTabBar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LgTabBar.h; sourceTree = "<group>"; };
+		8F5E639D20035286005E21A4 /* LgTabBar.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LgTabBar.m; sourceTree = "<group>"; };
+		8F5E639F20035343005E21A4 /* LgTabBarViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LgTabBarViewController.h; sourceTree = "<group>"; };
+		8F5E63A020035343005E21A4 /* LgTabBarViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LgTabBarViewController.m; sourceTree = "<group>"; };
 		8FCAC2831FFE717E005128BB /* MasTextCellTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MasTextCellTableViewCell.h; sourceTree = "<group>"; };
 		8FCAC2841FFE717E005128BB /* MasTextCellTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MasTextCellTableViewCell.m; sourceTree = "<group>"; };
 		8FCAC288200066A8005128BB /* LgMenuViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LgMenuViewController.h; sourceTree = "<group>"; };
@@ -205,6 +211,17 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		8F5E639B2003525F005E21A4 /* LgTabBar */ = {
+			isa = PBXGroup;
+			children = (
+				8F5E639C20035286005E21A4 /* LgTabBar.h */,
+				8F5E639D20035286005E21A4 /* LgTabBar.m */,
+				8F5E639F20035343005E21A4 /* LgTabBarViewController.h */,
+				8F5E63A020035343005E21A4 /* LgTabBarViewController.m */,
+			);
+			path = LgTabBar;
+			sourceTree = "<group>";
+		};
 		8FCAC28720006692005128BB /* LgMenu */ = {
 			isa = PBXGroup;
 			children = (
@@ -245,6 +262,7 @@
 		8FE02ED81FFCADAB00CE62F1 /* ForkingDogDemo */ = {
 			isa = PBXGroup;
 			children = (
+				8F5E639B2003525F005E21A4 /* LgTabBar */,
 				8FCAC28720006692005128BB /* LgMenu */,
 				8FE02ED91FFCADAB00CE62F1 /* AppDelegate.h */,
 				8FE02EDA1FFCADAB00CE62F1 /* AppDelegate.m */,
@@ -557,6 +575,8 @@
 				8FE02F161FFCB36600CE62F1 /* MixTableViewCell.m in Sources */,
 				8FE02F541FFCEF4100CE62F1 /* SDWebImageManager.m in Sources */,
 				8FE02F3F1FFCEF4100CE62F1 /* NSImage+WebCache.m in Sources */,
+				8F5E639E20035286005E21A4 /* LgTabBar.m in Sources */,
+				8F5E63A120035343005E21A4 /* LgTabBarViewController.m in Sources */,
 				8FE02F631FFCEF4100CE62F1 /* UIImageView+HighlightedWebCache.m in Sources */,
 				8FE02EDB1FFCADAB00CE62F1 /* AppDelegate.m in Sources */,
 			);

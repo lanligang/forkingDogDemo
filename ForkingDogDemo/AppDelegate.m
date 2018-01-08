@@ -9,7 +9,7 @@
 #import "AppDelegate.h"
 #import "LgMenuHeader.h"
 #import "LeftViewController.h"
-#import "ViewController.h"
+#import "LgTabBarViewController.h"
 @interface AppDelegate ()
 
 @end
@@ -38,36 +38,7 @@
 
  LeftViewController *leftVc = [[LeftViewController alloc]init];
 
- ViewController *vc = [[ViewController alloc]init];
- ViewController *vc2 = [[ViewController alloc]init];
-
- UINavigationController *nav = [[UINavigationController alloc]initWithRootViewController:vc];
-
-
- UITabBarItem *item1 = [[UITabBarItem alloc]init];
- UITabBarItem *item2 = [[UITabBarItem alloc]init];
- item1.title = @"首页";
- [item1 setTitleTextAttributes:@{UITextAttributeTextColor:[UIColor greenColor]} forState:UIControlStateSelected];
- [item2 setTitleTextAttributes:@{UITextAttributeTextColor:[UIColor greenColor]} forState:UIControlStateSelected];
-
- [item1 setSelectedImage:[[UIImage imageNamed:@"tab_list_find_p"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
- [item1 setImage:[[UIImage imageNamed:@"tab_list_find_n"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] ];
-
-
- [item2 setSelectedImage:[[UIImage imageNamed:@"tab_poster_friend_p"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
- [item2 setImage:[[UIImage imageNamed:@"tab_poster_friend_n"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] ];
-
- item2.title = @"第二页";
-
- UINavigationController *nav2 = [[UINavigationController alloc]initWithRootViewController:vc2];
-
-
- nav2.tabBarItem = item2;
- nav.tabBarItem = item1;
-
- UITabBarController *tabarVc = [[UITabBarController alloc]init];
-
- tabarVc.viewControllers = @[nav,nav2];
+ LgTabBarViewController *tabarVc = [[LgTabBarViewController alloc]init];
 
  LgMenuViewController *menuVc = [[LgMenuViewController alloc]initWithLeftViewController:leftVc andMainViewController:tabarVc];
  menuVc.isScale = YES;
