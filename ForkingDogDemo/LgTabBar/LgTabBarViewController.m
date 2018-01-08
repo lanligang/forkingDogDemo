@@ -18,25 +18,26 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-   
-    [self addAllChildViewController];
-    
     LgTabBar *tabBar = [[LgTabBar alloc]init];
     // 利用KVO来使用自定义的tabBar
+    [self addAllChildViewController];
     [self setValue:tabBar forKey:@"tabBar"];
-    
+
+ NSLog(@"--------输出一下选中值----------- %ld",self.selectedIndex);
+
 }
 -(void)addAllChildViewController
 {
     ViewController *vc = [[ViewController alloc]init];
-    ViewController *vc2 = [[ViewController alloc]init];
+    UIViewController *vc2 = [[UIViewController alloc]init];
     
     UINavigationController *nav = [[UINavigationController alloc]initWithRootViewController:vc];
-    
+   UINavigationController *nav2 = [[UINavigationController alloc]initWithRootViewController:vc2];
     UITabBarItem *item1 = [[UITabBarItem alloc]init];
     UITabBarItem *item2 = [[UITabBarItem alloc]init];
     item1.title = @"首页";
-    item1.tag = 0;
+    item2.title = @"第二页";
+
     [item1 setTitleTextAttributes:@{UITextAttributeTextColor:[UIColor greenColor]} forState:UIControlStateSelected];
     [item2 setTitleTextAttributes:@{UITextAttributeTextColor:[UIColor greenColor]} forState:UIControlStateSelected];
     
@@ -46,14 +47,13 @@
     
     [item2 setSelectedImage:[[UIImage imageNamed:@"tab_poster_friend_p"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
     [item2 setImage:[[UIImage imageNamed:@"tab_poster_friend_n"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] ];
-    
-    item2.title = @"第二页";
-    item2.tag = 1;
-    UINavigationController *nav2 = [[UINavigationController alloc]initWithRootViewController:vc2];
+
+
     
     nav2.tabBarItem = item2;
     nav.tabBarItem = item1;
-    self.viewControllers = @[nav,nav2];
+ [self addChildViewController:nav];
+ [self addChildViewController:nav2];
 }
 
 

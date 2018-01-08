@@ -37,7 +37,6 @@
  UIView *titleView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 0, 44.0f)];
 
  self.navigationItem.titleView  = titleView;
-
  NSArray *titles =@[@"消息",@"通知"];
  for (int i = 0; i<2; i++)
  {

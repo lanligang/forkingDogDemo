@@ -10,4 +10,6 @@
 
 @interface LgTabBar : UITabBar
 
+@property (nonatomic, strong) UIButton  *bigButton;
+
 @end
