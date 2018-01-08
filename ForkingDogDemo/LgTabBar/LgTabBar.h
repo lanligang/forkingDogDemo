@@ -7,9 +7,19 @@
 //
 
 #import <UIKit/UIKit.h>
+@protocol LgTabBarDelegate<NSObject>
+@optional
 
+-(void)bigButtonAction;
+
+@end
 @interface LgTabBar : UITabBar
 
 @property (nonatomic, strong) UIButton  *bigButton;
 
+@property (nonatomic, weak) id <LgTabBarDelegate>actionDelegate;
+
+
 @end
+
+

@@ -10,7 +10,7 @@
 #import "LgTabBar.h"
 #import "ViewController.h"
 
-@interface LgTabBarViewController ()
+@interface LgTabBarViewController ()<LgTabBarDelegate>
 
 @end
 
@@ -20,27 +20,46 @@
     [super viewDidLoad];
     LgTabBar *tabBar = [[LgTabBar alloc]init];
     // 利用KVO来使用自定义的tabBar
+    tabBar.actionDelegate = self;
     [self addAllChildViewController];
     [self setValue:tabBar forKey:@"tabBar"];
-
- NSLog(@"--------输出一下选中值----------- %ld",self.selectedIndex);
-
 }
+#pragma mark LgTabBarDelegate
+-(void)bigButtonAction
+{
+// PopAnimationViewVc *popVc = [PopAnimationViewVc showWithDataArray:@[] andViewController:self];
+}
+
 -(void)addAllChildViewController
 {
     ViewController *vc = [[ViewController alloc]init];
     UIViewController *vc2 = [[UIViewController alloc]init];
-    
+    UIViewController *vc3 = [[UIViewController alloc]init];
+    UIViewController *vc4 = [[UIViewController alloc]init];
+
+
     UINavigationController *nav = [[UINavigationController alloc]initWithRootViewController:vc];
    UINavigationController *nav2 = [[UINavigationController alloc]initWithRootViewController:vc2];
+
+ UINavigationController *nav3 = [[UINavigationController alloc]initWithRootViewController:vc3];
+  UINavigationController *nav4 = [[UINavigationController alloc]initWithRootViewController:vc4];
+
+
+
     UITabBarItem *item1 = [[UITabBarItem alloc]init];
     UITabBarItem *item2 = [[UITabBarItem alloc]init];
-    item1.title = @"首页";
-    item2.title = @"第二页";
+    UITabBarItem *item3 = [[UITabBarItem alloc]init];
+    UITabBarItem *item4 = [[UITabBarItem alloc]init];
+    item1.title = @"第1页";
+    item2.title = @"第2页";
+    item3.title = @"第3页";
+    item4.title = @"第4页";
 
     [item1 setTitleTextAttributes:@{UITextAttributeTextColor:[UIColor greenColor]} forState:UIControlStateSelected];
     [item2 setTitleTextAttributes:@{UITextAttributeTextColor:[UIColor greenColor]} forState:UIControlStateSelected];
-    
+    [item3 setTitleTextAttributes:@{UITextAttributeTextColor:[UIColor greenColor]} forState:UIControlStateSelected];
+    [item4 setTitleTextAttributes:@{UITextAttributeTextColor:[UIColor greenColor]} forState:UIControlStateSelected];
+ 
     [item1 setSelectedImage:[[UIImage imageNamed:@"tab_list_find_p"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
     [item1 setImage:[[UIImage imageNamed:@"tab_list_find_n"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] ];
     
@@ -48,12 +67,21 @@
     [item2 setSelectedImage:[[UIImage imageNamed:@"tab_poster_friend_p"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
     [item2 setImage:[[UIImage imageNamed:@"tab_poster_friend_n"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] ];
 
+ [item3 setSelectedImage:[[UIImage imageNamed:@"tab_list_find_p"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
+ [item3 setImage:[[UIImage imageNamed:@"tab_list_find_n"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] ];
 
-    
+ [item4 setSelectedImage:[[UIImage imageNamed:@"tab_list_find_p"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
+ [item4 setImage:[[UIImage imageNamed:@"tab_list_find_n"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] ];
+
+
     nav2.tabBarItem = item2;
     nav.tabBarItem = item1;
+    nav3.tabBarItem = item3;
+    nav4.tabBarItem = item4;
  [self addChildViewController:nav];
  [self addChildViewController:nav2];
+ [self addChildViewController:nav3];
+ [self addChildViewController:nav4];
 }
 
 
