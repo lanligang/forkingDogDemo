@@ -11,6 +11,7 @@
 #import "ViewController.h"
 
 @interface LgTabBarViewController ()<LgTabBarDelegate>
+@property (nonatomic, strong) NSMutableArray  *circleViews;
 
 @end
 
@@ -23,7 +24,42 @@
     tabBar.actionDelegate = self;
     [self addAllChildViewController];
     [self setValue:tabBar forKey:@"tabBar"];
+ _circleViews = [NSMutableArray array];
+
 }
+
+-(void)viewWillAppear:(BOOL)animated
+{
+ [super viewWillAppear:animated];
+ if (_circleViews.count>0) {
+  return;
+ }
+ for (UIView *view in self.tabBar.subviews)
+  {
+  NSLog(@" 输出类型 |   %@",view.class);
+  if ([view isKindOfClass:NSClassFromString(@"UITabBarButton")]) {
+   NSLog(@"  找到按钮了      %@",view.class);
+   UIView *circleView  = [UIView new];
+   circleView.frame = CGRectMake(CGRectGetWidth(view.frame)-5, 0, 5, 5);
+   circleView.backgroundColor = [UIColor redColor];
+   circleView.layer.cornerRadius = 2.5f;
+   circleView.clipsToBounds = YES;
+   [_circleViews addObject:circleView];
+
+
+
+   for (UIView *aview in view.subviews)
+    {
+    if ([aview isKindOfClass:NSClassFromString(@"UITabBarSwappableImageView")]) {
+     circleView.frame = CGRectMake(CGRectGetWidth(aview.frame)/2+10, CGRectGetHeight(aview.frame)/2-11, 5, 5);
+       [aview addSubview:circleView];
+    }
+    }
+  }
+  }
+
+}
+
 #pragma mark LgTabBarDelegate
 -(void)bigButtonAction
 {
@@ -78,10 +114,16 @@
     nav.tabBarItem = item1;
     nav3.tabBarItem = item3;
     nav4.tabBarItem = item4;
+
+
  [self addChildViewController:nav];
  [self addChildViewController:nav2];
  [self addChildViewController:nav3];
  [self addChildViewController:nav4];
+
+
+
+
 }
 
 
