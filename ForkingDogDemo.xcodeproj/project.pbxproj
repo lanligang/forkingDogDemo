@@ -369,7 +369,6 @@
 				8FE02ED21FFCADAB00CE62F1 /* Sources */,
 				8FE02ED31FFCADAB00CE62F1 /* Frameworks */,
 				8FE02ED41FFCADAB00CE62F1 /* Resources */,
-				774B6CCAFB5B2B47BC376402 /* [CP] Embed Pods Frameworks */,
 				1B55E4CBA0C5A26D3CA1E6A9 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
@@ -520,26 +519,11 @@
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/CLPlayer.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ForkingDogDemo/Pods-ForkingDogDemo-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		774B6CCAFB5B2B47BC376402 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ForkingDogDemo/Pods-ForkingDogDemo-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */

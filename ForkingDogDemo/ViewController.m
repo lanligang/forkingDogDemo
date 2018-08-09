@@ -7,8 +7,6 @@
 //
 
 #import "ViewController.h"
-
-#import <UITableView+FDTemplateLayoutCell.h>
 //这里 用mas  只是用来布局
 #import <Masonry.h>
 //单独文字
@@ -25,6 +23,8 @@
 
 
 @property (nonatomic,strong)NSMutableArray *dataSource;
+
+@property (nonatomic,strong)NSMutableDictionary *autoHeightCache;
 
 
 @end
@@ -136,20 +136,24 @@
     return CGFLOAT_MIN;
     
 }
-
+-(CGFloat)tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+	//如果想要预估区头和区尾同样的方法
+	NSString *key = [NSString stringWithFormat:@"%@_%ld",indexPath,(long)tableView.tag];
+	NSNumber * heightNum = self.autoHeightCache[key];
+	if(heightNum)return heightNum.floatValue;
+	return 44.0f;
+}
+-(void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+	NSString *key = [NSString stringWithFormat:@"%@_%ld",indexPath,(long)tableView.tag];
+	CGFloat height =  CGRectGetHeight(cell.frame);
+	self.autoHeightCache[key] = @(height);
+}
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSString *identifier = @"MixTableViewCell";
- if (indexPath.row==0||indexPath.row==4) {
-  identifier = @"TextTableViewCell";
- }else if (indexPath.row==2||indexPath.row==1){
-  identifier = @"MasTextCellTableViewCell";
- }
-    __weak ViewController *weakSelf = self;
-    return [tableView fd_heightForCellWithIdentifier:identifier cacheByIndexPath:indexPath configuration:^(BaseTableViewCell *cell) {
-        cell.model =weakSelf.dataSource[indexPath.row];
-    }];
+	return UITableViewAutomaticDimension;
 }
 
 -(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
@@ -161,7 +165,7 @@
 {
     return nil;
 }
-
+#pragma mark Getter
 -(NSMutableArray *)dataSource
 {
     if (!_dataSource)
@@ -189,7 +193,14 @@
     return _myTableView;
 }
 
-
+-(NSMutableDictionary *)autoHeightCache
+{
+	if (!_autoHeightCache)
+	{
+		_autoHeightCache = [[NSMutableDictionary alloc]init];
+	}
+	return _autoHeightCache;
+}
 
 
 
