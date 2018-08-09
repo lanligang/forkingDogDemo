@@ -4,13 +4,12 @@
 简书地址  https://www.jianshu.com/p/67b0e83d2d71
 
 ![ForkingDogDemo](forkingDogDemo.gif)
-*  缓存高度代码 在cell内部 设置从上到下 完美约束就可以 
-| 使用效果      | 如何使用          | 怎么使用 |
-| -----------  |:-------------:| -----:|
-| 制表符号   | 制表符号 |制表符号 |
-| 制表符号   | 制表符号      |   制表符号 |
-| 制表符号   | are neat      |    制表符号 |
+
+*  第一步 使用下面 缓存高度代码 
+* 第二步  在cell内部 设置从上到下 完美约束就可以 
+
 > 你有你的自由，我有我的快乐！开心最重要！
+> 是情是爱 是缘分，愿你的代码溜到飞起来
 
 ```
 -(CGFloat)tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -33,6 +32,7 @@ self.autoHeightCache[key] = @(height);
 return UITableViewAutomaticDimension;
 }
 ```
-```
-QQ 1176281703  QQ群 637387838
-```
+
+*  考试要考的哦 ！
+> QQ 1176281703  QQ群 637387838
+
