@@ -14,8 +14,10 @@
 {
     self = [super initWithFrame:frame];
     if(self){
-        [self loadBigButton];
+		[self.layer addSublayer:self.circleLayer];
+		self.circleLayer.path = self.cirCleBezierPath.CGPath;
 
+        [self loadBigButton];
         [self setShadowImage:[UIImage new]];
         [self setBackgroundImage:[UIImage new]];
     }
@@ -58,14 +60,58 @@
         view.frame = frame;
     }];
  [self bringSubviewToFront:_bigButton];
+
+		//白色圆弧的间距
+	CGFloat whiteSpace = 3.8;
+	CGFloat radius =50/2.0f+whiteSpace;
+		//计算高度
+	CGPoint buttonCenterPoint = _bigButton.center;
+
+	CGFloat barHeight = CGRectGetHeight(self.bounds);
+
+	CGFloat h1 = _bigButton.center.y;
+
+	CGFloat r   = radius;
+
+		//具体公式为下面
+	CGFloat space = sqrt(1-pow((h1/r),2))*r;
+
+	CGPoint begainPoint0 = (CGPoint){0,0};
+
+	CGPoint begainPoint = (CGPoint){buttonCenterPoint.x-space,0};
+
+	CGPoint begainPoint2 = (CGPoint){buttonCenterPoint.x+space,0};
+
+	CGPoint point3 = (CGPoint){barWidth,0};
+
+	CGPoint point4 = (CGPoint){barWidth,barHeight};
+	CGPoint point5 = (CGPoint){0,barHeight};
+
+	[self.cirCleBezierPath removeAllPoints];
+	[_cirCleBezierPath moveToPoint:begainPoint0];
+
+	[_cirCleBezierPath addLineToPoint:begainPoint];
+	CGFloat startAngle =M_PI+asin(h1/r);
+	CGFloat endAngle = M_PI*2-asin(h1/r);
+	[_cirCleBezierPath addArcWithCenter:buttonCenterPoint radius:r startAngle:startAngle endAngle:endAngle clockwise:YES];
+	[_cirCleBezierPath addLineToPoint:begainPoint2];
+	[_cirCleBezierPath addLineToPoint:point3];
+	[_cirCleBezierPath addLineToPoint:point4];
+	[_cirCleBezierPath addLineToPoint:point5];
+	self.circleLayer.path = _cirCleBezierPath.CGPath;
+	_circleLayer.fillColor = [[UIColor whiteColor] colorWithAlphaComponent:1.0f].CGColor;
+	_circleLayer.shadowColor = [UIColor lightGrayColor].CGColor;
+	_circleLayer.shadowOffset = CGSizeMake(0, -2);
+	_circleLayer.shadowOpacity = 0.3;
+
 }
 
 -(void)loadBigButton
 {
-    _bigButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 45.0f, 45)];
- [_bigButton setImage:[UIImage imageNamed:@"add_button"] forState:UIControlStateNormal];
- _bigButton.clipsToBounds = YES;
-    [_bigButton addTarget:self action:@selector(clickCenterBtn:) forControlEvents:UIControlEventTouchUpInside];
+      _bigButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 45.0f, 45)];
+      [_bigButton setImage:[UIImage imageNamed:@"add_button"] forState:UIControlStateNormal];
+       _bigButton.clipsToBounds = YES;
+     [_bigButton addTarget:self action:@selector(clickCenterBtn:) forControlEvents:UIControlEventTouchUpInside];
     [self addSubview:_bigButton];
 }
 
@@ -99,5 +145,21 @@
     return nil;
 }
 
+-(UIBezierPath *)cirCleBezierPath
+{
+	if (!_cirCleBezierPath)
+	 {
+		_cirCleBezierPath = [UIBezierPath bezierPath];
+	 }
+	return _cirCleBezierPath;
+}
 
+-(CAShapeLayer *)circleLayer
+{
+	if (!_circleLayer)
+	 {
+		_circleLayer = [CAShapeLayer layer];
+	 }
+	return _circleLayer;
+}
 @end

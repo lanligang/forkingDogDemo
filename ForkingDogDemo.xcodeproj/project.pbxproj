@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		8F5E639E20035286005E21A4 /* LgTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F5E639D20035286005E21A4 /* LgTabBar.m */; };
 		8F5E63A120035343005E21A4 /* LgTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F5E63A020035343005E21A4 /* LgTabBarViewController.m */; };
+		8F630A8421252612006EA924 /* UIView+LGAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F630A8321252612006EA924 /* UIView+LGAnimation.m */; };
 		8FCAC2851FFE717E005128BB /* MasTextCellTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FCAC2841FFE717E005128BB /* MasTextCellTableViewCell.m */; };
 		8FCAC28A200066A8005128BB /* LgMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FCAC289200066A8005128BB /* LgMenuViewController.m */; };
 		8FCAC28D20006D7F005128BB /* LeftViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FCAC28C20006D7F005128BB /* LeftViewController.m */; };
@@ -104,6 +105,8 @@
 		8F5E639D20035286005E21A4 /* LgTabBar.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LgTabBar.m; sourceTree = "<group>"; };
 		8F5E639F20035343005E21A4 /* LgTabBarViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LgTabBarViewController.h; sourceTree = "<group>"; };
 		8F5E63A020035343005E21A4 /* LgTabBarViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LgTabBarViewController.m; sourceTree = "<group>"; };
+		8F630A8221252612006EA924 /* UIView+LGAnimation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+LGAnimation.h"; sourceTree = "<group>"; };
+		8F630A8321252612006EA924 /* UIView+LGAnimation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+LGAnimation.m"; sourceTree = "<group>"; };
 		8FCAC2831FFE717E005128BB /* MasTextCellTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MasTextCellTableViewCell.h; sourceTree = "<group>"; };
 		8FCAC2841FFE717E005128BB /* MasTextCellTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MasTextCellTableViewCell.m; sourceTree = "<group>"; };
 		8FCAC288200066A8005128BB /* LgMenuViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LgMenuViewController.h; sourceTree = "<group>"; };
@@ -218,6 +221,8 @@
 				8F5E639D20035286005E21A4 /* LgTabBar.m */,
 				8F5E639F20035343005E21A4 /* LgTabBarViewController.h */,
 				8F5E63A020035343005E21A4 /* LgTabBarViewController.m */,
+				8F630A8221252612006EA924 /* UIView+LGAnimation.h */,
+				8F630A8321252612006EA924 /* UIView+LGAnimation.m */,
 			);
 			path = LgTabBar;
 			sourceTree = "<group>";
@@ -543,6 +548,7 @@
 				8FE02F0D1FFCB13000CE62F1 /* BaseTableViewCell.m in Sources */,
 				8FE02F6C1FFCEF4100CE62F1 /* UIView+WebCacheOperation.m in Sources */,
 				8FE02F421FFCEF4100CE62F1 /* SDImageCache.m in Sources */,
+				8F630A8421252612006EA924 /* UIView+LGAnimation.m in Sources */,
 				8FE02EDE1FFCADAC00CE62F1 /* ViewController.m in Sources */,
 				8FCAC28D20006D7F005128BB /* LeftViewController.m in Sources */,
 				8FE02F511FFCEF4100CE62F1 /* SDWebImageDownloaderOperation.m in Sources */,
@@ -753,7 +759,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 8D4JAQ92B5;
+				DEVELOPMENT_TEAM = 4SR2P5NBA9;
 				INFOPLIST_FILE = ForkingDogDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -769,7 +775,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 8D4JAQ92B5;
+				DEVELOPMENT_TEAM = 4SR2P5NBA9;
 				INFOPLIST_FILE = ForkingDogDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

@@ -15,6 +15,9 @@
 @end
 @interface LgTabBar : UITabBar
 
+@property (nonatomic,strong)UIBezierPath *cirCleBezierPath;
+@property (nonatomic,strong)CAShapeLayer *circleLayer;
+
 @property (nonatomic, strong) UIButton  *bigButton;
 
 @property (nonatomic, weak) id <LgTabBarDelegate>actionDelegate;

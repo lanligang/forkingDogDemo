@@ -9,8 +9,9 @@
 #import "LgTabBarViewController.h"
 #import "LgTabBar.h"
 #import "ViewController.h"
+#import "UIView+LGAnimation.h"
 
-@interface LgTabBarViewController ()<LgTabBarDelegate>
+@interface LgTabBarViewController ()<LgTabBarDelegate,UITabBarControllerDelegate>
 @property (nonatomic, strong) NSMutableArray  *circleViews;
 
 @end
@@ -25,6 +26,8 @@
     [self addAllChildViewController];
     [self setValue:tabBar forKey:@"tabBar"];
  _circleViews = [NSMutableArray array];
+	__weak typeof(self)ws = self;
+	self.delegate = ws;
 
 }
 
@@ -46,20 +49,37 @@
    circleView.clipsToBounds = YES;
    [_circleViews addObject:circleView];
 
-
-
-   for (UIView *aview in view.subviews)
-    {
+   for (UIView *aview in view.subviews)  {
     if ([aview isKindOfClass:NSClassFromString(@"UITabBarSwappableImageView")]) {
-     circleView.frame = CGRectMake(CGRectGetWidth(aview.frame)/2+10, CGRectGetHeight(aview.frame)/2-11, 5, 5);
+     circleView.frame = CGRectMake(CGRectGetWidth(aview.frame)/2+10,  CGRectGetHeight(aview.frame)/2-11, 5, 5);
        [aview addSubview:circleView];
-    }
+     }
     }
   }
-  }
-
 }
 
+}
+-(void)tabBar:(UITabBar *)tabBar didSelectItem:(UITabBarItem *)item
+{
+	NSInteger index = 0;
+	for (UIView *v  in tabBar.subviews) {
+		if ([v isKindOfClass:NSClassFromString(@"UITabBarButton")]) {
+			if (item.tag==index) {
+				for (UIView *aView in v.subviews) {
+					if ([aView isKindOfClass:NSClassFromString(@"UITabBarSwappableImageView")]) {
+						if (index==0) {
+							[aView aq_addRoaAnimation];
+						} else{
+							[aView aq_addScaleAnimation:1.2];
+						}
+						return;
+					}
+				}
+			}
+			index++;
+		}
+	}
+}
 #pragma mark LgTabBarDelegate
 -(void)bigButtonAction
 {
@@ -83,9 +103,13 @@
 
 
     UITabBarItem *item1 = [[UITabBarItem alloc]init];
+	item1.tag = 0;
     UITabBarItem *item2 = [[UITabBarItem alloc]init];
+	item2.tag = 1;
     UITabBarItem *item3 = [[UITabBarItem alloc]init];
+	item3.tag = 2;
     UITabBarItem *item4 = [[UITabBarItem alloc]init];
+	item4.tag = 3;
     item1.title = @"第1页";
     item2.title = @"第2页";
     item3.title = @"第3页";
@@ -115,15 +139,7 @@
     nav3.tabBarItem = item3;
     nav4.tabBarItem = item4;
 
-
- [self addChildViewController:nav];
- [self addChildViewController:nav2];
- [self addChildViewController:nav3];
- [self addChildViewController:nav4];
-
-
-
-
+	self.viewControllers = @[nav,nav2,nav3,nav4];
 }
 
 
