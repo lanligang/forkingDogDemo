@@ -34,7 +34,10 @@ self.autoHeightCache[key] = @(height);
 return UITableViewAutomaticDimension;
 }
 ```
+*  重新整理了一下代码中的各个文件夹
+* 关闭了缩放动画 暂时不支持 cocoapod 😭😭😭😭😭
 
 *  考试要考的哦 ！
 > QQ 1176281703  QQ群 637387838
+
 

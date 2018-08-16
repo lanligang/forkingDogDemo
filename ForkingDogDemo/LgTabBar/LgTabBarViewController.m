@@ -39,16 +39,13 @@
  }
  for (UIView *view in self.tabBar.subviews)
   {
-  NSLog(@" 输出类型 |   %@",view.class);
   if ([view isKindOfClass:NSClassFromString(@"UITabBarButton")]) {
-   NSLog(@"  找到按钮了      %@",view.class);
    UIView *circleView  = [UIView new];
    circleView.frame = CGRectMake(CGRectGetWidth(view.frame)-5, 0, 5, 5);
    circleView.backgroundColor = [UIColor redColor];
    circleView.layer.cornerRadius = 2.5f;
    circleView.clipsToBounds = YES;
    [_circleViews addObject:circleView];
-
    for (UIView *aview in view.subviews)  {
     if ([aview isKindOfClass:NSClassFromString(@"UITabBarSwappableImageView")]) {
      circleView.frame = CGRectMake(CGRectGetWidth(aview.frame)/2+10,  CGRectGetHeight(aview.frame)/2-11, 5, 5);
@@ -57,7 +54,6 @@
     }
   }
 }
-
 }
 -(void)tabBar:(UITabBar *)tabBar didSelectItem:(UITabBarItem *)item
 {
@@ -83,7 +79,8 @@
 #pragma mark LgTabBarDelegate
 -(void)bigButtonAction
 {
-// PopAnimationViewVc *popVc = [PopAnimationViewVc showWithDataArray:@[] andViewController:self];
+	UIActionSheet *action = [[UIActionSheet alloc]initWithTitle:@"温馨提示" delegate:nil cancelButtonTitle:@"取消" destructiveButtonTitle:@"发布" otherButtonTitles:@"继续", nil];
+	[action showInView:self.view];
 }
 
 -(void)addAllChildViewController
@@ -93,14 +90,10 @@
     UIViewController *vc3 = [[UIViewController alloc]init];
     UIViewController *vc4 = [[UIViewController alloc]init];
 
-
     UINavigationController *nav = [[UINavigationController alloc]initWithRootViewController:vc];
    UINavigationController *nav2 = [[UINavigationController alloc]initWithRootViewController:vc2];
-
  UINavigationController *nav3 = [[UINavigationController alloc]initWithRootViewController:vc3];
   UINavigationController *nav4 = [[UINavigationController alloc]initWithRootViewController:vc4];
-
-
 
     UITabBarItem *item1 = [[UITabBarItem alloc]init];
 	item1.tag = 0;
@@ -132,7 +125,6 @@
 
  [item4 setSelectedImage:[[UIImage imageNamed:@"tab_list_find_p"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
  [item4 setImage:[[UIImage imageNamed:@"tab_list_find_n"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] ];
-
 
     nav2.tabBarItem = item2;
     nav.tabBarItem = item1;

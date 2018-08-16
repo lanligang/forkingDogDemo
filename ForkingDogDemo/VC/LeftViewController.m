@@ -143,7 +143,11 @@ NSArray *arr = self.dataSource[indexPath.section];
 {
  if (!_dataSource)
  {
- _dataSource = [@[@[@"战绩三国",@"坦克世界"],@[@"吃鸡手游",@"贪玩蓝月",@"吃鸡手游"],@[@"王者荣耀",@"QQ飞车"],@[@"关于我们"]] mutableCopy];
+ _dataSource = [@[
+  @[@"战绩三国",@"坦克世界"],
+  @[@"吃鸡手游",@"贪玩蓝月",@"吃鸡手游"],
+  @[@"王者荣耀",@"QQ飞车"],
+  @[@"关于我们"]] mutableCopy];
  }
  return _dataSource;
 }

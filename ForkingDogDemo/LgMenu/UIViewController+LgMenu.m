@@ -18,34 +18,33 @@
 
  while (isCircle) {
   if([vc isKindOfClass:[LgMenuViewController class]]){
-   isCircle = NO;
+           isCircle = NO;
   }else{
-   vc =vc.parentViewController;
-   if(vc==nil){
-   isCircle = NO;
+       vc =vc.parentViewController;
+       if(vc==nil){
+         isCircle = NO;
+      }
    }
-  }
  }
   if([vc isKindOfClass:[LgMenuViewController class]]){
-   LgMenuViewController *lgMenu = (LgMenuViewController *)vc;
-   [lgMenu openLeftView];
+      LgMenuViewController *lgMenu = (LgMenuViewController *)vc;
+	  [lgMenu openLeftView];
   }
 }
 -(void)closeLgMenu
 {
- BOOL isCircle = YES;
+  BOOL isCircle = YES;
+   UIViewController *vc = self.parentViewController;
 
- UIViewController *vc = self.parentViewController;
-
- while (isCircle) {
-  if([vc isKindOfClass:[LgMenuViewController class]]){
-   isCircle = NO;
-  }else{
-   vc =vc.parentViewController;
-   if(vc==nil){
-    isCircle = NO;
+  while (isCircle) {
+    if([vc isKindOfClass:[LgMenuViewController class]]){
+        isCircle = NO;
+    }else{
+      vc =vc.parentViewController;
+       if(vc==nil){
+         isCircle = NO;
+     }
    }
-  }
  }
  if([vc isKindOfClass:[LgMenuViewController class]]){
   LgMenuViewController *lgMenu = (LgMenuViewController *)vc;

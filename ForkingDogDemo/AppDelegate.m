@@ -28,21 +28,23 @@
     if (@available(iOS 8.0,*)) {
         //设置导航的透明度为NO
         [UINavigationBar appearance].translucent = NO;
-     [UITabBar appearance].translucent = NO;
+        [UITabBar appearance].translucent = NO;
     }
 
  self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
  self.window.backgroundColor =[UIColor whiteColor];
- 
   [self.window makeKeyAndVisible];
 
- LeftViewController *leftVc = [[LeftViewController alloc]init];
+	
 
- LgTabBarViewController *tabarVc = [[LgTabBarViewController alloc]init];
+   LeftViewController *leftVc = [[LeftViewController alloc]init];
 
- LgMenuViewController *menuVc = [[LgMenuViewController alloc]initWithLeftViewController:leftVc andMainViewController:tabarVc];
- menuVc.isScale = YES;
- self.window.rootViewController = menuVc;
+   LgTabBarViewController *tabarVc = [[LgTabBarViewController alloc]init];
+	
+   LgMenuViewController *menuVc = [[LgMenuViewController alloc]initWithLeftViewController:leftVc andMainViewController:tabarVc];
+	//是否缩放 ------ 可以设置侧滑时候是否错放参数
+  menuVc.isScale = NO;
+  self.window.rootViewController = menuVc;
 
     return YES;
 }

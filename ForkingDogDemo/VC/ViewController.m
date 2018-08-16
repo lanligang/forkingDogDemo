@@ -72,9 +72,7 @@
  spaceView.bounds =CGRectMake(0, 0, 44, 44);
  UIBarButtonItem *item = [[UIBarButtonItem alloc]initWithCustomView:spaceView];
  self.navigationItem.rightBarButtonItem =item;
-
 }
-
 
 - (void)viewDidLoad {
     
@@ -129,12 +127,9 @@
  [self.navigationController pushViewController:vc animated:YES];
 }
 
-
 -(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {
-    
     return CGFLOAT_MIN;
-    
 }
 -(CGFloat)tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath
 {

@@ -227,6 +227,34 @@
 			path = LgTabBar;
 			sourceTree = "<group>";
 		};
+		8F630A8B212587C5006EA924 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				8FE02F0B1FFCB13000CE62F1 /* BaseTableViewCell.h */,
+				8FE02F0C1FFCB13000CE62F1 /* BaseTableViewCell.m */,
+				8FE02F0E1FFCB21500CE62F1 /* TextTableViewCell.h */,
+				8FE02F0F1FFCB21500CE62F1 /* TextTableViewCell.m */,
+				8FE02F101FFCB21500CE62F1 /* TextTableViewCell.xib */,
+				8FE02F131FFCB36600CE62F1 /* MixTableViewCell.h */,
+				8FE02F141FFCB36600CE62F1 /* MixTableViewCell.m */,
+				8FE02F151FFCB36600CE62F1 /* MixTableViewCell.xib */,
+				8FCAC2831FFE717E005128BB /* MasTextCellTableViewCell.h */,
+				8FCAC2841FFE717E005128BB /* MasTextCellTableViewCell.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		8F630A8C212587F4006EA924 /* VC */ = {
+			isa = PBXGroup;
+			children = (
+				8FE02EDC1FFCADAB00CE62F1 /* ViewController.h */,
+				8FE02EDD1FFCADAC00CE62F1 /* ViewController.m */,
+				8FCAC28B20006D7F005128BB /* LeftViewController.h */,
+				8FCAC28C20006D7F005128BB /* LeftViewController.m */,
+			);
+			path = VC;
+			sourceTree = "<group>";
+		};
 		8FCAC28720006692005128BB /* LgMenu */ = {
 			isa = PBXGroup;
 			children = (
@@ -271,20 +299,8 @@
 				8FCAC28720006692005128BB /* LgMenu */,
 				8FE02ED91FFCADAB00CE62F1 /* AppDelegate.h */,
 				8FE02EDA1FFCADAB00CE62F1 /* AppDelegate.m */,
-				8FE02EDC1FFCADAB00CE62F1 /* ViewController.h */,
-				8FE02EDD1FFCADAC00CE62F1 /* ViewController.m */,
-				8FCAC28B20006D7F005128BB /* LeftViewController.h */,
-				8FCAC28C20006D7F005128BB /* LeftViewController.m */,
-				8FE02F0B1FFCB13000CE62F1 /* BaseTableViewCell.h */,
-				8FE02F0C1FFCB13000CE62F1 /* BaseTableViewCell.m */,
-				8FE02F0E1FFCB21500CE62F1 /* TextTableViewCell.h */,
-				8FE02F0F1FFCB21500CE62F1 /* TextTableViewCell.m */,
-				8FE02F101FFCB21500CE62F1 /* TextTableViewCell.xib */,
-				8FE02F131FFCB36600CE62F1 /* MixTableViewCell.h */,
-				8FE02F141FFCB36600CE62F1 /* MixTableViewCell.m */,
-				8FE02F151FFCB36600CE62F1 /* MixTableViewCell.xib */,
-				8FCAC2831FFE717E005128BB /* MasTextCellTableViewCell.h */,
-				8FCAC2841FFE717E005128BB /* MasTextCellTableViewCell.m */,
+				8F630A8C212587F4006EA924 /* VC */,
+				8F630A8B212587C5006EA924 /* View */,
 				8FE02F181FFCEF4100CE62F1 /* SDWebImage */,
 				8FE02EE21FFCADAC00CE62F1 /* Assets.xcassets */,
 				8FE02EE41FFCADAC00CE62F1 /* LaunchScreen.storyboard */,
