@@ -9,6 +9,8 @@
 #import "LgTabBarViewController.h"
 #import "LgTabBar.h"
 #import "ViewController.h"
+#import "ADViewController.h"
+
 #import "UIView+LGAnimation.h"
 
 @interface LgTabBarViewController ()<LgTabBarDelegate,UITabBarControllerDelegate>
@@ -86,7 +88,7 @@
 -(void)addAllChildViewController
 {
     ViewController *vc = [[ViewController alloc]init];
-    UIViewController *vc2 = [[UIViewController alloc]init];
+    ADViewController *vc2 = [[ADViewController alloc]init];
     UIViewController *vc3 = [[UIViewController alloc]init];
     UIViewController *vc4 = [[UIViewController alloc]init];
 
@@ -104,7 +106,7 @@
     UITabBarItem *item4 = [[UITabBarItem alloc]init];
 	item4.tag = 3;
     item1.title = @"第1页";
-    item2.title = @"第2页";
+    item2.title = @"广告";
     item3.title = @"第3页";
     item4.title = @"第4页";
 

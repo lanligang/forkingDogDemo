@@ -3,7 +3,7 @@
 //  ForkingDogDemo
 //
 //  Created by ios2 on 2018/8/16.
-//  Copyright © 2018年 石家庄光耀. All rights reserved.
+//  Copyright © 2018年  All rights reserved.
 //
 
 #import "UIView+LGAnimation.h"
@@ -11,6 +11,11 @@
 @implementation UIView (LGAnimation)
 -(void)aq_addRoaAnimation
 {
+	/*
+	    CATransform3DMakeRotation(M_PI, 0, 1, 0); 以 Y 轴动画
+	    CATransform3DMakeRotation(M_PI, 1, 0, 0); 以 X 轴动画
+	    CATransform3DMakeRotation(M_PI, 0, 0, 1); 以 Z 轴动画
+	 */
 	[UIView animateWithDuration:0.3 animations:^{
 		self.layer.transform = CATransform3DMakeRotation(M_PI, 0, 1, 0);
 	}];
@@ -65,4 +70,6 @@
 	animation.calculationMode = kCAAnimationCubic;
 	[self.layer addAnimation:animation forKey:@"rotation"];
 }
+
+
 @end

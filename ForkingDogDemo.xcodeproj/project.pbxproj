@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4CD83D3721286DB00041EF99 /* UIView+ViewFrameScreen.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CD83D3621286DB00041EF99 /* UIView+ViewFrameScreen.m */; };
+		4CD83D3F212872D10041EF99 /* ADViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CD83D3E212872D10041EF99 /* ADViewController.m */; };
+		4CD83D4221287D8A0041EF99 /* ADCircleImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CD83D4121287D8A0041EF99 /* ADCircleImageView.m */; };
 		8F5E639E20035286005E21A4 /* LgTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F5E639D20035286005E21A4 /* LgTabBar.m */; };
 		8F5E63A120035343005E21A4 /* LgTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F5E63A020035343005E21A4 /* LgTabBarViewController.m */; };
 		8F630A8421252612006EA924 /* UIView+LGAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F630A8321252612006EA924 /* UIView+LGAnimation.m */; };
@@ -100,6 +103,12 @@
 
 /* Begin PBXFileReference section */
 		2A28FB669D84D5F3715BBCEB /* libPods-ForkingDogDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ForkingDogDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4CD83D3521286DB00041EF99 /* UIView+ViewFrameScreen.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+ViewFrameScreen.h"; sourceTree = "<group>"; };
+		4CD83D3621286DB00041EF99 /* UIView+ViewFrameScreen.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+ViewFrameScreen.m"; sourceTree = "<group>"; };
+		4CD83D3D212872D10041EF99 /* ADViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ADViewController.h; sourceTree = "<group>"; };
+		4CD83D3E212872D10041EF99 /* ADViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ADViewController.m; sourceTree = "<group>"; };
+		4CD83D4021287D8A0041EF99 /* ADCircleImageView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ADCircleImageView.h; sourceTree = "<group>"; };
+		4CD83D4121287D8A0041EF99 /* ADCircleImageView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ADCircleImageView.m; sourceTree = "<group>"; };
 		76E884D6F752559CDFEE7788 /* Pods-ForkingDogDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ForkingDogDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-ForkingDogDemo/Pods-ForkingDogDemo.release.xcconfig"; sourceTree = "<group>"; };
 		8F5E639C20035286005E21A4 /* LgTabBar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LgTabBar.h; sourceTree = "<group>"; };
 		8F5E639D20035286005E21A4 /* LgTabBar.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LgTabBar.m; sourceTree = "<group>"; };
@@ -214,6 +223,25 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		4CD83D3821286DBE0041EF99 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				4CD83D3521286DB00041EF99 /* UIView+ViewFrameScreen.h */,
+				4CD83D3621286DB00041EF99 /* UIView+ViewFrameScreen.m */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
+		4CD83D3921286E550041EF99 /* AdViews */ = {
+			isa = PBXGroup;
+			children = (
+				4CD83D3821286DBE0041EF99 /* Category */,
+				4CD83D4021287D8A0041EF99 /* ADCircleImageView.h */,
+				4CD83D4121287D8A0041EF99 /* ADCircleImageView.m */,
+			);
+			path = AdViews;
+			sourceTree = "<group>";
+		};
 		8F5E639B2003525F005E21A4 /* LgTabBar */ = {
 			isa = PBXGroup;
 			children = (
@@ -251,6 +279,8 @@
 				8FE02EDD1FFCADAC00CE62F1 /* ViewController.m */,
 				8FCAC28B20006D7F005128BB /* LeftViewController.h */,
 				8FCAC28C20006D7F005128BB /* LeftViewController.m */,
+				4CD83D3D212872D10041EF99 /* ADViewController.h */,
+				4CD83D3E212872D10041EF99 /* ADViewController.m */,
 			);
 			path = VC;
 			sourceTree = "<group>";
@@ -299,6 +329,7 @@
 				8FCAC28720006692005128BB /* LgMenu */,
 				8FE02ED91FFCADAB00CE62F1 /* AppDelegate.h */,
 				8FE02EDA1FFCADAB00CE62F1 /* AppDelegate.m */,
+				4CD83D3921286E550041EF99 /* AdViews */,
 				8F630A8C212587F4006EA924 /* VC */,
 				8F630A8B212587C5006EA924 /* View */,
 				8FE02F181FFCEF4100CE62F1 /* SDWebImage */,
@@ -444,7 +475,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0910;
-				ORGANIZATIONNAME = "石家庄光耀";
+				ORGANIZATIONNAME = LenSky;
 				TargetAttributes = {
 					8FE02ED51FFCADAB00CE62F1 = {
 						CreatedOnToolsVersion = 9.1;
@@ -561,6 +592,7 @@
 				8FE02F601FFCEF4100CE62F1 /* UIImage+MultiFormat.m in Sources */,
 				8FE02F571FFCEF4100CE62F1 /* SDWebImagePrefetcher.m in Sources */,
 				8FCAC2851FFE717E005128BB /* MasTextCellTableViewCell.m in Sources */,
+				4CD83D3F212872D10041EF99 /* ADViewController.m in Sources */,
 				8FE02F0D1FFCB13000CE62F1 /* BaseTableViewCell.m in Sources */,
 				8FE02F6C1FFCEF4100CE62F1 /* UIView+WebCacheOperation.m in Sources */,
 				8FE02F421FFCEF4100CE62F1 /* SDImageCache.m in Sources */,
@@ -578,11 +610,13 @@
 				8FCAC29320007B99005128BB /* UIViewController+LgMenu.m in Sources */,
 				8FCAC29020007302005128BB /* UIView+LgMenu.m in Sources */,
 				8FE02F3C1FFCEF4100CE62F1 /* NSData+ImageContentType.m in Sources */,
+				4CD83D4221287D8A0041EF99 /* ADCircleImageView.m in Sources */,
 				8FE02F161FFCB36600CE62F1 /* MixTableViewCell.m in Sources */,
 				8FE02F541FFCEF4100CE62F1 /* SDWebImageManager.m in Sources */,
 				8FE02F3F1FFCEF4100CE62F1 /* NSImage+WebCache.m in Sources */,
 				8F5E639E20035286005E21A4 /* LgTabBar.m in Sources */,
 				8F5E63A120035343005E21A4 /* LgTabBarViewController.m in Sources */,
+				4CD83D3721286DB00041EF99 /* UIView+ViewFrameScreen.m in Sources */,
 				8FE02F631FFCEF4100CE62F1 /* UIImageView+HighlightedWebCache.m in Sources */,
 				8FE02EDB1FFCADAB00CE62F1 /* AppDelegate.m in Sources */,
 			);
