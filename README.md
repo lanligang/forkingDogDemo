@@ -52,6 +52,11 @@ return UITableViewAutomaticDimension;
   menuVc.isScale = NO;
   self.window.rootViewController = menuVc;
 ```
+### 在其他控制器中主动打开和关闭
+```
+-(void)openLgMenu;
+-(void)closeLgMenu;
+```
 *  重新整理了一下代码中的各个文件夹
 * 关闭了缩放动画 暂时不支持 cocoapod 😭😭😭😭😭
 
