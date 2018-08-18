@@ -35,8 +35,17 @@ return UITableViewAutomaticDimension;
 }
 ```
 * 策滑自己试着写的 使用方法
-* 
+
 * isScale 是否缩放
+
+> // MAXOPEN_LEFT 控制滑开的最大宽度
+#ifndef LgMenuMacro_h 
+#define LgMenuMacro_h
+
+#define MAXOPEN_LEFT [UIScreen mainScreen].bounds.size.width*4/6.0f
+
+#endif /* LgMenuMacro_h */
+
 ```
  LeftViewController *leftVc = [[LeftViewController alloc]init];
 
