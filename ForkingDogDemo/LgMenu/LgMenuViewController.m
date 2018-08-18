@@ -48,8 +48,18 @@
  _rightViewController.view.clipsToBounds = YES;
  _rightViewController.view.backgroundColor = [UIColor whiteColor];
  UIPanGestureRecognizer *panGesture = [[UIPanGestureRecognizer alloc]initWithTarget:self action:@selector(swipView:)];
+	//只允许单手操作避免 两个手指滑动来回蹦的问题
+	panGesture.maximumNumberOfTouches = 1;
  panGesture.delegate  = self;
  [self.view addGestureRecognizer:panGesture];
+	//测试系统的边缘侧滑手势
+	/*
+	UIScreenEdgePanGestureRecognizer *panGesture = [[UIScreenEdgePanGestureRecognizer alloc]initWithTarget:self action:@selector(swipView:)];
+	panGesture.edges = UIRectEdgeLeft;
+	panGesture.delegate  = self;
+	[self.view addGestureRecognizer:panGesture];
+	 */
+	
  _isCanMove = NO;
  
  
@@ -72,12 +82,11 @@
   }
   [mainView bringSubviewToFront:_effectView];
   _effectView.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:mainView.x/MAXOPEN_LEFT*0.5];
-
   if(_isScale){
    mainView.transform = CGAffineTransformMakeScale(1.0-mainView.x/MAXOPEN_LEFT*0.3,1.0-mainView.x/MAXOPEN_LEFT*0.3);
   }
   _lastPoint = aPoint;
- }else if (panges.state==UIGestureRecognizerStateEnded){
+ }else if (panges.state==UIGestureRecognizerStateEnded||panges.state==UIGestureRecognizerStateFailed ||panges.state==UIGestureRecognizerStateCancelled){
   UIView *mainView =self.rightViewController.view;
   if(mainView.x>=MAXOPEN_LEFT*0.35){
    [self openLeftView];
