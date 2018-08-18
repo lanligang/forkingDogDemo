@@ -34,6 +34,19 @@ self.autoHeightCache[key] = @(height);
 return UITableViewAutomaticDimension;
 }
 ```
+* 策滑自己试着写的 使用方法
+* 
+* isScale 是否缩放
+```
+ LeftViewController *leftVc = [[LeftViewController alloc]init];
+
+   LgTabBarViewController *tabarVc = [[LgTabBarViewController alloc]init];
+	
+   LgMenuViewController *menuVc = [[LgMenuViewController alloc]initWithLeftViewController:leftVc andMainViewController:tabarVc];
+	//是否缩放 ------ 可以设置侧滑时候是否错放参数
+  menuVc.isScale = NO;
+  self.window.rootViewController = menuVc;
+```
 *  重新整理了一下代码中的各个文件夹
 * 关闭了缩放动画 暂时不支持 cocoapod 😭😭😭😭😭
 
