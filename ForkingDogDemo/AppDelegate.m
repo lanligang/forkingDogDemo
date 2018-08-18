@@ -43,7 +43,8 @@
 	
    LgMenuViewController *menuVc = [[LgMenuViewController alloc]initWithLeftViewController:leftVc andMainViewController:tabarVc];
 	//是否缩放 ------ 可以设置侧滑时候是否错放参数
-  menuVc.isScale = NO;
+  menuVc.isScale = YES;
+  menuVc.scaleValue = 0.5f;
   self.window.rootViewController = menuVc;
 
     return YES;

@@ -27,6 +27,7 @@
 {
     self  =  [super init];
  if (self){
+   _scaleValue = 0.3;
    [self addChildViewController:leftViewController];
    [self addChildViewController:mainViewController];
   self.leftViewController = leftViewController;
@@ -74,17 +75,25 @@
   CGFloat chageX = (aPoint.x-_lastPoint.x);
 
   UIView *mainView =self.rightViewController.view;
-  mainView.x = mainView.x+chageX;
-  if(mainView.x<=0){
-   mainView.x=0;
-  }else if (mainView.x>=MAXOPEN_LEFT){
-   mainView.x= MAXOPEN_LEFT;
-  }
-  [mainView bringSubviewToFront:_effectView];
-  _effectView.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:mainView.x/MAXOPEN_LEFT*0.5];
+  CGFloat currentX = mainView.x + chageX;
   if(_isScale){
-   mainView.transform = CGAffineTransformMakeScale(1.0-mainView.x/MAXOPEN_LEFT*0.3,1.0-mainView.x/MAXOPEN_LEFT*0.3);
+	mainView.transform = CGAffineTransformMakeScale(1.0-currentX/MAXOPEN_LEFT*_scaleValue,1.0-currentX/MAXOPEN_LEFT*_scaleValue);
   }
+  if(currentX <= 0){
+   currentX = 0;
+  }else if (currentX >= MAXOPEN_LEFT){
+   currentX = MAXOPEN_LEFT;
+  }
+
+  [mainView bringSubviewToFront:_effectView];
+
+  _effectView.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:currentX /MAXOPEN_LEFT*0.5];
+	 
+  if(_isScale){
+   mainView.transform = CGAffineTransformMakeScale(1.0-currentX/MAXOPEN_LEFT*_scaleValue,1.0-currentX /MAXOPEN_LEFT*_scaleValue);
+  }
+    mainView.x = currentX;
+
   _lastPoint = aPoint;
  }else if (panges.state==UIGestureRecognizerStateEnded||panges.state==UIGestureRecognizerStateFailed ||panges.state==UIGestureRecognizerStateCancelled){
   UIView *mainView =self.rightViewController.view;
@@ -99,10 +108,12 @@
 {
   UIView *mainView =self.rightViewController.view;
  [mainView bringSubviewToFront:_effectView];
+ CGFloat currentX =MAXOPEN_LEFT;
+ CGAffineTransform aTransform = CGAffineTransformMakeScale(1.0-currentX/MAXOPEN_LEFT*_scaleValue,1.0-currentX /MAXOPEN_LEFT*_scaleValue);
 
  [UIView animateWithDuration:0.3 animations:^{
   if(_isScale){
-   mainView.transform = CGAffineTransformMakeScale(1.0-0.3,1.0-0.3);
+   mainView.transform = aTransform;
   }
   mainView.x = MAXOPEN_LEFT;
    _effectView.backgroundColor =[[UIColor blackColor]colorWithAlphaComponent:0.5];
@@ -149,9 +160,9 @@
  }
 }else if ([self.rightViewController isKindOfClass:[UINavigationController class]]){
  UINavigationController *nav = (UINavigationController *)self.rightViewController;
- if(nav.viewControllers.count>1){
-  return NO;
- }
+  if(nav.viewControllers.count>1){
+   return NO;
+  }
 }
  if(touchPoint.x<=20.0f){
   _isCanMove = YES;
@@ -187,19 +198,20 @@
    [self closeLeftView];
 }
 
+#pragma mark setter
+-(void)setScaleValue:(CGFloat)scaleValue
+{
+	_scaleValue =scaleValue;
+	if (_scaleValue<=0) {
+		_scaleValue = 0;
+	}else if (_scaleValue >= 1){
+		_scaleValue = 1;
+	}
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end
