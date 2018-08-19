@@ -68,6 +68,8 @@ return UITableViewAutomaticDimension;
 ```
 *  重新整理了一下代码中的各个文件夹
 
+![新加的cell](ad.gif)
+
 *  考试要考的哦 ！
 > QQ 1176281703  QQ群 637387838
 
