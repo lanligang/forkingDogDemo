@@ -31,11 +31,9 @@
         [UITabBar appearance].translucent = NO;
     }
 
- self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
- self.window.backgroundColor =[UIColor whiteColor];
+  self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
+  self.window.backgroundColor =[UIColor whiteColor];
   [self.window makeKeyAndVisible];
-
-	
 
    LeftViewController *leftVc = [[LeftViewController alloc]init];
 

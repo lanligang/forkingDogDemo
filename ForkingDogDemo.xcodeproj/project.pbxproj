@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4CCA079721298BC5007B975F /* ADTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CCA079621298BC5007B975F /* ADTableViewCell.m */; };
 		4CD83D3721286DB00041EF99 /* UIView+ViewFrameScreen.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CD83D3621286DB00041EF99 /* UIView+ViewFrameScreen.m */; };
 		4CD83D3F212872D10041EF99 /* ADViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CD83D3E212872D10041EF99 /* ADViewController.m */; };
 		4CD83D4221287D8A0041EF99 /* ADCircleImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CD83D4121287D8A0041EF99 /* ADCircleImageView.m */; };
@@ -103,6 +104,8 @@
 
 /* Begin PBXFileReference section */
 		2A28FB669D84D5F3715BBCEB /* libPods-ForkingDogDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ForkingDogDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4CCA079521298BC5007B975F /* ADTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ADTableViewCell.h; sourceTree = "<group>"; };
+		4CCA079621298BC5007B975F /* ADTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ADTableViewCell.m; sourceTree = "<group>"; };
 		4CD83D3521286DB00041EF99 /* UIView+ViewFrameScreen.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+ViewFrameScreen.h"; sourceTree = "<group>"; };
 		4CD83D3621286DB00041EF99 /* UIView+ViewFrameScreen.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+ViewFrameScreen.m"; sourceTree = "<group>"; };
 		4CD83D3D212872D10041EF99 /* ADViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ADViewController.h; sourceTree = "<group>"; };
@@ -268,6 +271,8 @@
 				8FE02F151FFCB36600CE62F1 /* MixTableViewCell.xib */,
 				8FCAC2831FFE717E005128BB /* MasTextCellTableViewCell.h */,
 				8FCAC2841FFE717E005128BB /* MasTextCellTableViewCell.m */,
+				4CCA079521298BC5007B975F /* ADTableViewCell.h */,
+				4CCA079621298BC5007B975F /* ADTableViewCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -611,6 +616,7 @@
 				8FCAC29020007302005128BB /* UIView+LgMenu.m in Sources */,
 				8FE02F3C1FFCEF4100CE62F1 /* NSData+ImageContentType.m in Sources */,
 				4CD83D4221287D8A0041EF99 /* ADCircleImageView.m in Sources */,
+				4CCA079721298BC5007B975F /* ADTableViewCell.m in Sources */,
 				8FE02F161FFCB36600CE62F1 /* MixTableViewCell.m in Sources */,
 				8FE02F541FFCEF4100CE62F1 /* SDWebImageManager.m in Sources */,
 				8FE02F3F1FFCEF4100CE62F1 /* NSImage+WebCache.m in Sources */,
