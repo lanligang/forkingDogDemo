@@ -25,37 +25,42 @@
     LgTabBar *tabBar = [[LgTabBar alloc]init];
     // 利用KVO来使用自定义的tabBar
     tabBar.actionDelegate = self;
-    [self addAllChildViewController];
     [self setValue:tabBar forKey:@"tabBar"];
+	[self addAllChildViewController];
  _circleViews = [NSMutableArray array];
 	__weak typeof(self)ws = self;
 	self.delegate = ws;
-
+	self.selectedIndex = 0;
+	[self checkHiddenRedCircle];
 }
-
+-(void)checkHiddenRedCircle
+{
+	if (_circleViews.count>0) {
+		return;
+	}
+	for (UIView *view in self.tabBar.subviews)
+	{
+		if ([view isKindOfClass:NSClassFromString(@"UITabBarButton")]) {
+			UIView *circleView  = [UIView new];
+			circleView.frame = CGRectMake(CGRectGetWidth(view.frame)-5, 0, 5, 5);
+			circleView.backgroundColor = [UIColor redColor];
+			circleView.layer.cornerRadius = 2.5f;
+			circleView.clipsToBounds = YES;
+			[_circleViews addObject:circleView];
+			for (UIView *aview in view.subviews)  {
+				if ([aview isKindOfClass:NSClassFromString(@"UITabBarSwappableImageView")]) {
+					circleView.frame = CGRectMake(CGRectGetWidth(aview.frame)/2+10,  CGRectGetHeight(aview.frame)/2-11, 5, 5);
+					[aview addSubview:circleView];
+					circleView.hidden = YES;
+				}
+			}
+		}
+	}
+}
 -(void)viewWillAppear:(BOOL)animated
 {
  [super viewWillAppear:animated];
- if (_circleViews.count>0) {
-  return;
- }
- for (UIView *view in self.tabBar.subviews)
-  {
-  if ([view isKindOfClass:NSClassFromString(@"UITabBarButton")]) {
-   UIView *circleView  = [UIView new];
-   circleView.frame = CGRectMake(CGRectGetWidth(view.frame)-5, 0, 5, 5);
-   circleView.backgroundColor = [UIColor redColor];
-   circleView.layer.cornerRadius = 2.5f;
-   circleView.clipsToBounds = YES;
-   [_circleViews addObject:circleView];
-   for (UIView *aview in view.subviews)  {
-    if ([aview isKindOfClass:NSClassFromString(@"UITabBarSwappableImageView")]) {
-     circleView.frame = CGRectMake(CGRectGetWidth(aview.frame)/2+10,  CGRectGetHeight(aview.frame)/2-11, 5, 5);
-       [aview addSubview:circleView];
-     }
-    }
-  }
-}
+ [self checkHiddenRedCircle];
 }
 -(void)tabBar:(UITabBar *)tabBar didSelectItem:(UITabBarItem *)item
 {
