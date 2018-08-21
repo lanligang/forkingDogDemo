@@ -9,8 +9,9 @@
 #import "ADViewController.h"
 #import "ADTableViewCell.h"
 #import <Masonry.h>
+#import <StoreKit/StoreKit.h>
 
-@interface ADViewController ()<UITableViewDelegate,UITableViewDataSource>
+@interface ADViewController ()<UITableViewDelegate,UITableViewDataSource,SKStoreProductViewControllerDelegate>
 
 @property (nonatomic,strong)UITableView *myTableView;
 
@@ -20,7 +21,9 @@
 
 @end
 
-@implementation ADViewController
+@implementation ADViewController{
+	NSArray *_appIds;
+}
 
 - (void)viewDidLoad
 {
@@ -32,6 +35,8 @@
 		make.edges.mas_equalTo(self.view);
 		make.bottom.mas_equalTo(0);
 	}];
+	_appIds = @[@"989673964",@"1382147551",@"1382484132",@"",@"1233116180",@"1262355816",@"1296756659",@"1382147551",@"1382147551",@"1382147551",@"1382147551"];
+
 
 }
 
@@ -92,7 +97,21 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-
+	SKStoreProductViewController *_SKSVC = [[SKStoreProductViewController alloc] init];
+	_SKSVC.delegate = self;
+	NSString *appId = _appIds[(indexPath.row%_appIds.count)];
+	//这里加转子 hud 
+	[_SKSVC loadProductWithParameters:@{SKStoreProductParameterITunesItemIdentifier:appId}
+					  completionBlock:^(BOOL result, NSError *error) {
+						  if (result) {
+							  [self presentViewController:_SKSVC
+												 animated:YES
+											   completion:nil];
+						  }
+						  else{
+							  NSLog(@"%@",error);
+						  }
+					  }];
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {
@@ -110,7 +129,11 @@
 {
 	return nil;
 }
-
+#pragma mark- SKStoreProductViewControllerDelegate
+-(void) productViewControllerDidFinish:(SKStoreProductViewController *)viewController
+{
+	[viewController dismissViewControllerAnimated:YES completion:nil];
+}
 
 -(UITableView *)myTableView
 {
