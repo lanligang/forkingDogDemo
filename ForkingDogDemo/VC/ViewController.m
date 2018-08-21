@@ -129,12 +129,11 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
- UIViewController *vc = [[UIViewController alloc]init];
- vc.hidesBottomBarWhenPushed = YES;
+  UIViewController *vc = [[UIViewController alloc]init];
+  vc.hidesBottomBarWhenPushed = YES;
  //原则上是不能这样写的
- vc.view.backgroundColor = [UIColor whiteColor];
-
- [self.navigationController pushViewController:vc animated:YES];
+  vc.view.backgroundColor = [UIColor whiteColor];
+  [self.navigationController pushViewController:vc animated:YES];
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
