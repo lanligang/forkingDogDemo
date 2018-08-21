@@ -62,12 +62,12 @@
 {
    CGRect rect = [UIView rectFromSunView:_circleImgView1];
    CGFloat currentY =  CGRectGetMaxY(rect) - CGRectGetHeight(rect)/2.0f;
-	CGFloat radius = ([UIScreen mainScreen].bounds.size.width)*(currentY)/([UIScreen mainScreen].bounds.size.height-100);
+	CGFloat radius = ([UIScreen mainScreen].bounds.size.width*1.3)*(currentY)/([UIScreen mainScreen].bounds.size.height);
 	if (_currentAnimation == _circleImgView1) {
 		_currentAnimation.maskRaduis = radius;
 		_circleImgView2.maskRaduis = [UIScreen mainScreen].bounds.size.width;
 	}else{
-		_currentAnimation.maskRaduis = [UIScreen mainScreen].bounds.size.width+68 - radius;
+		_currentAnimation.maskRaduis = [UIScreen mainScreen].bounds.size.width*1.3 - radius;
 		_circleImgView1.maskRaduis = [UIScreen mainScreen].bounds.size.width;
 	}
 }
