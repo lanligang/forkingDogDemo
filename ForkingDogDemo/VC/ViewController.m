@@ -17,7 +17,7 @@
 #import "MasTextCellTableViewCell.h"
 #import "LgMenuHeader.h"
 #import "ADTableViewCell.h"
-
+#import "ADViewController.h"
 
 @interface ViewController ()<UITableViewDelegate,UITableViewDataSource>{
 	ADTableViewCell *_adCell;
@@ -129,10 +129,8 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-  UIViewController *vc = [[UIViewController alloc]init];
+  ADViewController *vc = [[ADViewController alloc]init];
   vc.hidesBottomBarWhenPushed = YES;
- //原则上是不能这样写的
-  vc.view.backgroundColor = [UIColor whiteColor];
   [self.navigationController pushViewController:vc animated:YES];
 }
 
