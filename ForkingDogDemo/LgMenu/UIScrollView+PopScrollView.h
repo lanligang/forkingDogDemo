@@ -3,7 +3,7 @@
 //  TeBrand
 //
 //  Created by ios2 on 2018/8/23.
-//  Copyright © 2018年 SunBo. All rights reserved.
+//  Copyright © 2018年 LenSky. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
