@@ -54,16 +54,9 @@
  panGesture.delegate  = self;
  [self.view addGestureRecognizer:panGesture];
 	//测试系统的边缘侧滑手势
-	/*
-	UIScreenEdgePanGestureRecognizer *panGesture = [[UIScreenEdgePanGestureRecognizer alloc]initWithTarget:self action:@selector(swipView:)];
-	panGesture.edges = UIRectEdgeLeft;
-	panGesture.delegate  = self;
-	[self.view addGestureRecognizer:panGesture];
-	 */
-	
+
  _isCanMove = NO;
- 
- 
+
 }
 -(void)swipView:(UISwipeGestureRecognizer *)panges
 {
