@@ -14,6 +14,9 @@
 		8F5E639E20035286005E21A4 /* LgTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F5E639D20035286005E21A4 /* LgTabBar.m */; };
 		8F5E63A120035343005E21A4 /* LgTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F5E63A020035343005E21A4 /* LgTabBarViewController.m */; };
 		8F630A8421252612006EA924 /* UIView+LGAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F630A8321252612006EA924 /* UIView+LGAnimation.m */; };
+		8FAA240A212E4DEC00E99674 /* UIScrollView+PopScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FAA2409212E4DEB00E99674 /* UIScrollView+PopScrollView.m */; };
+		8FAA240B212E4DEC00E99674 /* UIScrollView+PopScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FAA2409212E4DEB00E99674 /* UIScrollView+PopScrollView.m */; };
+		8FAA240C212E4DEC00E99674 /* UIScrollView+PopScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FAA2409212E4DEB00E99674 /* UIScrollView+PopScrollView.m */; };
 		8FCAC2851FFE717E005128BB /* MasTextCellTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FCAC2841FFE717E005128BB /* MasTextCellTableViewCell.m */; };
 		8FCAC28A200066A8005128BB /* LgMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FCAC289200066A8005128BB /* LgMenuViewController.m */; };
 		8FCAC28D20006D7F005128BB /* LeftViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FCAC28C20006D7F005128BB /* LeftViewController.m */; };
@@ -119,6 +122,8 @@
 		8F5E63A020035343005E21A4 /* LgTabBarViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LgTabBarViewController.m; sourceTree = "<group>"; };
 		8F630A8221252612006EA924 /* UIView+LGAnimation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+LGAnimation.h"; sourceTree = "<group>"; };
 		8F630A8321252612006EA924 /* UIView+LGAnimation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+LGAnimation.m"; sourceTree = "<group>"; };
+		8FAA2408212E4DEB00E99674 /* UIScrollView+PopScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+PopScrollView.h"; sourceTree = "<group>"; };
+		8FAA2409212E4DEB00E99674 /* UIScrollView+PopScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+PopScrollView.m"; sourceTree = "<group>"; };
 		8FCAC2831FFE717E005128BB /* MasTextCellTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MasTextCellTableViewCell.h; sourceTree = "<group>"; };
 		8FCAC2841FFE717E005128BB /* MasTextCellTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MasTextCellTableViewCell.m; sourceTree = "<group>"; };
 		8FCAC288200066A8005128BB /* LgMenuViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LgMenuViewController.h; sourceTree = "<group>"; };
@@ -293,6 +298,8 @@
 		8FCAC28720006692005128BB /* LgMenu */ = {
 			isa = PBXGroup;
 			children = (
+				8FAA2408212E4DEB00E99674 /* UIScrollView+PopScrollView.h */,
+				8FAA2409212E4DEB00E99674 /* UIScrollView+PopScrollView.m */,
 				8FCAC288200066A8005128BB /* LgMenuViewController.h */,
 				8FCAC289200066A8005128BB /* LgMenuViewController.m */,
 				8FCAC28E20007302005128BB /* UIView+LgMenu.h */,
@@ -621,6 +628,7 @@
 				8FE02F541FFCEF4100CE62F1 /* SDWebImageManager.m in Sources */,
 				8FE02F3F1FFCEF4100CE62F1 /* NSImage+WebCache.m in Sources */,
 				8F5E639E20035286005E21A4 /* LgTabBar.m in Sources */,
+				8FAA240A212E4DEC00E99674 /* UIScrollView+PopScrollView.m in Sources */,
 				8F5E63A120035343005E21A4 /* LgTabBarViewController.m in Sources */,
 				4CD83D3721286DB00041EF99 /* UIView+ViewFrameScreen.m in Sources */,
 				8FE02F631FFCEF4100CE62F1 /* UIImageView+HighlightedWebCache.m in Sources */,
@@ -639,6 +647,7 @@
 				8FE02F4C1FFCEF4100CE62F1 /* SDWebImageDecoder.m in Sources */,
 				8FE02F461FFCEF4100CE62F1 /* SDImageCacheConfig.m in Sources */,
 				8FE02F491FFCEF4100CE62F1 /* SDWebImageCompat.m in Sources */,
+				8FAA240B212E4DEC00E99674 /* UIScrollView+PopScrollView.m in Sources */,
 				8FE02F3D1FFCEF4100CE62F1 /* NSData+ImageContentType.m in Sources */,
 				8FE02EF31FFCADAC00CE62F1 /* ForkingDogDemoTests.m in Sources */,
 				8FE02F521FFCEF4100CE62F1 /* SDWebImageDownloaderOperation.m in Sources */,
@@ -664,6 +673,7 @@
 				8FE02F4D1FFCEF4100CE62F1 /* SDWebImageDecoder.m in Sources */,
 				8FE02F471FFCEF4100CE62F1 /* SDImageCacheConfig.m in Sources */,
 				8FE02F4A1FFCEF4100CE62F1 /* SDWebImageCompat.m in Sources */,
+				8FAA240C212E4DEC00E99674 /* UIScrollView+PopScrollView.m in Sources */,
 				8FE02F3E1FFCEF4100CE62F1 /* NSData+ImageContentType.m in Sources */,
 				8FE02EFE1FFCADAC00CE62F1 /* ForkingDogDemoUITests.m in Sources */,
 				8FE02F531FFCEF4100CE62F1 /* SDWebImageDownloaderOperation.m in Sources */,
