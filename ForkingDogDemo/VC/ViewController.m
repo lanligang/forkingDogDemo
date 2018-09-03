@@ -19,6 +19,10 @@
 #import "ADTableViewCell.h"
 #import "ADViewController.h"
 
+#import "GameViewController.h"
+
+
+
 @interface ViewController ()<UITableViewDelegate,UITableViewDataSource>{
 	ADTableViewCell *_adCell;
 }
@@ -129,7 +133,7 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-  ADViewController *vc = [[ADViewController alloc]init];
+  GameViewController *vc = [[GameViewController alloc]init];
   vc.hidesBottomBarWhenPushed = YES;
   [self.navigationController pushViewController:vc animated:YES];
 }

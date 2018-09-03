@@ -85,6 +85,13 @@
 		8FE02F6C1FFCEF4100CE62F1 /* UIView+WebCacheOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FE02F3B1FFCEF4100CE62F1 /* UIView+WebCacheOperation.m */; };
 		8FE02F6D1FFCEF4100CE62F1 /* UIView+WebCacheOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FE02F3B1FFCEF4100CE62F1 /* UIView+WebCacheOperation.m */; };
 		8FE02F6E1FFCEF4100CE62F1 /* UIView+WebCacheOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FE02F3B1FFCEF4100CE62F1 /* UIView+WebCacheOperation.m */; };
+		8FFE0170213CBE9000F9F5B1 /* SpriteKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FFE016F213CBE9000F9F5B1 /* SpriteKit.framework */; };
+		8FFE0173213CBEBF00F9F5B1 /* GameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FFE0172213CBEBF00F9F5B1 /* GameViewController.m */; };
+		8FFE0174213CBEBF00F9F5B1 /* GameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FFE0172213CBEBF00F9F5B1 /* GameViewController.m */; };
+		8FFE0175213CBEBF00F9F5B1 /* GameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FFE0172213CBEBF00F9F5B1 /* GameViewController.m */; };
+		8FFE0179213CBF2600F9F5B1 /* MyScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FFE0178213CBF2600F9F5B1 /* MyScene.m */; };
+		8FFE017A213CBF2600F9F5B1 /* MyScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FFE0178213CBF2600F9F5B1 /* MyScene.m */; };
+		8FFE017B213CBF2600F9F5B1 /* MyScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FFE0178213CBF2600F9F5B1 /* MyScene.m */; };
 		B53D723A9E5F2D691F1F6404 /* libPods-ForkingDogDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A28FB669D84D5F3715BBCEB /* libPods-ForkingDogDemo.a */; };
 /* End PBXBuildFile section */
 
@@ -194,6 +201,11 @@
 		8FE02F391FFCEF4100CE62F1 /* UIView+WebCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+WebCache.m"; sourceTree = "<group>"; };
 		8FE02F3A1FFCEF4100CE62F1 /* UIView+WebCacheOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+WebCacheOperation.h"; sourceTree = "<group>"; };
 		8FE02F3B1FFCEF4100CE62F1 /* UIView+WebCacheOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+WebCacheOperation.m"; sourceTree = "<group>"; };
+		8FFE016F213CBE9000F9F5B1 /* SpriteKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SpriteKit.framework; path = System/Library/Frameworks/SpriteKit.framework; sourceTree = SDKROOT; };
+		8FFE0171213CBEBF00F9F5B1 /* GameViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameViewController.h; sourceTree = "<group>"; };
+		8FFE0172213CBEBF00F9F5B1 /* GameViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GameViewController.m; sourceTree = "<group>"; };
+		8FFE0177213CBF2600F9F5B1 /* MyScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyScene.h; sourceTree = "<group>"; };
+		8FFE0178213CBF2600F9F5B1 /* MyScene.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyScene.m; sourceTree = "<group>"; };
 		C83E36281973FE3A3B2A2AAF /* Pods-ForkingDogDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ForkingDogDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ForkingDogDemo/Pods-ForkingDogDemo.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -202,6 +214,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8FFE0170213CBE9000F9F5B1 /* SpriteKit.framework in Frameworks */,
 				B53D723A9E5F2D691F1F6404 /* libPods-ForkingDogDemo.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -226,6 +239,7 @@
 		478ECB25E81AE1454A6A1B01 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				8FFE016F213CBE9000F9F5B1 /* SpriteKit.framework */,
 				2A28FB669D84D5F3715BBCEB /* libPods-ForkingDogDemo.a */,
 			);
 			name = Frameworks;
@@ -337,6 +351,7 @@
 		8FE02ED81FFCADAB00CE62F1 /* ForkingDogDemo */ = {
 			isa = PBXGroup;
 			children = (
+				8FFE016E213CBE7200F9F5B1 /* Game */,
 				8F5E639B2003525F005E21A4 /* LgTabBar */,
 				8FCAC28720006692005128BB /* LgMenu */,
 				8FE02ED91FFCADAB00CE62F1 /* AppDelegate.h */,
@@ -411,6 +426,25 @@
 				8FE02F3B1FFCEF4100CE62F1 /* UIView+WebCacheOperation.m */,
 			);
 			path = SDWebImage;
+			sourceTree = "<group>";
+		};
+		8FFE016E213CBE7200F9F5B1 /* Game */ = {
+			isa = PBXGroup;
+			children = (
+				8FFE0171213CBEBF00F9F5B1 /* GameViewController.h */,
+				8FFE0172213CBEBF00F9F5B1 /* GameViewController.m */,
+				8FFE0176213CBEFA00F9F5B1 /* Scene */,
+			);
+			path = Game;
+			sourceTree = "<group>";
+		};
+		8FFE0176213CBEFA00F9F5B1 /* Scene */ = {
+			isa = PBXGroup;
+			children = (
+				8FFE0177213CBF2600F9F5B1 /* MyScene.h */,
+				8FFE0178213CBF2600F9F5B1 /* MyScene.m */,
+			);
+			path = Scene;
 			sourceTree = "<group>";
 		};
 		B22F59B2CFCB608E27D4DB5C /* Pods */ = {
@@ -606,6 +640,7 @@
 				8FCAC2851FFE717E005128BB /* MasTextCellTableViewCell.m in Sources */,
 				4CD83D3F212872D10041EF99 /* ADViewController.m in Sources */,
 				8FE02F0D1FFCB13000CE62F1 /* BaseTableViewCell.m in Sources */,
+				8FFE0173213CBEBF00F9F5B1 /* GameViewController.m in Sources */,
 				8FE02F6C1FFCEF4100CE62F1 /* UIView+WebCacheOperation.m in Sources */,
 				8FE02F421FFCEF4100CE62F1 /* SDImageCache.m in Sources */,
 				8F630A8421252612006EA924 /* UIView+LGAnimation.m in Sources */,
@@ -626,6 +661,7 @@
 				4CCA079721298BC5007B975F /* ADTableViewCell.m in Sources */,
 				8FE02F161FFCB36600CE62F1 /* MixTableViewCell.m in Sources */,
 				8FE02F541FFCEF4100CE62F1 /* SDWebImageManager.m in Sources */,
+				8FFE0179213CBF2600F9F5B1 /* MyScene.m in Sources */,
 				8FE02F3F1FFCEF4100CE62F1 /* NSImage+WebCache.m in Sources */,
 				8F5E639E20035286005E21A4 /* LgTabBar.m in Sources */,
 				8FAA240A212E4DEC00E99674 /* UIScrollView+PopScrollView.m in Sources */,
@@ -640,6 +676,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8FFE0174213CBEBF00F9F5B1 /* GameViewController.m in Sources */,
 				8FE02F5E1FFCEF4100CE62F1 /* UIImage+GIF.m in Sources */,
 				8FE02F4F1FFCEF4100CE62F1 /* SDWebImageDownloader.m in Sources */,
 				8FE02F5B1FFCEF4100CE62F1 /* UIButton+WebCache.m in Sources */,
@@ -651,6 +688,7 @@
 				8FE02F3D1FFCEF4100CE62F1 /* NSData+ImageContentType.m in Sources */,
 				8FE02EF31FFCADAC00CE62F1 /* ForkingDogDemoTests.m in Sources */,
 				8FE02F521FFCEF4100CE62F1 /* SDWebImageDownloaderOperation.m in Sources */,
+				8FFE017A213CBF2600F9F5B1 /* MyScene.m in Sources */,
 				8FE02F6A1FFCEF4100CE62F1 /* UIView+WebCache.m in Sources */,
 				8FE02F671FFCEF4100CE62F1 /* UIImageView+WebCache.m in Sources */,
 				8FE02F551FFCEF4100CE62F1 /* SDWebImageManager.m in Sources */,
@@ -666,6 +704,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8FFE0175213CBEBF00F9F5B1 /* GameViewController.m in Sources */,
 				8FE02F5F1FFCEF4100CE62F1 /* UIImage+GIF.m in Sources */,
 				8FE02F501FFCEF4100CE62F1 /* SDWebImageDownloader.m in Sources */,
 				8FE02F5C1FFCEF4100CE62F1 /* UIButton+WebCache.m in Sources */,
@@ -677,6 +716,7 @@
 				8FE02F3E1FFCEF4100CE62F1 /* NSData+ImageContentType.m in Sources */,
 				8FE02EFE1FFCADAC00CE62F1 /* ForkingDogDemoUITests.m in Sources */,
 				8FE02F531FFCEF4100CE62F1 /* SDWebImageDownloaderOperation.m in Sources */,
+				8FFE017B213CBF2600F9F5B1 /* MyScene.m in Sources */,
 				8FE02F6B1FFCEF4100CE62F1 /* UIView+WebCache.m in Sources */,
 				8FE02F681FFCEF4100CE62F1 /* UIImageView+WebCache.m in Sources */,
 				8FE02F561FFCEF4100CE62F1 /* SDWebImageManager.m in Sources */,
