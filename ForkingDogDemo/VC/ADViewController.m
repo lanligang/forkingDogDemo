@@ -10,9 +10,14 @@
 #import "ADTableViewCell.h"
 #import <Masonry.h>
 #import <StoreKit/StoreKit.h>
+#import "MJRefresh.h"
+#import "CollectionViewHeader.h"
 
 
-@interface ADViewController ()<UITableViewDelegate,UITableViewDataSource,SKStoreProductViewControllerDelegate>
+@interface ADViewController ()
+<UITableViewDelegate,
+UITableViewDataSource,
+SKStoreProductViewControllerDelegate>
 
 @property (nonatomic,strong)UITableView *myTableView;
 
@@ -26,6 +31,15 @@
 	NSArray *_appIds;
 }
 
+//-(void)viewWillAppear:(BOOL)animated
+//{
+//	[super viewWillAppear:animated];
+//	[self.navigationController setNavigationBarHidden:YES animated:animated];
+//}
+//-(void)viewWillDisappear:(BOOL)animated
+//{
+//	[self.navigationController setNavigationBarHidden:NO animated:animated];
+//}
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -38,9 +52,24 @@
 	}];
 	_appIds = @[@"989673964",@"1382147551",@"1382484132",@"",@"1233116180",@"1262355816",@"1296756659",@"1382147551",@"1382147551",@"1382147551",@"1382147551"];
 
+	_myTableView.lg_header = [CollectionViewHeader collectionHeader];
+	_myTableView.lg_header.delegate = self;
+	__weak typeof(self) ws = self;
+	[_myTableView.lg_header setLgRegreshAction:^{
+		[ws requstData];
+	}];
+	/*
+	//如果想要打开调用
+	[_myTableView.lg_header openFirstStepTop];
+	//如果想关闭 使用
+	[_myTableView.lg_header endLgRefresh];
+	 */
 
 }
-
+-(void)requstData
+{
+	[_myTableView.lg_header endLgRefresh];
+}
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
 	return 1;
