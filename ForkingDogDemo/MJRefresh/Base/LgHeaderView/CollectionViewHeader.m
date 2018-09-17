@@ -167,10 +167,9 @@
 		 CGPoint vel = [pan velocityInView:_scrollView];
 		if (vel.y <0) {
 			//向上推
-			if (self.insetTDelta>=-(self.mj_size.height -2.0f)) {
+			if (self.insetTDelta> -(self.mj_h-2.0f)) {
 				//结束刷新
-				[self endRefreshing];
-				[self endLgRefresh];
+				[self endRefreshAction];
 			}
 		}else if (vel.y>0){
 			CGFloat maxTopH =-(self.mj_h - self.refreshView.mj_h+2.0f);
@@ -275,9 +274,8 @@
 			[self layoutIfNeeded];
 		}];
 	}
-	[UIView animateWithDuration:0.1 animations:^{
-		_scrollView.contentInset = UIEdgeInsetsMake(0, 0, 0, 0);
-		[_scrollView setContentOffset:CGPointMake(0, 0) animated:NO];
+	[UIView animateWithDuration:MJRefreshFastAnimationDuration animations:^{
+		[_scrollView setContentInset:UIEdgeInsetsMake(0, 0, 0, 0)];
 	}];
 }
 
@@ -374,7 +372,18 @@
 #pragma mark 下拉刷新结束的时候
 -(void)endLgRefresh
 {
-	[self performSelector:@selector(endRefreshAnimation) withObject:nil afterDelay:0.1];
+     CGFloat lgScreenWidth = 	CGRectGetWidth([UIScreen mainScreen].bounds);
+	if (lgScreenWidth<=321.0f) {
+		[self performSelector:@selector(endRefreshAnimation) withObject:nil afterDelay:0.85];
+	}else{
+		[self performSelector:@selector(endRefreshAnimation) withObject:nil afterDelay:0.2];
+	}
+
+}
+
+-(void)endRefreshAction
+{
+	[self endRefreshAnimation];
 }
 
 -(void)endRefreshAnimation

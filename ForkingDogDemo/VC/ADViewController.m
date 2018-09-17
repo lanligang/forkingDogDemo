@@ -17,7 +17,8 @@
 @interface ADViewController ()
 <UITableViewDelegate,
 UITableViewDataSource,
-SKStoreProductViewControllerDelegate>
+SKStoreProductViewControllerDelegate,
+LgCollectionHeaderDelegate>
 
 @property (nonatomic,strong)UITableView *myTableView;
 
