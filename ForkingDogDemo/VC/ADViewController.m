@@ -55,7 +55,20 @@ SKStoreProductViewControllerDelegate>
 		make.edges.mas_equalTo(self.view);
 		make.bottom.mas_equalTo(0);
 	}];
-	_appIds = @[@"989673964",@"1382147551",@"1382484132",@"",@"1233116180",@"1262355816",@"1296756659",@"1382147551",@"1382147551",@"1382147551",@"1382147551"];
+	_appIds = @[
+				@"989673964",
+				@"1382147551",
+				@"629774477",
+				@"1256992655",
+				@"1382484132",
+				@"1233116180",
+				@"1262355816",
+				@"1296756659",
+				@"1382147551",
+				@"1382147551",
+				@"1382147551",
+				@"553106760",
+				@"1382147551"];
 
 	_myTableView.lg_header = [CollectionViewHeader collectionHeader];
 	_myTableView.lg_header.delegate = self;
