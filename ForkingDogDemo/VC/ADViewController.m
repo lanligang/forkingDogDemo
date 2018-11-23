@@ -9,23 +9,26 @@
 #import "ADViewController.h"
 #import "ADTableViewCell.h"
 #import <Masonry.h>
-#import <StoreKit/StoreKit.h>
 #import "MJRefresh.h"
 #import "CollectionViewHeader.h"
 #import "DCCycleScrollView.h"
 #import "UIColor+Hex.h"
+#import <StoreKit/StoreKit.h>
+
 @interface ADViewController ()
 <UITableViewDelegate,
 UITableViewDataSource,
-SKStoreProductViewControllerDelegate,
 LgCollectionHeaderDelegate,
-DCCycleScrollViewDelegate>
+DCCycleScrollViewDelegate,
+SKStoreProductViewControllerDelegate>
 
 @property (nonatomic,strong)UITableView *myTableView;
 
 @property (nonatomic,strong)NSMutableDictionary *autoHeightCache;
 
 @property (nonatomic,strong)NSMutableDictionary *cellCacheDic;
+@property (nonatomic,weak)UIViewController *weakVc;
+
 
 @end
 
@@ -142,22 +145,25 @@ DCCycleScrollViewDelegate>
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+	NSString *appId = _appIds[(indexPath.row%_appIds.count)];
 	SKStoreProductViewController *_SKSVC = [[SKStoreProductViewController alloc] init];
 	_SKSVC.delegate = self;
-	NSString *appId = _appIds[(indexPath.row%_appIds.count)];
-	//这里加转子 hud 
+	//这里加转子 hud
+	[self presentViewController:_SKSVC animated:NO completion:nil];
 	[_SKSVC loadProductWithParameters:@{SKStoreProductParameterITunesItemIdentifier:appId}
 					  completionBlock:^(BOOL result, NSError *error) {
 						  if (result) {
-							  [self presentViewController:_SKSVC
-												 animated:YES
-											   completion:nil];
-						  }
-						  else{
-							  NSLog(@"%@",error);
+
+						  }  else{
 						  }
 					  }];
 }
+- (void)productViewControllerDidFinish:(SKStoreProductViewController *)viewController
+{
+	[viewController dismissViewControllerAnimated:YES completion:nil];
+}
+
+
 -(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {
 
@@ -173,11 +179,6 @@ DCCycleScrollViewDelegate>
 -(UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section
 {
 	return nil;
-}
-#pragma mark- SKStoreProductViewControllerDelegate
--(void) productViewControllerDidFinish:(SKStoreProductViewController *)viewController
-{
-	[viewController dismissViewControllerAnimated:YES completion:nil];
 }
 
 -(UITableView *)myTableView
