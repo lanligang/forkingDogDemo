@@ -122,6 +122,12 @@
 		8FC0E1B421A79C5200DC4C98 /* ADScreenManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FC0E1B321A79C5200DC4C98 /* ADScreenManager.m */; };
 		8FC0E1B521A79C5200DC4C98 /* ADScreenManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FC0E1B321A79C5200DC4C98 /* ADScreenManager.m */; };
 		8FC0E1B621A79C5200DC4C98 /* ADScreenManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FC0E1B321A79C5200DC4C98 /* ADScreenManager.m */; };
+		8FC0E1B921A7E6A700DC4C98 /* UnidreamLED.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8FC0E1B821A7E6A700DC4C98 /* UnidreamLED.ttf */; };
+		8FC0E1BA21A7E6A700DC4C98 /* UnidreamLED.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8FC0E1B821A7E6A700DC4C98 /* UnidreamLED.ttf */; };
+		8FC0E1BB21A7E6A700DC4C98 /* UnidreamLED.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8FC0E1B821A7E6A700DC4C98 /* UnidreamLED.ttf */; };
+		8FC0E1BE21A7E6BC00DC4C98 /* UIFont+textFont.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FC0E1BC21A7E6BB00DC4C98 /* UIFont+textFont.m */; };
+		8FC0E1BF21A7E6BC00DC4C98 /* UIFont+textFont.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FC0E1BC21A7E6BB00DC4C98 /* UIFont+textFont.m */; };
+		8FC0E1C021A7E6BC00DC4C98 /* UIFont+textFont.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FC0E1BC21A7E6BB00DC4C98 /* UIFont+textFont.m */; };
 		8FCAC2851FFE717E005128BB /* MasTextCellTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FCAC2841FFE717E005128BB /* MasTextCellTableViewCell.m */; };
 		8FCAC28A200066A8005128BB /* LgMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FCAC289200066A8005128BB /* LgMenuViewController.m */; };
 		8FCAC28D20006D7F005128BB /* LeftViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FCAC28C20006D7F005128BB /* LeftViewController.m */; };
@@ -308,6 +314,9 @@
 		8FC0E1AE21A79BC400DC4C98 /* UINavigationController+circleDismiss.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+circleDismiss.m"; sourceTree = "<group>"; };
 		8FC0E1B221A79C5200DC4C98 /* ADScreenManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ADScreenManager.h; sourceTree = "<group>"; };
 		8FC0E1B321A79C5200DC4C98 /* ADScreenManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ADScreenManager.m; sourceTree = "<group>"; };
+		8FC0E1B821A7E6A700DC4C98 /* UnidreamLED.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = UnidreamLED.ttf; sourceTree = "<group>"; };
+		8FC0E1BC21A7E6BB00DC4C98 /* UIFont+textFont.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIFont+textFont.m"; sourceTree = "<group>"; };
+		8FC0E1BD21A7E6BC00DC4C98 /* UIFont+textFont.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIFont+textFont.h"; sourceTree = "<group>"; };
 		8FCAC2831FFE717E005128BB /* MasTextCellTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MasTextCellTableViewCell.h; sourceTree = "<group>"; };
 		8FCAC2841FFE717E005128BB /* MasTextCellTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MasTextCellTableViewCell.m; sourceTree = "<group>"; };
 		8FCAC288200066A8005128BB /* LgMenuViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LgMenuViewController.h; sourceTree = "<group>"; };
@@ -639,6 +648,9 @@
 		8FC0E1A721A79B7D00DC4C98 /* ScreenAD */ = {
 			isa = PBXGroup;
 			children = (
+				8FC0E1BD21A7E6BC00DC4C98 /* UIFont+textFont.h */,
+				8FC0E1BC21A7E6BB00DC4C98 /* UIFont+textFont.m */,
+				8FC0E1B821A7E6A700DC4C98 /* UnidreamLED.ttf */,
 				8FC0E1A821A79BAA00DC4C98 /* ScreenADViewController.h */,
 				8FC0E1A921A79BAA00DC4C98 /* ScreenADViewController.m */,
 				8FC0E1AD21A79BC400DC4C98 /* UINavigationController+circleDismiss.h */,
@@ -914,6 +926,7 @@
 				8FE02F121FFCB21500CE62F1 /* TextTableViewCell.xib in Resources */,
 				4CFCC7C0214EC8C900600E19 /* MJRefresh.bundle in Resources */,
 				8FE02F171FFCB36600CE62F1 /* MixTableViewCell.xib in Resources */,
+				8FC0E1B921A7E6A700DC4C98 /* UnidreamLED.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -922,6 +935,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4CFCC7C1214EC8C900600E19 /* MJRefresh.bundle in Resources */,
+				8FC0E1BA21A7E6A700DC4C98 /* UnidreamLED.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -930,6 +944,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4CFCC7C2214EC8C900600E19 /* MJRefresh.bundle in Resources */,
+				8FC0E1BB21A7E6A700DC4C98 /* UnidreamLED.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1036,6 +1051,7 @@
 				4CFCC78D214EC8C900600E19 /* MJRefreshFooter.m in Sources */,
 				8FC0E1A121A78C6B00DC4C98 /* DCCycleScrollView.m in Sources */,
 				8FFE0179213CBF2600F9F5B1 /* MyScene.m in Sources */,
+				8FC0E1BE21A7E6BC00DC4C98 /* UIFont+textFont.m in Sources */,
 				8FE02F3F1FFCEF4100CE62F1 /* NSImage+WebCache.m in Sources */,
 				8F5E639E20035286005E21A4 /* LgTabBar.m in Sources */,
 				4CFCC7A8214EC8C900600E19 /* MJRefreshNormalHeader.m in Sources */,
@@ -1082,6 +1098,7 @@
 				4CFCC7CD214EC8C900600E19 /* UIScrollView+MJRefresh.m in Sources */,
 				4CFCC7AC214EC8C900600E19 /* MJRefreshStateHeader.m in Sources */,
 				8FAA240B212E4DEC00E99674 /* UIScrollView+PopScrollView.m in Sources */,
+				8FC0E1BF21A7E6BC00DC4C98 /* UIFont+textFont.m in Sources */,
 				8FC0E1B521A79C5200DC4C98 /* ADScreenManager.m in Sources */,
 				8FE02F3D1FFCEF4100CE62F1 /* NSData+ImageContentType.m in Sources */,
 				4CFCC745214EC2CA00600E19 /* UIColor+Hex.m in Sources */,
@@ -1144,6 +1161,7 @@
 				4CFCC7CE214EC8C900600E19 /* UIScrollView+MJRefresh.m in Sources */,
 				4CFCC7AD214EC8C900600E19 /* MJRefreshStateHeader.m in Sources */,
 				8FAA240C212E4DEC00E99674 /* UIScrollView+PopScrollView.m in Sources */,
+				8FC0E1C021A7E6BC00DC4C98 /* UIFont+textFont.m in Sources */,
 				8FC0E1B621A79C5200DC4C98 /* ADScreenManager.m in Sources */,
 				8FE02F3E1FFCEF4100CE62F1 /* NSData+ImageContentType.m in Sources */,
 				4CFCC746214EC2CA00600E19 /* UIColor+Hex.m in Sources */,

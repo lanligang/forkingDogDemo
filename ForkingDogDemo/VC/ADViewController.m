@@ -132,6 +132,9 @@ DCCycleScrollViewDelegate>
 }
 -(void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
+	 UIPanGestureRecognizer *pan =  scrollView.panGestureRecognizer;
+	CGPoint p =  [pan velocityInView:scrollView];
+	NSLog(@"-------------- 输出当前的Y 变化 | %f",fabs(p.y));
 	for (ADTableViewCell *cell in self.cellCacheDic.allValues) {
 		[cell configeAdImgCircle];
 	}
