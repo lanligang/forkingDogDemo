@@ -12,13 +12,14 @@
 #import <StoreKit/StoreKit.h>
 #import "MJRefresh.h"
 #import "CollectionViewHeader.h"
-
-
+#import "DCCycleScrollView.h"
+#import "UIColor+Hex.h"
 @interface ADViewController ()
 <UITableViewDelegate,
 UITableViewDataSource,
 SKStoreProductViewControllerDelegate,
-LgCollectionHeaderDelegate>
+LgCollectionHeaderDelegate,
+DCCycleScrollViewDelegate>
 
 @property (nonatomic,strong)UITableView *myTableView;
 
@@ -59,12 +60,22 @@ LgCollectionHeaderDelegate>
 	[_myTableView.lg_header setLgRegreshAction:^{
 		[ws requstData];
 	}];
+
+	DCCycleScrollView *dccyScrollView = [DCCycleScrollView cycleScrollViewWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.view.frame), 200.0f) shouldInfiniteLoop:YES imageGroups:@[@"https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1534696019570&di=e1b89fa2c004e6a27a0bf047f3dc528b&imgtype=0&src=http%3A%2F%2Fattach.bbs.miui.com%2Fforum%2F201601%2F15%2F192720gzyeeyxeflexe747.png",@"https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1534696019570&di=e1b89fa2c004e6a27a0bf047f3dc528b&imgtype=0&src=http%3A%2F%2Fattach.bbs.miui.com%2Fforum%2F201601%2F15%2F192720gzyeeyxeflexe747.png",@"https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1534696019570&di=e1b89fa2c004e6a27a0bf047f3dc528b&imgtype=0&src=http%3A%2F%2Fattach.bbs.miui.com%2Fforum%2F201601%2F15%2F192720gzyeeyxeflexe747.png"]];
+	dccyScrollView.delegate = self;
+	dccyScrollView.autoScroll = YES;
+	dccyScrollView.isZoom = YES;
+	dccyScrollView.itemWidth = CGRectGetWidth(self.view.frame) - 80.0f;
+	dccyScrollView.itemSpace = -20.0f;
+	self.myTableView.tableHeaderView = dccyScrollView;
+	dccyScrollView.backgroundColor  = [UIColor colorWithHexString:@"#333333"];
 	/*
 	//如果想要打开调用
 	[_myTableView.lg_header openFirstStepTop];
 	//如果想关闭 使用
 	[_myTableView.lg_header endLgRefresh];
 	 */
+	self.view.backgroundColor = [UIColor colorWithHexString:@"#333333"];
 
 }
 -(void)requstData

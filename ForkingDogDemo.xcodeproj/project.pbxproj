@@ -104,6 +104,24 @@
 		8FAA240A212E4DEC00E99674 /* UIScrollView+PopScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FAA2409212E4DEB00E99674 /* UIScrollView+PopScrollView.m */; };
 		8FAA240B212E4DEC00E99674 /* UIScrollView+PopScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FAA2409212E4DEB00E99674 /* UIScrollView+PopScrollView.m */; };
 		8FAA240C212E4DEC00E99674 /* UIScrollView+PopScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FAA2409212E4DEB00E99674 /* UIScrollView+PopScrollView.m */; };
+		8FC0E19E21A78C6B00DC4C98 /* DCCycleScrollViewFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FC0E19B21A78C6B00DC4C98 /* DCCycleScrollViewFlowLayout.m */; };
+		8FC0E19F21A78C6B00DC4C98 /* DCCycleScrollViewFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FC0E19B21A78C6B00DC4C98 /* DCCycleScrollViewFlowLayout.m */; };
+		8FC0E1A021A78C6B00DC4C98 /* DCCycleScrollViewFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FC0E19B21A78C6B00DC4C98 /* DCCycleScrollViewFlowLayout.m */; };
+		8FC0E1A121A78C6B00DC4C98 /* DCCycleScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FC0E19C21A78C6B00DC4C98 /* DCCycleScrollView.m */; };
+		8FC0E1A221A78C6B00DC4C98 /* DCCycleScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FC0E19C21A78C6B00DC4C98 /* DCCycleScrollView.m */; };
+		8FC0E1A321A78C6B00DC4C98 /* DCCycleScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FC0E19C21A78C6B00DC4C98 /* DCCycleScrollView.m */; };
+		8FC0E1A421A78C6B00DC4C98 /* DCCycleScrollViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FC0E19D21A78C6B00DC4C98 /* DCCycleScrollViewCell.m */; };
+		8FC0E1A521A78C6B00DC4C98 /* DCCycleScrollViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FC0E19D21A78C6B00DC4C98 /* DCCycleScrollViewCell.m */; };
+		8FC0E1A621A78C6B00DC4C98 /* DCCycleScrollViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FC0E19D21A78C6B00DC4C98 /* DCCycleScrollViewCell.m */; };
+		8FC0E1AA21A79BAA00DC4C98 /* ScreenADViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FC0E1A921A79BAA00DC4C98 /* ScreenADViewController.m */; };
+		8FC0E1AB21A79BAA00DC4C98 /* ScreenADViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FC0E1A921A79BAA00DC4C98 /* ScreenADViewController.m */; };
+		8FC0E1AC21A79BAA00DC4C98 /* ScreenADViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FC0E1A921A79BAA00DC4C98 /* ScreenADViewController.m */; };
+		8FC0E1AF21A79BC400DC4C98 /* UINavigationController+circleDismiss.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FC0E1AE21A79BC400DC4C98 /* UINavigationController+circleDismiss.m */; };
+		8FC0E1B021A79BC400DC4C98 /* UINavigationController+circleDismiss.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FC0E1AE21A79BC400DC4C98 /* UINavigationController+circleDismiss.m */; };
+		8FC0E1B121A79BC400DC4C98 /* UINavigationController+circleDismiss.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FC0E1AE21A79BC400DC4C98 /* UINavigationController+circleDismiss.m */; };
+		8FC0E1B421A79C5200DC4C98 /* ADScreenManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FC0E1B321A79C5200DC4C98 /* ADScreenManager.m */; };
+		8FC0E1B521A79C5200DC4C98 /* ADScreenManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FC0E1B321A79C5200DC4C98 /* ADScreenManager.m */; };
+		8FC0E1B621A79C5200DC4C98 /* ADScreenManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FC0E1B321A79C5200DC4C98 /* ADScreenManager.m */; };
 		8FCAC2851FFE717E005128BB /* MasTextCellTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FCAC2841FFE717E005128BB /* MasTextCellTableViewCell.m */; };
 		8FCAC28A200066A8005128BB /* LgMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FCAC289200066A8005128BB /* LgMenuViewController.m */; };
 		8FCAC28D20006D7F005128BB /* LeftViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FCAC28C20006D7F005128BB /* LeftViewController.m */; };
@@ -278,6 +296,18 @@
 		8F630A8321252612006EA924 /* UIView+LGAnimation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+LGAnimation.m"; sourceTree = "<group>"; };
 		8FAA2408212E4DEB00E99674 /* UIScrollView+PopScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+PopScrollView.h"; sourceTree = "<group>"; };
 		8FAA2409212E4DEB00E99674 /* UIScrollView+PopScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+PopScrollView.m"; sourceTree = "<group>"; };
+		8FC0E19821A78C6B00DC4C98 /* DCCycleScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCCycleScrollView.h; sourceTree = "<group>"; };
+		8FC0E19921A78C6B00DC4C98 /* DCCycleScrollViewFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCCycleScrollViewFlowLayout.h; sourceTree = "<group>"; };
+		8FC0E19A21A78C6B00DC4C98 /* DCCycleScrollViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCCycleScrollViewCell.h; sourceTree = "<group>"; };
+		8FC0E19B21A78C6B00DC4C98 /* DCCycleScrollViewFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCCycleScrollViewFlowLayout.m; sourceTree = "<group>"; };
+		8FC0E19C21A78C6B00DC4C98 /* DCCycleScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCCycleScrollView.m; sourceTree = "<group>"; };
+		8FC0E19D21A78C6B00DC4C98 /* DCCycleScrollViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCCycleScrollViewCell.m; sourceTree = "<group>"; };
+		8FC0E1A821A79BAA00DC4C98 /* ScreenADViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ScreenADViewController.h; sourceTree = "<group>"; };
+		8FC0E1A921A79BAA00DC4C98 /* ScreenADViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ScreenADViewController.m; sourceTree = "<group>"; };
+		8FC0E1AD21A79BC400DC4C98 /* UINavigationController+circleDismiss.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+circleDismiss.h"; sourceTree = "<group>"; };
+		8FC0E1AE21A79BC400DC4C98 /* UINavigationController+circleDismiss.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+circleDismiss.m"; sourceTree = "<group>"; };
+		8FC0E1B221A79C5200DC4C98 /* ADScreenManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ADScreenManager.h; sourceTree = "<group>"; };
+		8FC0E1B321A79C5200DC4C98 /* ADScreenManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ADScreenManager.m; sourceTree = "<group>"; };
 		8FCAC2831FFE717E005128BB /* MasTextCellTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MasTextCellTableViewCell.h; sourceTree = "<group>"; };
 		8FCAC2841FFE717E005128BB /* MasTextCellTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MasTextCellTableViewCell.m; sourceTree = "<group>"; };
 		8FCAC288200066A8005128BB /* LgMenuViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LgMenuViewController.h; sourceTree = "<group>"; };
@@ -593,6 +623,32 @@
 			path = VC;
 			sourceTree = "<group>";
 		};
+		8FC0E19721A78C6B00DC4C98 /* DCCycleScrollView */ = {
+			isa = PBXGroup;
+			children = (
+				8FC0E19821A78C6B00DC4C98 /* DCCycleScrollView.h */,
+				8FC0E19921A78C6B00DC4C98 /* DCCycleScrollViewFlowLayout.h */,
+				8FC0E19A21A78C6B00DC4C98 /* DCCycleScrollViewCell.h */,
+				8FC0E19B21A78C6B00DC4C98 /* DCCycleScrollViewFlowLayout.m */,
+				8FC0E19C21A78C6B00DC4C98 /* DCCycleScrollView.m */,
+				8FC0E19D21A78C6B00DC4C98 /* DCCycleScrollViewCell.m */,
+			);
+			path = DCCycleScrollView;
+			sourceTree = "<group>";
+		};
+		8FC0E1A721A79B7D00DC4C98 /* ScreenAD */ = {
+			isa = PBXGroup;
+			children = (
+				8FC0E1A821A79BAA00DC4C98 /* ScreenADViewController.h */,
+				8FC0E1A921A79BAA00DC4C98 /* ScreenADViewController.m */,
+				8FC0E1AD21A79BC400DC4C98 /* UINavigationController+circleDismiss.h */,
+				8FC0E1AE21A79BC400DC4C98 /* UINavigationController+circleDismiss.m */,
+				8FC0E1B221A79C5200DC4C98 /* ADScreenManager.h */,
+				8FC0E1B321A79C5200DC4C98 /* ADScreenManager.m */,
+			);
+			path = ScreenAD;
+			sourceTree = "<group>";
+		};
 		8FCAC28720006692005128BB /* LgMenu */ = {
 			isa = PBXGroup;
 			children = (
@@ -635,11 +691,13 @@
 		8FE02ED81FFCADAB00CE62F1 /* ForkingDogDemo */ = {
 			isa = PBXGroup;
 			children = (
+				8FC0E1A721A79B7D00DC4C98 /* ScreenAD */,
 				8FFE016E213CBE7200F9F5B1 /* Game */,
 				8F5E639B2003525F005E21A4 /* LgTabBar */,
 				8FCAC28720006692005128BB /* LgMenu */,
 				8FE02ED91FFCADAB00CE62F1 /* AppDelegate.h */,
 				8FE02EDA1FFCADAB00CE62F1 /* AppDelegate.m */,
+				8FC0E19721A78C6B00DC4C98 /* DCCycleScrollView */,
 				4CFCC748214EC8C800600E19 /* MJRefresh */,
 				4CD83D3921286E550041EF99 /* AdViews */,
 				8F630A8C212587F4006EA924 /* VC */,
@@ -930,6 +988,7 @@
 				8FE02F5A1FFCEF4100CE62F1 /* UIButton+WebCache.m in Sources */,
 				8FE02F601FFCEF4100CE62F1 /* UIImage+MultiFormat.m in Sources */,
 				8FE02F571FFCEF4100CE62F1 /* SDWebImagePrefetcher.m in Sources */,
+				8FC0E19E21A78C6B00DC4C98 /* DCCycleScrollViewFlowLayout.m in Sources */,
 				8FCAC2851FFE717E005128BB /* MasTextCellTableViewCell.m in Sources */,
 				4CD83D3F212872D10041EF99 /* ADViewController.m in Sources */,
 				4CFCC79F214EC8C900600E19 /* MJRefreshBackNormalFooter.m in Sources */,
@@ -937,6 +996,8 @@
 				8FE02F0D1FFCB13000CE62F1 /* BaseTableViewCell.m in Sources */,
 				8FFE0173213CBEBF00F9F5B1 /* GameViewController.m in Sources */,
 				8FE02F6C1FFCEF4100CE62F1 /* UIView+WebCacheOperation.m in Sources */,
+				8FC0E1AF21A79BC400DC4C98 /* UINavigationController+circleDismiss.m in Sources */,
+				8FC0E1AA21A79BAA00DC4C98 /* ScreenADViewController.m in Sources */,
 				8FE02F421FFCEF4100CE62F1 /* SDImageCache.m in Sources */,
 				4CFCC744214EC2CA00600E19 /* UIColor+Hex.m in Sources */,
 				4CFCC796214EC8C900600E19 /* MJRefreshAutoNormalFooter.m in Sources */,
@@ -946,12 +1007,14 @@
 				8FE02F511FFCEF4100CE62F1 /* SDWebImageDownloaderOperation.m in Sources */,
 				8FE02F4B1FFCEF4100CE62F1 /* SDWebImageDecoder.m in Sources */,
 				4CFCC7D6214EC96F00600E19 /* LgHeaderCollectionViewCell.m in Sources */,
+				8FC0E1B421A79C5200DC4C98 /* ADScreenManager.m in Sources */,
 				8FE02F111FFCB21500CE62F1 /* TextTableViewCell.m in Sources */,
 				8FE02F661FFCEF4100CE62F1 /* UIImageView+WebCache.m in Sources */,
 				8FCAC28A200066A8005128BB /* LgMenuViewController.m in Sources */,
 				8FE02EE91FFCADAC00CE62F1 /* main.m in Sources */,
 				8FE02F4E1FFCEF4100CE62F1 /* SDWebImageDownloader.m in Sources */,
 				8FE02F451FFCEF4100CE62F1 /* SDImageCacheConfig.m in Sources */,
+				8FC0E1A421A78C6B00DC4C98 /* DCCycleScrollViewCell.m in Sources */,
 				8FCAC29320007B99005128BB /* UIViewController+LgMenu.m in Sources */,
 				8FCAC29020007302005128BB /* UIView+LgMenu.m in Sources */,
 				4CFCC7CC214EC8C900600E19 /* UIScrollView+MJRefresh.m in Sources */,
@@ -971,6 +1034,7 @@
 				4CFCC7A2214EC8C900600E19 /* MJRefreshBackStateFooter.m in Sources */,
 				4CFCC7C3214EC8C900600E19 /* MJRefreshConst.m in Sources */,
 				4CFCC78D214EC8C900600E19 /* MJRefreshFooter.m in Sources */,
+				8FC0E1A121A78C6B00DC4C98 /* DCCycleScrollView.m in Sources */,
 				8FFE0179213CBF2600F9F5B1 /* MyScene.m in Sources */,
 				8FE02F3F1FFCEF4100CE62F1 /* NSImage+WebCache.m in Sources */,
 				8F5E639E20035286005E21A4 /* LgTabBar.m in Sources */,
@@ -1007,15 +1071,18 @@
 				4CFCC7CA214EC8C900600E19 /* UIScrollView+MJExtension.m in Sources */,
 				8FE02F4C1FFCEF4100CE62F1 /* SDWebImageDecoder.m in Sources */,
 				4CFCC788214EC8C800600E19 /* MJRefreshBackFooter.m in Sources */,
+				8FC0E19F21A78C6B00DC4C98 /* DCCycleScrollViewFlowLayout.m in Sources */,
 				4CFCC7AF214EC8C900600E19 /* MJChiBaoZiFooter.m in Sources */,
 				8FE02F461FFCEF4100CE62F1 /* SDImageCacheConfig.m in Sources */,
 				4CFCC79D214EC8C900600E19 /* MJRefreshBackGifFooter.m in Sources */,
+				8FC0E1A221A78C6B00DC4C98 /* DCCycleScrollView.m in Sources */,
 				8FE02F491FFCEF4100CE62F1 /* SDWebImageCompat.m in Sources */,
 				4CFCC7C7214EC8C900600E19 /* NSBundle+MJRefresh.m in Sources */,
 				4CFCC7BB214EC8C900600E19 /* MJDIYBackFooter.m in Sources */,
 				4CFCC7CD214EC8C900600E19 /* UIScrollView+MJRefresh.m in Sources */,
 				4CFCC7AC214EC8C900600E19 /* MJRefreshStateHeader.m in Sources */,
 				8FAA240B212E4DEC00E99674 /* UIScrollView+PopScrollView.m in Sources */,
+				8FC0E1B521A79C5200DC4C98 /* ADScreenManager.m in Sources */,
 				8FE02F3D1FFCEF4100CE62F1 /* NSData+ImageContentType.m in Sources */,
 				4CFCC745214EC2CA00600E19 /* UIColor+Hex.m in Sources */,
 				4CFCC78B214EC8C800600E19 /* MJRefreshComponent.m in Sources */,
@@ -1023,11 +1090,14 @@
 				8FE02EF31FFCADAC00CE62F1 /* ForkingDogDemoTests.m in Sources */,
 				4CFCC794214EC8C900600E19 /* MJRefreshAutoGifFooter.m in Sources */,
 				8FE02F521FFCEF4100CE62F1 /* SDWebImageDownloaderOperation.m in Sources */,
+				8FC0E1AB21A79BAA00DC4C98 /* ScreenADViewController.m in Sources */,
+				8FC0E1A521A78C6B00DC4C98 /* DCCycleScrollViewCell.m in Sources */,
 				4CFCC7B2214EC8C900600E19 /* MJChiBaoZiFooter2.m in Sources */,
 				8FFE017A213CBF2600F9F5B1 /* MyScene.m in Sources */,
 				8FE02F6A1FFCEF4100CE62F1 /* UIView+WebCache.m in Sources */,
 				8FE02F671FFCEF4100CE62F1 /* UIImageView+WebCache.m in Sources */,
 				4CFCC7A3214EC8C900600E19 /* MJRefreshBackStateFooter.m in Sources */,
+				8FC0E1B021A79BC400DC4C98 /* UINavigationController+circleDismiss.m in Sources */,
 				4CFCC797214EC8C900600E19 /* MJRefreshAutoNormalFooter.m in Sources */,
 				8FE02F551FFCEF4100CE62F1 /* SDWebImageManager.m in Sources */,
 				8FE02F611FFCEF4100CE62F1 /* UIImage+MultiFormat.m in Sources */,
@@ -1063,15 +1133,18 @@
 				4CFCC7CB214EC8C900600E19 /* UIScrollView+MJExtension.m in Sources */,
 				8FE02F4D1FFCEF4100CE62F1 /* SDWebImageDecoder.m in Sources */,
 				4CFCC789214EC8C800600E19 /* MJRefreshBackFooter.m in Sources */,
+				8FC0E1A021A78C6B00DC4C98 /* DCCycleScrollViewFlowLayout.m in Sources */,
 				4CFCC7B0214EC8C900600E19 /* MJChiBaoZiFooter.m in Sources */,
 				8FE02F471FFCEF4100CE62F1 /* SDImageCacheConfig.m in Sources */,
 				4CFCC79E214EC8C900600E19 /* MJRefreshBackGifFooter.m in Sources */,
+				8FC0E1A321A78C6B00DC4C98 /* DCCycleScrollView.m in Sources */,
 				8FE02F4A1FFCEF4100CE62F1 /* SDWebImageCompat.m in Sources */,
 				4CFCC7C8214EC8C900600E19 /* NSBundle+MJRefresh.m in Sources */,
 				4CFCC7BC214EC8C900600E19 /* MJDIYBackFooter.m in Sources */,
 				4CFCC7CE214EC8C900600E19 /* UIScrollView+MJRefresh.m in Sources */,
 				4CFCC7AD214EC8C900600E19 /* MJRefreshStateHeader.m in Sources */,
 				8FAA240C212E4DEC00E99674 /* UIScrollView+PopScrollView.m in Sources */,
+				8FC0E1B621A79C5200DC4C98 /* ADScreenManager.m in Sources */,
 				8FE02F3E1FFCEF4100CE62F1 /* NSData+ImageContentType.m in Sources */,
 				4CFCC746214EC2CA00600E19 /* UIColor+Hex.m in Sources */,
 				4CFCC78C214EC8C800600E19 /* MJRefreshComponent.m in Sources */,
@@ -1079,11 +1152,14 @@
 				8FE02EFE1FFCADAC00CE62F1 /* ForkingDogDemoUITests.m in Sources */,
 				4CFCC795214EC8C900600E19 /* MJRefreshAutoGifFooter.m in Sources */,
 				8FE02F531FFCEF4100CE62F1 /* SDWebImageDownloaderOperation.m in Sources */,
+				8FC0E1AC21A79BAA00DC4C98 /* ScreenADViewController.m in Sources */,
+				8FC0E1A621A78C6B00DC4C98 /* DCCycleScrollViewCell.m in Sources */,
 				4CFCC7B3214EC8C900600E19 /* MJChiBaoZiFooter2.m in Sources */,
 				8FFE017B213CBF2600F9F5B1 /* MyScene.m in Sources */,
 				8FE02F6B1FFCEF4100CE62F1 /* UIView+WebCache.m in Sources */,
 				8FE02F681FFCEF4100CE62F1 /* UIImageView+WebCache.m in Sources */,
 				4CFCC7A4214EC8C900600E19 /* MJRefreshBackStateFooter.m in Sources */,
+				8FC0E1B121A79BC400DC4C98 /* UINavigationController+circleDismiss.m in Sources */,
 				4CFCC798214EC8C900600E19 /* MJRefreshAutoNormalFooter.m in Sources */,
 				8FE02F561FFCEF4100CE62F1 /* SDWebImageManager.m in Sources */,
 				8FE02F621FFCEF4100CE62F1 /* UIImage+MultiFormat.m in Sources */,
@@ -1277,7 +1353,7 @@
 					"\"UIKit\"",
 					"-ObjC",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = CustomRefresh.ForkingDogDemo12;
+				PRODUCT_BUNDLE_IDENTIFIER = CustomRefresh.ForkingDogDem321321312;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1327,7 +1403,7 @@
 					"\"UIKit\"",
 					"-ObjC",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = CustomRefresh.ForkingDogDemo12;
+				PRODUCT_BUNDLE_IDENTIFIER = CustomRefresh.ForkingDogDem321321312;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

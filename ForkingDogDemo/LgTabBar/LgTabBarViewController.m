@@ -26,7 +26,9 @@
     // 利用KVO来使用自定义的tabBar
     tabBar.actionDelegate = self;
     [self setValue:tabBar forKey:@"tabBar"];
+	//这里一定要看好顺序如果顺序不对就会出问题
 	[self addAllChildViewController];
+
  _circleViews = [NSMutableArray array];
 	__weak typeof(self)ws = self;
 	self.delegate = ws;
@@ -99,8 +101,8 @@
 
     UINavigationController *nav = [[UINavigationController alloc]initWithRootViewController:vc];
    UINavigationController *nav2 = [[UINavigationController alloc]initWithRootViewController:vc2];
- UINavigationController *nav3 = [[UINavigationController alloc]initWithRootViewController:vc3];
-  UINavigationController *nav4 = [[UINavigationController alloc]initWithRootViewController:vc4];
+   UINavigationController *nav3 = [[UINavigationController alloc]initWithRootViewController:vc3];
+   UINavigationController *nav4 = [[UINavigationController alloc]initWithRootViewController:vc4];
 
     UITabBarItem *item1 = [[UITabBarItem alloc]init];
 	item1.tag = 0;
@@ -140,7 +142,6 @@
 
 	self.viewControllers = @[nav,nav2,nav3,nav4];
 }
-
 
 
 - (void)didReceiveMemoryWarning {

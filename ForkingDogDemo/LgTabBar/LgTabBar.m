@@ -7,7 +7,7 @@
 //
 
 #import "LgTabBar.h"
-
+#import "UIColor+Hex.h"
 @implementation LgTabBar
 
 -(instancetype)initWithFrame:(CGRect)frame
@@ -99,7 +99,7 @@
 	[_cirCleBezierPath addLineToPoint:point4];
 	[_cirCleBezierPath addLineToPoint:point5];
 	self.circleLayer.path = _cirCleBezierPath.CGPath;
-	_circleLayer.fillColor = [[UIColor whiteColor] colorWithAlphaComponent:1.0f].CGColor;
+	_circleLayer.fillColor = [[UIColor colorWithHexString:@"#333333"] colorWithAlphaComponent:1.0f].CGColor;
 	_circleLayer.shadowColor = [UIColor lightGrayColor].CGColor;
 	_circleLayer.shadowOffset = CGSizeMake(0, -2);
 	_circleLayer.shadowOpacity = 0.3;

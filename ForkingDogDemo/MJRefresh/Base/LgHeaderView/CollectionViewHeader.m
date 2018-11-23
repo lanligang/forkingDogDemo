@@ -64,7 +64,7 @@
 	_myCollectionView.dataSource = self;
 
 	UIView *refreshView = [UIView new];
-	refreshView.backgroundColor = [UIColor colorWithHexString:@"#ececec"];
+	refreshView.backgroundColor = [UIColor colorWithHexString:@"#333333"];
 	UIImageView *gifImgV = [UIImageView new];
 	[self.refreshView addSubview:gifImgV];
 	NSMutableArray * animationImgs = [NSMutableArray array];
