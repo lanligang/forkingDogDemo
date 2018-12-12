@@ -96,7 +96,7 @@
 
  UIBarButtonItem *rightItem = [[UIBarButtonItem alloc]initWithImage:[[UIImage imageNamed:@"header_left"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] style:UIBarButtonItemStylePlain target:self action:@selector(openAction:)];
  self.navigationItem.leftBarButtonItem = rightItem;
-	[ADScreenManager showScreenAmimation];
+	//[ADScreenManager showScreenAmimation];
 }
 -(void)openAction:(id)sender
 {

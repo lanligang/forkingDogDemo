@@ -16,16 +16,9 @@
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
-			<integer>1</integer>
-		</dict>
-		<key>Pods-ForkingDogDemo.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-			<key>orderHint</key>
 			<integer>2</integer>
 		</dict>
-		<key>UITableView+FDTemplateLayoutCell.xcscheme</key>
+		<key>Pods-ForkingDogDemo.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -38,6 +31,13 @@
 			<false/>
 			<key>orderHint</key>
 			<integer>4</integer>
+		</dict>
+		<key>lottie-ios.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+			<key>orderHint</key>
+			<integer>1</integer>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>

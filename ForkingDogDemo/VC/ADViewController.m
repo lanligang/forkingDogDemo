@@ -168,6 +168,7 @@ SKStoreProductViewControllerDelegate>
 						  if (result) {
 
 						  }  else{
+							  [_SKSVC dismissViewControllerAnimated:NO completion:nil];
 						  }
 					  }];
 }
@@ -193,7 +194,11 @@ SKStoreProductViewControllerDelegate>
 {
 	return nil;
 }
-
+#pragma mark DCCycleScrollViewDelegate
+- (void)cycleScrollView:(DCCycleScrollView *)cycleScrollView didSelectItemAtIndex:(NSInteger)index
+{
+	//点击的代理方法
+}
 -(UITableView *)myTableView
 {
 	if (!_myTableView)
@@ -222,9 +227,6 @@ SKStoreProductViewControllerDelegate>
 	 }
 	return _cellCacheDic;
 }
-
-
-
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];

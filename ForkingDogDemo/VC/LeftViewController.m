@@ -9,13 +9,14 @@
 #import "LeftViewController.h"
 #import <Masonry.h>
 #import "LgMenuHeader.h"
-
-
+#import <lottie-ios/Lottie/LOTAnimationView.h>
+#import <Masonry.h>
 @interface LeftViewController ()<UITableViewDelegate,UITableViewDataSource>
 {
  UIImageView *_animationImageView;
  CGFloat _speedX;
  CGFloat _speedY;
+ LOTAnimationView *animation;
 }
 @property (nonatomic,strong)UITableView *myTableView;
 
@@ -62,12 +63,34 @@
   make.height.mas_equalTo(44);
   make.bottom.mas_equalTo(-5);
  }];
+
+//[self runAnimation];
+
+
  _speedX = 0.1;
  _speedY =-0.06;
 
  _time = [CADisplayLink displayLinkWithTarget:self selector:@selector(animationBgView:)];
 
 [_time addToRunLoop:[NSRunLoop currentRunLoop] forMode:NSRunLoopCommonModes];
+
+//ripple
+	animation = [LOTAnimationView animationNamed:@"ripple"];
+	animation.layer.cornerRadius = 8.0f;
+	animation.loopAnimation = YES;
+	animation.layer.masksToBounds = YES;
+	animation.backgroundColor = [UIColor whiteColor];
+	[animation play];
+//	animation.frame = CGRectMake(0, 100, 690/2.0f, 354/2.0f);
+	[self.view addSubview:animation];
+
+	[animation mas_makeConstraints:^(MASConstraintMaker *make) {
+		make.left.mas_equalTo(0);
+		make.size.mas_equalTo(CGSizeMake(690.0f/2.0f, 354.0f/2.0f));
+		make.top.mas_equalTo(100);
+	}];
+
+
 }
 -(void)animationBgView:(id)sender
 {
@@ -112,6 +135,13 @@ NSArray *arr = self.dataSource[indexPath.section];
   [self closeLgMenu];
 }
 
+-(void)runAnimation
+{
+	__weak typeof(self)ws = self;
+	[animation  playFromProgress:0 toProgress:1 withCompletion:^(BOOL animationFinished)  {
+
+	}];
+}
 
 -(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {

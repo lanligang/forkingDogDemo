@@ -8,6 +8,6 @@
 #ifndef LgMenuMacro_h
 #define LgMenuMacro_h
 
-#define MAXOPEN_LEFT [UIScreen mainScreen].bounds.size.width*5/8.0f
+#define MAXOPEN_LEFT [UIScreen mainScreen].bounds.size.width*7.5/8.0f
 
 #endif /* LgMenuMacro_h */

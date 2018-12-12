@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0700"
+   LastUpgradeVersion = "0930"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -13,11 +13,11 @@
             buildForProfiling = "YES"
             buildForArchiving = "YES">
             <BuildableReference
-               BuildableIdentifier = 'primary'
-               BlueprintIdentifier = 'F586ECDE261CB0DE2FEC58F89B3A36A0'
-               BlueprintName = 'Pods-ForkingDogDemo'
-               ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'libPods-ForkingDogDemo.a'>
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "81D86F2532B6E428D0AD61CC3CBDE4C5"
+               BlueprintName = "Pods-ForkingDogDemo"
+               ReferencedContainer = "container:Pods.xcodeproj"
+               BuildableName = "libPods-ForkingDogDemo.a">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

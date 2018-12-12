@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0700"
+   LastUpgradeVersion = "0930"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -13,11 +13,11 @@
             buildForProfiling = "YES"
             buildForArchiving = "YES">
             <BuildableReference
-               BuildableIdentifier = 'primary'
-               BlueprintIdentifier = 'A506C0FADAF9B1680DC0FF857792C137'
-               BlueprintName = 'CLPlayer'
-               ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'libCLPlayer.a'>
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "A506C0FADAF9B1680DC0FF857792C137"
+               BlueprintName = "CLPlayer"
+               ReferencedContainer = "container:Pods.xcodeproj"
+               BuildableName = "libCLPlayer.a">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

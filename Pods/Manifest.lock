@@ -1,25 +1,22 @@
 PODS:
   - CLPlayer (1.1.3):
     - Masonry
+  - lottie-ios (2.5.0)
   - Masonry (1.0.2)
   - YYText (1.0.7)
 
 DEPENDENCIES:
   - CLPlayer
+  - lottie-ios
   - Masonry (~> 1.0.2)
   - YYText (~> 1.0.7)
 
-SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
-    - CLPlayer
-    - Masonry
-    - YYText
-
 SPEC CHECKSUMS:
   CLPlayer: 9dd2dba2ac8ae97a034f733263f1d307027d604d
+  lottie-ios: d699fdee68d7b63e721d949388b015fef1aaa4ac
   Masonry: 7c429b56da9d4ee0bbb3ed77a5ea710d6a5df39e
   YYText: 5c461d709e24d55a182d1441c41dc639a18a4849
 
-PODFILE CHECKSUM: 7bd9fd5e0c7533420dd9cb96b9838ba2dff0bb53
+PODFILE CHECKSUM: b9c9fdc0d96ccc4941b4ff89e90505c6c388fb66
 
-COCOAPODS: 1.5.3
+COCOAPODS: 1.4.0

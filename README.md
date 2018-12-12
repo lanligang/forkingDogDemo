@@ -78,3 +78,52 @@ return UITableViewAutomaticDimension;
 > QQ 1176281703  QQ群 637387838
 
 
+
+![图片来自官方](https://github.com/airbnb/lottie-ios/raw/master/_Gifs/Examples2.gif)
+地址：https://github.com/airbnb/lottie-ios
+素材下载地址：https://www.lottiefiles.com/
+下载下来是 json 文件
+oc 语言使用 pod 安装 
+pod 'lottie-ios'
+pod  install 命令 完成后
+导入头文件
+```
+#import <lottie-ios/Lottie/LOTAnimationView.h>
+LOTAnimationView *animation = [LOTAnimationView animationNamed:@"ripple"];
+animation.backgroundColor = [UIColor redColor];
+animation.frame = CGRectMake(0, 100, 300, 300);
+[self.view addSubview:animation];
+
+//执行动画有两种方式 
+#mark 第一种 全部执行完
+[animation playWithCompletion:^(BOOL animationFinished) {
+// Do Something
+}];
+# mark 也可以直接设置动画进度
+animation.animationProgress = progress;
+# mark 还可以使用 
+[animation playFromProgress:0.25 toProgress:0.5 withCompletion:^(BOOL animationFinished) {
+// Do Something
+}];
+
+# mark 从官方摘抄代码
+// ===========  还可以自定义present 动画  ======= 
+
+ToAnimationViewController *vc = [[ToAnimationViewController alloc] init];
+vc.transitioningDelegate = self;
+[self presentViewController:vc animated:YES completion:NULL];
+#pragma mark -- View Controller Transitioning
+
+- (id<UIViewControllerAnimatedTransitioning>)animationControllerForPresentedController:(UIViewController *)presented presentingController:(UIViewController *)presenting sourceController:(UIViewController *)source {
+LOTAnimationTransitionController *animationController = [[LOTAnimationTransitionController alloc] initWithAnimationNamed:@"vcTransition1" fromLayerNamed:@"outLayer" toLayerNamed:@"inLayer" applyAnimationTransform:NO];
+return animationController;
+}
+- (id<UIViewControllerAnimatedTransitioning>)animationControllerForDismissedController:(UIViewController *)dismissed {
+LOTAnimationTransitionController *animationController = [[LOTAnimationTransitionController alloc] initWithAnimationNamed:@"vcTransition2" fromLayerNamed:@"outLayer" toLayerNamed:@"inLayer" applyAnimationTransform:NO];
+return animationController;
+}
+
+```
+![效果图](https://github.com/airbnb/lottie-ios/raw/master/_Gifs/transitionMasked.gif)
+![效果图](https://github.com/airbnb/lottie-ios/raw/master/_Gifs/transitionPosition.gif)
+

@@ -4,6 +4,6 @@ target ‘ForkingDogDemo’ do
    pod 'YYText', '~> 1.0.7'
    pod 'Masonry', '~> 1.0.2'
    pod 'CLPlayer'
-   
+   pod 'lottie-ios'
 end
 
