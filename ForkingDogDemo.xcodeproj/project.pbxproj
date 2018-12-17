@@ -107,6 +107,9 @@
 		8F1740BF21C74859001CF990 /* LgPageControlViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F1740B821C74859001CF990 /* LgPageControlViewController.m */; };
 		8F1740C021C74859001CF990 /* LgPageControlViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F1740B821C74859001CF990 /* LgPageControlViewController.m */; };
 		8F1740C121C74859001CF990 /* LgPageControlViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F1740B821C74859001CF990 /* LgPageControlViewController.m */; };
+		8F1740C421C76E3E001CF990 /* OpenCloseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F1740C321C76E3E001CF990 /* OpenCloseViewController.m */; };
+		8F1740C721C77024001CF990 /* OpenCloseTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F1740C621C77024001CF990 /* OpenCloseTableViewCell.m */; };
+		8F1740CA21C7709F001CF990 /* OpenCloseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F1740C921C7709F001CF990 /* OpenCloseModel.m */; };
 		8F1D688521B66500002F2122 /* img_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F1D687B21B66500002F2122 /* img_1.png */; };
 		8F1D688621B66500002F2122 /* img_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F1D687B21B66500002F2122 /* img_1.png */; };
 		8F1D688721B66500002F2122 /* img_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F1D687B21B66500002F2122 /* img_1.png */; };
@@ -345,6 +348,12 @@
 		8F1740B621C74859001CF990 /* LgPageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LgPageView.m; sourceTree = "<group>"; };
 		8F1740B721C74859001CF990 /* NSObject+LgObserver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+LgObserver.m"; sourceTree = "<group>"; };
 		8F1740B821C74859001CF990 /* LgPageControlViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LgPageControlViewController.m; sourceTree = "<group>"; };
+		8F1740C221C76E3E001CF990 /* OpenCloseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OpenCloseViewController.h; sourceTree = "<group>"; };
+		8F1740C321C76E3E001CF990 /* OpenCloseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OpenCloseViewController.m; sourceTree = "<group>"; };
+		8F1740C521C77024001CF990 /* OpenCloseTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OpenCloseTableViewCell.h; sourceTree = "<group>"; };
+		8F1740C621C77024001CF990 /* OpenCloseTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OpenCloseTableViewCell.m; sourceTree = "<group>"; };
+		8F1740C821C7709F001CF990 /* OpenCloseModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OpenCloseModel.h; sourceTree = "<group>"; };
+		8F1740C921C7709F001CF990 /* OpenCloseModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OpenCloseModel.m; sourceTree = "<group>"; };
 		8F1D687B21B66500002F2122 /* img_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = img_1.png; sourceTree = "<group>"; };
 		8F1D687C21B66500002F2122 /* img_0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = img_0.png; sourceTree = "<group>"; };
 		8F1D687D21B66500002F2122 /* img_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = img_2.png; sourceTree = "<group>"; };
@@ -713,6 +722,10 @@
 				8FCAC2841FFE717E005128BB /* MasTextCellTableViewCell.m */,
 				4CCA079521298BC5007B975F /* ADTableViewCell.h */,
 				4CCA079621298BC5007B975F /* ADTableViewCell.m */,
+				8F1740C521C77024001CF990 /* OpenCloseTableViewCell.h */,
+				8F1740C621C77024001CF990 /* OpenCloseTableViewCell.m */,
+				8F1740C821C7709F001CF990 /* OpenCloseModel.h */,
+				8F1740C921C7709F001CF990 /* OpenCloseModel.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -728,6 +741,8 @@
 				4CD83D3E212872D10041EF99 /* ADViewController.m */,
 				8FCC310521B10D8C00A5B924 /* SnapeViewController.h */,
 				8FCC310621B10D8C00A5B924 /* SnapeViewController.m */,
+				8F1740C221C76E3E001CF990 /* OpenCloseViewController.h */,
+				8F1740C321C76E3E001CF990 /* OpenCloseViewController.m */,
 				8FCC310821B10FB400A5B924 /* MySCNScene.h */,
 				8FCC310921B10FB400A5B924 /* MySCNScene.m */,
 			);
@@ -1161,6 +1176,7 @@
 				8FCAC2851FFE717E005128BB /* MasTextCellTableViewCell.m in Sources */,
 				4CD83D3F212872D10041EF99 /* ADViewController.m in Sources */,
 				4CFCC79F214EC8C900600E19 /* MJRefreshBackNormalFooter.m in Sources */,
+				8F1740C721C77024001CF990 /* OpenCloseTableViewCell.m in Sources */,
 				4CFCC7B1214EC8C900600E19 /* MJChiBaoZiFooter2.m in Sources */,
 				8FE02F0D1FFCB13000CE62F1 /* BaseTableViewCell.m in Sources */,
 				8FFE0173213CBEBF00F9F5B1 /* GameViewController.m in Sources */,
@@ -1186,6 +1202,7 @@
 				8FE02F451FFCEF4100CE62F1 /* SDImageCacheConfig.m in Sources */,
 				8FC0E1A421A78C6B00DC4C98 /* DCCycleScrollViewCell.m in Sources */,
 				8FCAC29320007B99005128BB /* UIViewController+LgMenu.m in Sources */,
+				8F1740CA21C7709F001CF990 /* OpenCloseModel.m in Sources */,
 				8F1740B921C74859001CF990 /* LgPageView.m in Sources */,
 				8FCAC29020007302005128BB /* UIView+LgMenu.m in Sources */,
 				8FCC310721B10D8C00A5B924 /* SnapeViewController.m in Sources */,
@@ -1215,6 +1232,7 @@
 				4CFCC7A8214EC8C900600E19 /* MJRefreshNormalHeader.m in Sources */,
 				4CFCC799214EC8C900600E19 /* MJRefreshAutoStateFooter.m in Sources */,
 				4CFCC793214EC8C900600E19 /* MJRefreshAutoGifFooter.m in Sources */,
+				8F1740C421C76E3E001CF990 /* OpenCloseViewController.m in Sources */,
 				4CFCC7C6214EC8C900600E19 /* NSBundle+MJRefresh.m in Sources */,
 				4CFCC787214EC8C800600E19 /* MJRefreshBackFooter.m in Sources */,
 				8FAA240A212E4DEC00E99674 /* UIScrollView+PopScrollView.m in Sources */,
