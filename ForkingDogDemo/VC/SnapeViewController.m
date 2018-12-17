@@ -11,8 +11,12 @@
 #import "MySCNScene.h"
 #import <Masonry.h>
 
-@interface SnapeViewController ()
+#import "LgPageControlViewController.h"
 
+@interface SnapeViewController ()<LgPageControlDelegate>{
+	LgPageControlViewController *_pageVc;
+}
+@property (nonatomic,strong)NSMutableArray *dataSource;
 @end
 
 @implementation SnapeViewController
@@ -20,6 +24,39 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
+	[self.dataSource addObjectsFromArray:@[@"推荐",@"影视类",@"有好货",@"清新派",@"第六空间",@"魅力异族"]];
+	[self.navigationController.navigationBar setTranslucent:NO];
+
+		//CGFloat topY =  CGRectGetHeight([UIApplication sharedApplication].statusBarFrame);
+
+	LgPageView *pageView =[[LgPageView alloc]initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.view.frame) - 30, 40.0f)
+											  andTitleFont:[UIFont systemFontOfSize:18.0f]
+										   andSeletedColor:[UIColor redColor]
+											andNormalColor:nil
+											  andLineColor:nil
+											 andLineHeight:3.0f];
+
+	[self.view addSubview:pageView];
+
+	LgPageControlViewController *pageVc = [[LgPageControlViewController alloc]initWithTitleView:pageView andDelegateVc:self];
+	pageVc.canClearSubVcCache = YES;
+	pageVc.minClearCount = 5;
+	_pageVc = pageVc;
+	pageVc.view.frame = CGRectMake(0,
+								   CGRectGetMaxY(pageView.frame),
+								   CGRectGetWidth(self.view.frame),
+								   CGRectGetHeight(self.view.frame)- CGRectGetMaxY(pageView.frame));
+
+	UIButton *changeBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+	[changeBtn setTitle:@"加" forState:UIControlStateNormal];
+	[changeBtn setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
+	changeBtn.bounds = CGRectMake(0, 0, 30, 30);
+	changeBtn.center = (CGPoint){CGRectGetMaxX(pageView.frame) + 15.0f, pageView.center.y};
+	[changeBtn addTarget:self action:@selector(changeCountClicked:) forControlEvents:UIControlEventTouchUpInside];
+	[self.view addSubview:changeBtn];
+
+
+	return;
 	UIView *bgView = [UIView new];
 	[self.view addSubview:bgView];
 	bgView.backgroundColor = [UIColor redColor];
@@ -55,14 +92,6 @@
 		make.top.mas_equalTo(100);
 		make.centerX.mas_equalTo(0);
 	}];
-
-
-
-
-
-
-
-
 
 	return;
 	//创建SCNView
@@ -111,6 +140,50 @@
 	UIBezierPath *path = [UIBezierPath bezierPathWithRect:CGRectMake(0, 0, 10, 10)];
 	return path;
 }
+
+#pragma mark  按钮点击
+-(void)changeCountClicked:(UIButton *)btn
+{
+	btn.selected = !btn.selected;
+	if (btn.selected) {
+		[self.dataSource addObjectsFromArray:@[@"朴实无华",@"礼仪文化"]];
+	}else{
+		[self.dataSource addObjectsFromArray:@[@"搞笑达人",@"二次元市场"]];
+	}
+	[_pageVc addPageNumber];
+}
+
+#pragma mark LgPageControlDelegate
+
+-(NSInteger)lgPageControl:(LgPageControlViewController *)pageController
+{
+	return self.dataSource.count;
+}
+-(UIViewController *)lgPageControl:(LgPageControlViewController *)pageController withIndex:(NSInteger)index
+{
+	NSString *aclassNames[2] = {@"ADViewController",@"ViewController"};
+	NSInteger vcIndex = index%2;
+	NSString *className = aclassNames[vcIndex];
+	UIViewController *vc = [[NSClassFromString(className) alloc]init];
+	return vc;
+}
+
+-(NSArray *)lgPageTitlesWithLgPageView:(LgPageView *)pageView
+{
+	return self.dataSource;
+}
+
+-(NSMutableArray *)dataSource
+{
+	if (!_dataSource)
+	 {
+		_dataSource = [[NSMutableArray alloc]init];
+	 }
+	return _dataSource;
+}
+
+
+
 
 /*
 #pragma mark - Navigation

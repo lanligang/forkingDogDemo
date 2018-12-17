@@ -98,6 +98,15 @@
 		4CFCC7E4214ED44A00600E19 /* CollectionViewHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CFCC7E3214ED44A00600E19 /* CollectionViewHeader.m */; };
 		4CFCC7E5214ED44A00600E19 /* CollectionViewHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CFCC7E3214ED44A00600E19 /* CollectionViewHeader.m */; };
 		4CFCC7E6214ED44A00600E19 /* CollectionViewHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CFCC7E3214ED44A00600E19 /* CollectionViewHeader.m */; };
+		8F1740B921C74859001CF990 /* LgPageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F1740B621C74859001CF990 /* LgPageView.m */; };
+		8F1740BA21C74859001CF990 /* LgPageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F1740B621C74859001CF990 /* LgPageView.m */; };
+		8F1740BB21C74859001CF990 /* LgPageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F1740B621C74859001CF990 /* LgPageView.m */; };
+		8F1740BC21C74859001CF990 /* NSObject+LgObserver.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F1740B721C74859001CF990 /* NSObject+LgObserver.m */; };
+		8F1740BD21C74859001CF990 /* NSObject+LgObserver.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F1740B721C74859001CF990 /* NSObject+LgObserver.m */; };
+		8F1740BE21C74859001CF990 /* NSObject+LgObserver.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F1740B721C74859001CF990 /* NSObject+LgObserver.m */; };
+		8F1740BF21C74859001CF990 /* LgPageControlViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F1740B821C74859001CF990 /* LgPageControlViewController.m */; };
+		8F1740C021C74859001CF990 /* LgPageControlViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F1740B821C74859001CF990 /* LgPageControlViewController.m */; };
+		8F1740C121C74859001CF990 /* LgPageControlViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F1740B821C74859001CF990 /* LgPageControlViewController.m */; };
 		8F1D688521B66500002F2122 /* img_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F1D687B21B66500002F2122 /* img_1.png */; };
 		8F1D688621B66500002F2122 /* img_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F1D687B21B66500002F2122 /* img_1.png */; };
 		8F1D688721B66500002F2122 /* img_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F1D687B21B66500002F2122 /* img_1.png */; };
@@ -329,6 +338,13 @@
 		4CFCC7E2214ED44900600E19 /* CollectionViewHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionViewHeader.h; sourceTree = "<group>"; };
 		4CFCC7E3214ED44A00600E19 /* CollectionViewHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionViewHeader.m; sourceTree = "<group>"; };
 		76E884D6F752559CDFEE7788 /* Pods-ForkingDogDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ForkingDogDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-ForkingDogDemo/Pods-ForkingDogDemo.release.xcconfig"; sourceTree = "<group>"; };
+		8F1740B221C74859001CF990 /* LgPageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LgPageView.h; sourceTree = "<group>"; };
+		8F1740B321C74859001CF990 /* LgPageControlViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LgPageControlViewController.h; sourceTree = "<group>"; };
+		8F1740B421C74859001CF990 /* NSObject+LgObserver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+LgObserver.h"; sourceTree = "<group>"; };
+		8F1740B521C74859001CF990 /* LgPageControlDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LgPageControlDelegate.h; sourceTree = "<group>"; };
+		8F1740B621C74859001CF990 /* LgPageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LgPageView.m; sourceTree = "<group>"; };
+		8F1740B721C74859001CF990 /* NSObject+LgObserver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+LgObserver.m"; sourceTree = "<group>"; };
+		8F1740B821C74859001CF990 /* LgPageControlViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LgPageControlViewController.m; sourceTree = "<group>"; };
 		8F1D687B21B66500002F2122 /* img_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = img_1.png; sourceTree = "<group>"; };
 		8F1D687C21B66500002F2122 /* img_0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = img_0.png; sourceTree = "<group>"; };
 		8F1D687D21B66500002F2122 /* img_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = img_2.png; sourceTree = "<group>"; };
@@ -637,6 +653,20 @@
 			path = LgHeaderView;
 			sourceTree = "<group>";
 		};
+		8F1740B121C74859001CF990 /* pageControlVc */ = {
+			isa = PBXGroup;
+			children = (
+				8F1740B221C74859001CF990 /* LgPageView.h */,
+				8F1740B321C74859001CF990 /* LgPageControlViewController.h */,
+				8F1740B421C74859001CF990 /* NSObject+LgObserver.h */,
+				8F1740B521C74859001CF990 /* LgPageControlDelegate.h */,
+				8F1740B621C74859001CF990 /* LgPageView.m */,
+				8F1740B721C74859001CF990 /* NSObject+LgObserver.m */,
+				8F1740B821C74859001CF990 /* LgPageControlViewController.m */,
+			);
+			path = pageControlVc;
+			sourceTree = "<group>";
+		};
 		8F1D687A21B66500002F2122 /* images */ = {
 			isa = PBXGroup;
 			children = (
@@ -775,6 +805,7 @@
 		8FE02ED81FFCADAB00CE62F1 /* ForkingDogDemo */ = {
 			isa = PBXGroup;
 			children = (
+				8F1740B121C74859001CF990 /* pageControlVc */,
 				8FC0E1A721A79B7D00DC4C98 /* ScreenAD */,
 				8FFE016E213CBE7200F9F5B1 /* Game */,
 				8F5E639B2003525F005E21A4 /* LgTabBar */,
@@ -1126,6 +1157,7 @@
 				8FE02F601FFCEF4100CE62F1 /* UIImage+MultiFormat.m in Sources */,
 				8FE02F571FFCEF4100CE62F1 /* SDWebImagePrefetcher.m in Sources */,
 				8FC0E19E21A78C6B00DC4C98 /* DCCycleScrollViewFlowLayout.m in Sources */,
+				8F1740BF21C74859001CF990 /* LgPageControlViewController.m in Sources */,
 				8FCAC2851FFE717E005128BB /* MasTextCellTableViewCell.m in Sources */,
 				4CD83D3F212872D10041EF99 /* ADViewController.m in Sources */,
 				4CFCC79F214EC8C900600E19 /* MJRefreshBackNormalFooter.m in Sources */,
@@ -1154,6 +1186,7 @@
 				8FE02F451FFCEF4100CE62F1 /* SDImageCacheConfig.m in Sources */,
 				8FC0E1A421A78C6B00DC4C98 /* DCCycleScrollViewCell.m in Sources */,
 				8FCAC29320007B99005128BB /* UIViewController+LgMenu.m in Sources */,
+				8F1740B921C74859001CF990 /* LgPageView.m in Sources */,
 				8FCAC29020007302005128BB /* UIView+LgMenu.m in Sources */,
 				8FCC310721B10D8C00A5B924 /* SnapeViewController.m in Sources */,
 				4CFCC7CC214EC8C900600E19 /* UIScrollView+MJRefresh.m in Sources */,
@@ -1165,6 +1198,7 @@
 				8FE02F161FFCB36600CE62F1 /* MixTableViewCell.m in Sources */,
 				4CFCC7CF214EC8C900600E19 /* UIView+MJExtension.m in Sources */,
 				4CFCC79C214EC8C900600E19 /* MJRefreshBackGifFooter.m in Sources */,
+				8F1740BC21C74859001CF990 /* NSObject+LgObserver.m in Sources */,
 				4CFCC7AE214EC8C900600E19 /* MJChiBaoZiFooter.m in Sources */,
 				4CFCC784214EC8C800600E19 /* MJRefreshAutoFooter.m in Sources */,
 				8FE02F541FFCEF4100CE62F1 /* SDWebImageManager.m in Sources */,
@@ -1198,6 +1232,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8F1740BA21C74859001CF990 /* LgPageView.m in Sources */,
 				4CFCC7A6214EC8C900600E19 /* MJRefreshGifHeader.m in Sources */,
 				8FFE0174213CBEBF00F9F5B1 /* GameViewController.m in Sources */,
 				8FE02F5E1FFCEF4100CE62F1 /* UIImage+GIF.m in Sources */,
@@ -1209,6 +1244,7 @@
 				4CFCC7D0214EC8C900600E19 /* UIView+MJExtension.m in Sources */,
 				8FE02F641FFCEF4100CE62F1 /* UIImageView+HighlightedWebCache.m in Sources */,
 				4CFCC7CA214EC8C900600E19 /* UIScrollView+MJExtension.m in Sources */,
+				8F1740BD21C74859001CF990 /* NSObject+LgObserver.m in Sources */,
 				8FE02F4C1FFCEF4100CE62F1 /* SDWebImageDecoder.m in Sources */,
 				4CFCC788214EC8C800600E19 /* MJRefreshBackFooter.m in Sources */,
 				8FC0E19F21A78C6B00DC4C98 /* DCCycleScrollViewFlowLayout.m in Sources */,
@@ -1241,6 +1277,7 @@
 				8FC0E1B021A79BC400DC4C98 /* UINavigationController+circleDismiss.m in Sources */,
 				4CFCC797214EC8C900600E19 /* MJRefreshAutoNormalFooter.m in Sources */,
 				8FE02F551FFCEF4100CE62F1 /* SDWebImageManager.m in Sources */,
+				8F1740C021C74859001CF990 /* LgPageControlViewController.m in Sources */,
 				8FE02F611FFCEF4100CE62F1 /* UIImage+MultiFormat.m in Sources */,
 				4CFCC785214EC8C800600E19 /* MJRefreshAutoFooter.m in Sources */,
 				4CFCC7E5214ED44A00600E19 /* CollectionViewHeader.m in Sources */,
@@ -1261,6 +1298,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8F1740BB21C74859001CF990 /* LgPageView.m in Sources */,
 				4CFCC7A7214EC8C900600E19 /* MJRefreshGifHeader.m in Sources */,
 				8FFE0175213CBEBF00F9F5B1 /* GameViewController.m in Sources */,
 				8FE02F5F1FFCEF4100CE62F1 /* UIImage+GIF.m in Sources */,
@@ -1272,6 +1310,7 @@
 				4CFCC7D1214EC8C900600E19 /* UIView+MJExtension.m in Sources */,
 				8FE02F651FFCEF4100CE62F1 /* UIImageView+HighlightedWebCache.m in Sources */,
 				4CFCC7CB214EC8C900600E19 /* UIScrollView+MJExtension.m in Sources */,
+				8F1740BE21C74859001CF990 /* NSObject+LgObserver.m in Sources */,
 				8FE02F4D1FFCEF4100CE62F1 /* SDWebImageDecoder.m in Sources */,
 				4CFCC789214EC8C800600E19 /* MJRefreshBackFooter.m in Sources */,
 				8FC0E1A021A78C6B00DC4C98 /* DCCycleScrollViewFlowLayout.m in Sources */,
@@ -1304,6 +1343,7 @@
 				8FC0E1B121A79BC400DC4C98 /* UINavigationController+circleDismiss.m in Sources */,
 				4CFCC798214EC8C900600E19 /* MJRefreshAutoNormalFooter.m in Sources */,
 				8FE02F561FFCEF4100CE62F1 /* SDWebImageManager.m in Sources */,
+				8F1740C121C74859001CF990 /* LgPageControlViewController.m in Sources */,
 				8FE02F621FFCEF4100CE62F1 /* UIImage+MultiFormat.m in Sources */,
 				4CFCC786214EC8C800600E19 /* MJRefreshAutoFooter.m in Sources */,
 				4CFCC7E6214ED44A00600E19 /* CollectionViewHeader.m in Sources */,
