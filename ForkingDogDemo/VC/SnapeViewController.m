@@ -32,15 +32,15 @@
 	LgPageView *pageView =[[LgPageView alloc]initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.view.frame) - 30, 40.0f)
 											  andTitleFont:[UIFont systemFontOfSize:18.0f]
 										   andSeletedColor:[UIColor redColor]
-											andNormalColor:nil
-											  andLineColor:nil
+											andNormalColor:[UIColor lightGrayColor]
+											  andLineColor:[UIColor redColor]
 											 andLineHeight:3.0f];
 
 	[self.view addSubview:pageView];
 
 	LgPageControlViewController *pageVc = [[LgPageControlViewController alloc]initWithTitleView:pageView andDelegateVc:self];
 	pageVc.canClearSubVcCache = YES;
-	pageVc.minClearCount = 5;
+	pageVc.minClearCount = 2;
 	_pageVc = pageVc;
 	pageVc.view.frame = CGRectMake(0,
 								   CGRectGetMaxY(pageView.frame),

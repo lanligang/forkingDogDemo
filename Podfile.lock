@@ -1,22 +1,28 @@
 PODS:
   - CLPlayer (1.1.3):
     - Masonry
+  - FBRetainCycleDetector (0.1.4)
   - lottie-ios (2.5.0)
   - Masonry (1.0.2)
+  - MLeaksFinder (1.0.0):
+    - FBRetainCycleDetector
   - YYText (1.0.7)
 
 DEPENDENCIES:
   - CLPlayer
   - lottie-ios
   - Masonry (~> 1.0.2)
+  - MLeaksFinder
   - YYText (~> 1.0.7)
 
 SPEC CHECKSUMS:
   CLPlayer: 9dd2dba2ac8ae97a034f733263f1d307027d604d
+  FBRetainCycleDetector: 46f8179bbb1c587deee3ea838a1a3ee02acf5015
   lottie-ios: d699fdee68d7b63e721d949388b015fef1aaa4ac
   Masonry: 7c429b56da9d4ee0bbb3ed77a5ea710d6a5df39e
+  MLeaksFinder: 8c435bd2f6d070af18cff082b503b21adc130fc0
   YYText: 5c461d709e24d55a182d1441c41dc639a18a4849
 
-PODFILE CHECKSUM: b9c9fdc0d96ccc4941b4ff89e90505c6c388fb66
+PODFILE CHECKSUM: c2e6c8a6b281784d1f8d894ec3f0e5e2497d4e73
 
 COCOAPODS: 1.4.0
