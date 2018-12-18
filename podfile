@@ -5,5 +5,11 @@ target ‘ForkingDogDemo’ do
    pod 'Masonry', '~> 1.0.2'
    pod 'CLPlayer'
    pod 'lottie-ios'
+   pod 'AFNetworking', '~> 3.2.1'
+   # 增加内存泄漏检测
+   pod 'MLeaksFinder'
+   pod 'SVProgressHUD', '~> 2.2.5'
+   pod 'YYModel', '~> 1.0.4'
+
 end
 
