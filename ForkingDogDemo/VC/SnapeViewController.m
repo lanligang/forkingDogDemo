@@ -10,13 +10,18 @@
 #import <SceneKit/SceneKit.h>
 #import "MySCNScene.h"
 #import <Masonry.h>
-
+#import "RequestBaseTool.h"
+#import "SVHUDMacro.h"
 #import "LgPageControlViewController.h"
 
 @interface SnapeViewController ()<LgPageControlDelegate>{
 	LgPageControlViewController *_pageVc;
+
 }
 @property (nonatomic,strong)NSMutableArray *dataSource;
+
+@property (nonatomic,strong)NSMutableArray *jokeIds;
+
 @end
 
 @implementation SnapeViewController
@@ -24,22 +29,27 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
+
 	NSString *urlStr = @"http://khd.funnypicsbox.com/jokes/lanmu.json";
-	NSData *data= [NSData dataWithContentsOfURL:[NSURL URLWithString:urlStr]];
-	if (data) {
-		NSError *error = nil;
-		id obj = 	[NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:&error];
+	SV_NOHIDDEN
+	[RequestBaseTool getUrlStr:urlStr andParms:nil andCompletion:^(id obj) {
 		if (obj && [obj isKindOfClass:[NSArray class]]) {
 			NSArray *array = (NSArray *)obj;
 				//leibie
 			for (int i = 0; i<array.count; i++) {
 				NSDictionary *dic = array[i];
 				[self.dataSource addObject:dic[@"leibie"]];
+				[self.jokeIds addObject:[NSString stringWithFormat:@"%@",dic[@"leibieid"]]];
 			}
-		}else{
-			[self.dataSource addObjectsFromArray:@[]];
+			//刷新表数据
+			[_pageVc reloadData];
+			SV_Dismiss
 		}
-	}
+	} Error:^(NSError *errror) {
+
+	}];
+
+
 	[self.navigationController.navigationBar setTranslucent:NO];
 
 	LgPageView *pageView =[[LgPageView alloc]initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.view.frame), 40.0f)
@@ -92,44 +102,13 @@
 	return vc;
 }
 
-
 -(void)vcWithIndex:(NSInteger)index andVc:(UIViewController **)vc
 {
-	switch (index) {
-		case 0:
-			*vc = [[NSClassFromString(@"ADViewController") alloc]init];
-			break;
-		case 1:
-			*vc = [[NSClassFromString(@"ViewController") alloc]init];
-			break;
-		case 2:
-			*vc = [[NSClassFromString(@"OpenCloseViewController") alloc]init];
-			break;
-		case 3:
-			*vc = [[NSClassFromString(@"ADViewController") alloc]init];
-			break;
-		case 4:
-			*vc = [[NSClassFromString(@"ADViewController") alloc]init];
-			break;
-		case 5:
-			*vc = [[NSClassFromString(@"ADViewController") alloc]init];
-			break;
-		case 6:
-			*vc = [[NSClassFromString(@"ADViewController") alloc]init];
-			break;
-		case 8:
-			*vc = [[NSClassFromString(@"ADViewController") alloc]init];
-			break;
-		case 9:
-			*vc = [[NSClassFromString(@"ADViewController") alloc]init];
-			break;
-		case 10:
-			*vc = [[NSClassFromString(@"ADViewController") alloc]init];
-			break;
-		default:
-			*vc = [[NSClassFromString(@"ADViewController") alloc]init];
-			break;
-	}
+	*vc = ({
+		id aVc =  (UIViewController *)[[NSClassFromString(@"JokeViewController") alloc]init];
+		[aVc setValue:self.jokeIds[index] forKey:@"jokeId"];
+		aVc;
+	});
 }
 
 -(NSArray *)lgPageTitlesWithLgPageView:(LgPageView *)pageView
@@ -145,6 +124,15 @@
 	 }
 	return _dataSource;
 }
+-(NSMutableArray *)jokeIds
+{
+	if (!_jokeIds)
+	 {
+		_jokeIds = [[NSMutableArray alloc]init];
+	 }
+	return _jokeIds;
+}
+
 
 
 

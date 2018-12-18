@@ -98,6 +98,25 @@
 		4CFCC7E4214ED44A00600E19 /* CollectionViewHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CFCC7E3214ED44A00600E19 /* CollectionViewHeader.m */; };
 		4CFCC7E5214ED44A00600E19 /* CollectionViewHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CFCC7E3214ED44A00600E19 /* CollectionViewHeader.m */; };
 		4CFCC7E6214ED44A00600E19 /* CollectionViewHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CFCC7E3214ED44A00600E19 /* CollectionViewHeader.m */; };
+		8F11FE3E21C89DD400C5F713 /* MasScrollDemoVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F11FE3D21C89DD400C5F713 /* MasScrollDemoVC.m */; };
+		8F11FE3F21C89DD400C5F713 /* MasScrollDemoVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F11FE3D21C89DD400C5F713 /* MasScrollDemoVC.m */; };
+		8F11FE4021C89DD400C5F713 /* MasScrollDemoVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F11FE3D21C89DD400C5F713 /* MasScrollDemoVC.m */; };
+		8F11FE4621C8BBCB00C5F713 /* UITextField+input.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F11FE4321C8BBCB00C5F713 /* UITextField+input.m */; };
+		8F11FE4721C8BBCB00C5F713 /* UITextField+input.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F11FE4321C8BBCB00C5F713 /* UITextField+input.m */; };
+		8F11FE4821C8BBCB00C5F713 /* UITextField+input.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F11FE4321C8BBCB00C5F713 /* UITextField+input.m */; };
+		8F11FE4921C8BBCB00C5F713 /* UITextView+input.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F11FE4521C8BBCB00C5F713 /* UITextView+input.m */; };
+		8F11FE4A21C8BBCB00C5F713 /* UITextView+input.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F11FE4521C8BBCB00C5F713 /* UITextView+input.m */; };
+		8F11FE4B21C8BBCB00C5F713 /* UITextView+input.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F11FE4521C8BBCB00C5F713 /* UITextView+input.m */; };
+		8F11FE4E21C8E4BB00C5F713 /* RequestBaseTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F11FE4C21C8E4BA00C5F713 /* RequestBaseTool.m */; };
+		8F11FE4F21C8E4BB00C5F713 /* RequestBaseTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F11FE4C21C8E4BA00C5F713 /* RequestBaseTool.m */; };
+		8F11FE5021C8E4BB00C5F713 /* RequestBaseTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F11FE4C21C8E4BA00C5F713 /* RequestBaseTool.m */; };
+		8F11FE5421C8EDB500C5F713 /* JokeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F11FE5321C8EDB500C5F713 /* JokeViewController.m */; };
+		8F11FE5721C8F45D00C5F713 /* FCBaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F11FE5521C8F45C00C5F713 /* FCBaseModel.m */; };
+		8F11FE5821C8F45D00C5F713 /* FCBaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F11FE5521C8F45C00C5F713 /* FCBaseModel.m */; };
+		8F11FE5921C8F45D00C5F713 /* FCBaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F11FE5521C8F45C00C5F713 /* FCBaseModel.m */; };
+		8F11FE5C21C8F49300C5F713 /* JokeModels.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F11FE5B21C8F49300C5F713 /* JokeModels.m */; };
+		8F11FE5D21C8F49300C5F713 /* JokeModels.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F11FE5B21C8F49300C5F713 /* JokeModels.m */; };
+		8F11FE5E21C8F49300C5F713 /* JokeModels.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F11FE5B21C8F49300C5F713 /* JokeModels.m */; };
 		8F1740B921C74859001CF990 /* LgPageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F1740B621C74859001CF990 /* LgPageView.m */; };
 		8F1740BA21C74859001CF990 /* LgPageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F1740B621C74859001CF990 /* LgPageView.m */; };
 		8F1740BB21C74859001CF990 /* LgPageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F1740B621C74859001CF990 /* LgPageView.m */; };
@@ -341,6 +360,21 @@
 		4CFCC7E2214ED44900600E19 /* CollectionViewHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionViewHeader.h; sourceTree = "<group>"; };
 		4CFCC7E3214ED44A00600E19 /* CollectionViewHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionViewHeader.m; sourceTree = "<group>"; };
 		76E884D6F752559CDFEE7788 /* Pods-ForkingDogDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ForkingDogDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-ForkingDogDemo/Pods-ForkingDogDemo.release.xcconfig"; sourceTree = "<group>"; };
+		8F11FE3C21C89DD400C5F713 /* MasScrollDemoVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MasScrollDemoVC.h; sourceTree = "<group>"; };
+		8F11FE3D21C89DD400C5F713 /* MasScrollDemoVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MasScrollDemoVC.m; sourceTree = "<group>"; };
+		8F11FE4221C8BBCB00C5F713 /* UITextView+input.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextView+input.h"; sourceTree = "<group>"; };
+		8F11FE4321C8BBCB00C5F713 /* UITextField+input.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextField+input.m"; sourceTree = "<group>"; };
+		8F11FE4421C8BBCB00C5F713 /* UITextField+input.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextField+input.h"; sourceTree = "<group>"; };
+		8F11FE4521C8BBCB00C5F713 /* UITextView+input.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextView+input.m"; sourceTree = "<group>"; };
+		8F11FE4C21C8E4BA00C5F713 /* RequestBaseTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RequestBaseTool.m; sourceTree = "<group>"; };
+		8F11FE4D21C8E4BB00C5F713 /* RequestBaseTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RequestBaseTool.h; sourceTree = "<group>"; };
+		8F11FE5121C8E86000C5F713 /* SVHUDMacro.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SVHUDMacro.h; sourceTree = "<group>"; };
+		8F11FE5221C8EDB500C5F713 /* JokeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JokeViewController.h; sourceTree = "<group>"; };
+		8F11FE5321C8EDB500C5F713 /* JokeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JokeViewController.m; sourceTree = "<group>"; };
+		8F11FE5521C8F45C00C5F713 /* FCBaseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FCBaseModel.m; sourceTree = "<group>"; };
+		8F11FE5621C8F45C00C5F713 /* FCBaseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FCBaseModel.h; sourceTree = "<group>"; };
+		8F11FE5A21C8F49300C5F713 /* JokeModels.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JokeModels.h; sourceTree = "<group>"; };
+		8F11FE5B21C8F49300C5F713 /* JokeModels.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JokeModels.m; sourceTree = "<group>"; };
 		8F1740B221C74859001CF990 /* LgPageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LgPageView.h; sourceTree = "<group>"; };
 		8F1740B321C74859001CF990 /* LgPageControlViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LgPageControlViewController.h; sourceTree = "<group>"; };
 		8F1740B421C74859001CF990 /* NSObject+LgObserver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+LgObserver.h"; sourceTree = "<group>"; };
@@ -662,6 +696,17 @@
 			path = LgHeaderView;
 			sourceTree = "<group>";
 		};
+		8F11FE4121C8BBCB00C5F713 /* textInputCategary */ = {
+			isa = PBXGroup;
+			children = (
+				8F11FE4221C8BBCB00C5F713 /* UITextView+input.h */,
+				8F11FE4321C8BBCB00C5F713 /* UITextField+input.m */,
+				8F11FE4421C8BBCB00C5F713 /* UITextField+input.h */,
+				8F11FE4521C8BBCB00C5F713 /* UITextView+input.m */,
+			);
+			path = textInputCategary;
+			sourceTree = "<group>";
+		};
 		8F1740B121C74859001CF990 /* pageControlVc */ = {
 			isa = PBXGroup;
 			children = (
@@ -743,8 +788,16 @@
 				8FCC310621B10D8C00A5B924 /* SnapeViewController.m */,
 				8F1740C221C76E3E001CF990 /* OpenCloseViewController.h */,
 				8F1740C321C76E3E001CF990 /* OpenCloseViewController.m */,
+				8F11FE3C21C89DD400C5F713 /* MasScrollDemoVC.h */,
+				8F11FE3D21C89DD400C5F713 /* MasScrollDemoVC.m */,
+				8F11FE5221C8EDB500C5F713 /* JokeViewController.h */,
+				8F11FE5321C8EDB500C5F713 /* JokeViewController.m */,
+				8F11FE5A21C8F49300C5F713 /* JokeModels.h */,
+				8F11FE5B21C8F49300C5F713 /* JokeModels.m */,
 				8FCC310821B10FB400A5B924 /* MySCNScene.h */,
 				8FCC310921B10FB400A5B924 /* MySCNScene.m */,
+				8F11FE5121C8E86000C5F713 /* SVHUDMacro.h */,
+				8F11FE4121C8BBCB00C5F713 /* textInputCategary */,
 			);
 			path = VC;
 			sourceTree = "<group>";
@@ -827,6 +880,10 @@
 				8FCAC28720006692005128BB /* LgMenu */,
 				8FE02ED91FFCADAB00CE62F1 /* AppDelegate.h */,
 				8FE02EDA1FFCADAB00CE62F1 /* AppDelegate.m */,
+				8F11FE4D21C8E4BB00C5F713 /* RequestBaseTool.h */,
+				8F11FE4C21C8E4BA00C5F713 /* RequestBaseTool.m */,
+				8F11FE5621C8F45C00C5F713 /* FCBaseModel.h */,
+				8F11FE5521C8F45C00C5F713 /* FCBaseModel.m */,
 				8FC0E19721A78C6B00DC4C98 /* DCCycleScrollView */,
 				4CFCC748214EC8C800600E19 /* MJRefresh */,
 				4CD83D3921286E550041EF99 /* AdViews */,
@@ -1130,10 +1187,12 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-ForkingDogDemo/Pods-ForkingDogDemo-resources.sh",
 				"${PODS_ROOT}/CLPlayer/CLPlayer/Resource/CLPlayer.bundle",
+				"${PODS_ROOT}/SVProgressHUD/SVProgressHUD/SVProgressHUD.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/CLPlayer.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/SVProgressHUD.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1176,6 +1235,7 @@
 				8FCAC2851FFE717E005128BB /* MasTextCellTableViewCell.m in Sources */,
 				4CD83D3F212872D10041EF99 /* ADViewController.m in Sources */,
 				4CFCC79F214EC8C900600E19 /* MJRefreshBackNormalFooter.m in Sources */,
+				8F11FE4921C8BBCB00C5F713 /* UITextView+input.m in Sources */,
 				8F1740C721C77024001CF990 /* OpenCloseTableViewCell.m in Sources */,
 				4CFCC7B1214EC8C900600E19 /* MJChiBaoZiFooter2.m in Sources */,
 				8FE02F0D1FFCB13000CE62F1 /* BaseTableViewCell.m in Sources */,
@@ -1186,6 +1246,7 @@
 				8FE02F421FFCEF4100CE62F1 /* SDImageCache.m in Sources */,
 				4CFCC744214EC2CA00600E19 /* UIColor+Hex.m in Sources */,
 				4CFCC796214EC8C900600E19 /* MJRefreshAutoNormalFooter.m in Sources */,
+				8F11FE5421C8EDB500C5F713 /* JokeViewController.m in Sources */,
 				8F630A8421252612006EA924 /* UIView+LGAnimation.m in Sources */,
 				8FE02EDE1FFCADAC00CE62F1 /* ViewController.m in Sources */,
 				8FCAC28D20006D7F005128BB /* LeftViewController.m in Sources */,
@@ -1197,6 +1258,7 @@
 				8FE02F661FFCEF4100CE62F1 /* UIImageView+WebCache.m in Sources */,
 				8FCAC28A200066A8005128BB /* LgMenuViewController.m in Sources */,
 				8FE02EE91FFCADAC00CE62F1 /* main.m in Sources */,
+				8F11FE4621C8BBCB00C5F713 /* UITextField+input.m in Sources */,
 				8FCC310A21B10FB400A5B924 /* MySCNScene.m in Sources */,
 				8FE02F4E1FFCEF4100CE62F1 /* SDWebImageDownloader.m in Sources */,
 				8FE02F451FFCEF4100CE62F1 /* SDImageCacheConfig.m in Sources */,
@@ -1211,12 +1273,15 @@
 				8FE02F3C1FFCEF4100CE62F1 /* NSData+ImageContentType.m in Sources */,
 				4CD83D4221287D8A0041EF99 /* ADCircleImageView.m in Sources */,
 				4CFCC7BD214EC8C900600E19 /* MJDIYHeader.m in Sources */,
+				8F11FE4E21C8E4BB00C5F713 /* RequestBaseTool.m in Sources */,
 				4CCA079721298BC5007B975F /* ADTableViewCell.m in Sources */,
 				8FE02F161FFCB36600CE62F1 /* MixTableViewCell.m in Sources */,
 				4CFCC7CF214EC8C900600E19 /* UIView+MJExtension.m in Sources */,
 				4CFCC79C214EC8C900600E19 /* MJRefreshBackGifFooter.m in Sources */,
 				8F1740BC21C74859001CF990 /* NSObject+LgObserver.m in Sources */,
+				8F11FE3E21C89DD400C5F713 /* MasScrollDemoVC.m in Sources */,
 				4CFCC7AE214EC8C900600E19 /* MJChiBaoZiFooter.m in Sources */,
+				8F11FE5C21C8F49300C5F713 /* JokeModels.m in Sources */,
 				4CFCC784214EC8C800600E19 /* MJRefreshAutoFooter.m in Sources */,
 				8FE02F541FFCEF4100CE62F1 /* SDWebImageManager.m in Sources */,
 				4CFCC7E4214ED44A00600E19 /* CollectionViewHeader.m in Sources */,
@@ -1233,6 +1298,7 @@
 				4CFCC799214EC8C900600E19 /* MJRefreshAutoStateFooter.m in Sources */,
 				4CFCC793214EC8C900600E19 /* MJRefreshAutoGifFooter.m in Sources */,
 				8F1740C421C76E3E001CF990 /* OpenCloseViewController.m in Sources */,
+				8F11FE5721C8F45D00C5F713 /* FCBaseModel.m in Sources */,
 				4CFCC7C6214EC8C900600E19 /* NSBundle+MJRefresh.m in Sources */,
 				4CFCC787214EC8C800600E19 /* MJRefreshBackFooter.m in Sources */,
 				8FAA240A212E4DEC00E99674 /* UIScrollView+PopScrollView.m in Sources */,
@@ -1250,10 +1316,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8F11FE4F21C8E4BB00C5F713 /* RequestBaseTool.m in Sources */,
 				8F1740BA21C74859001CF990 /* LgPageView.m in Sources */,
 				4CFCC7A6214EC8C900600E19 /* MJRefreshGifHeader.m in Sources */,
 				8FFE0174213CBEBF00F9F5B1 /* GameViewController.m in Sources */,
 				8FE02F5E1FFCEF4100CE62F1 /* UIImage+GIF.m in Sources */,
+				8F11FE4721C8BBCB00C5F713 /* UITextField+input.m in Sources */,
 				4CFCC79A214EC8C900600E19 /* MJRefreshAutoStateFooter.m in Sources */,
 				4CFCC7BE214EC8C900600E19 /* MJDIYHeader.m in Sources */,
 				8FE02F4F1FFCEF4100CE62F1 /* SDWebImageDownloader.m in Sources */,
@@ -1272,10 +1340,12 @@
 				8FC0E1A221A78C6B00DC4C98 /* DCCycleScrollView.m in Sources */,
 				8FE02F491FFCEF4100CE62F1 /* SDWebImageCompat.m in Sources */,
 				4CFCC7C7214EC8C900600E19 /* NSBundle+MJRefresh.m in Sources */,
+				8F11FE3F21C89DD400C5F713 /* MasScrollDemoVC.m in Sources */,
 				4CFCC7BB214EC8C900600E19 /* MJDIYBackFooter.m in Sources */,
 				4CFCC7CD214EC8C900600E19 /* UIScrollView+MJRefresh.m in Sources */,
 				4CFCC7AC214EC8C900600E19 /* MJRefreshStateHeader.m in Sources */,
 				8FAA240B212E4DEC00E99674 /* UIScrollView+PopScrollView.m in Sources */,
+				8F11FE5821C8F45D00C5F713 /* FCBaseModel.m in Sources */,
 				8FC0E1BF21A7E6BC00DC4C98 /* UIFont+textFont.m in Sources */,
 				8FC0E1B521A79C5200DC4C98 /* ADScreenManager.m in Sources */,
 				8FE02F3D1FFCEF4100CE62F1 /* NSData+ImageContentType.m in Sources */,
@@ -1283,6 +1353,7 @@
 				4CFCC78B214EC8C800600E19 /* MJRefreshComponent.m in Sources */,
 				4CFCC791214EC8C900600E19 /* MJRefreshHeader.m in Sources */,
 				8FE02EF31FFCADAC00CE62F1 /* ForkingDogDemoTests.m in Sources */,
+				8F11FE5D21C8F49300C5F713 /* JokeModels.m in Sources */,
 				4CFCC794214EC8C900600E19 /* MJRefreshAutoGifFooter.m in Sources */,
 				8FE02F521FFCEF4100CE62F1 /* SDWebImageDownloaderOperation.m in Sources */,
 				8FC0E1AB21A79BAA00DC4C98 /* ScreenADViewController.m in Sources */,
@@ -1300,6 +1371,7 @@
 				4CFCC785214EC8C800600E19 /* MJRefreshAutoFooter.m in Sources */,
 				4CFCC7E5214ED44A00600E19 /* CollectionViewHeader.m in Sources */,
 				4CFCC78E214EC8C900600E19 /* MJRefreshFooter.m in Sources */,
+				8F11FE4A21C8BBCB00C5F713 /* UITextView+input.m in Sources */,
 				4CFCC7B8214EC8C900600E19 /* MJDIYAutoFooter.m in Sources */,
 				8FE02F581FFCEF4100CE62F1 /* SDWebImagePrefetcher.m in Sources */,
 				4CFCC7B5214EC8C900600E19 /* MJChiBaoZiHeader.m in Sources */,
@@ -1316,10 +1388,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8F11FE5021C8E4BB00C5F713 /* RequestBaseTool.m in Sources */,
 				8F1740BB21C74859001CF990 /* LgPageView.m in Sources */,
 				4CFCC7A7214EC8C900600E19 /* MJRefreshGifHeader.m in Sources */,
 				8FFE0175213CBEBF00F9F5B1 /* GameViewController.m in Sources */,
 				8FE02F5F1FFCEF4100CE62F1 /* UIImage+GIF.m in Sources */,
+				8F11FE4821C8BBCB00C5F713 /* UITextField+input.m in Sources */,
 				4CFCC79B214EC8C900600E19 /* MJRefreshAutoStateFooter.m in Sources */,
 				4CFCC7BF214EC8C900600E19 /* MJDIYHeader.m in Sources */,
 				8FE02F501FFCEF4100CE62F1 /* SDWebImageDownloader.m in Sources */,
@@ -1338,10 +1412,12 @@
 				8FC0E1A321A78C6B00DC4C98 /* DCCycleScrollView.m in Sources */,
 				8FE02F4A1FFCEF4100CE62F1 /* SDWebImageCompat.m in Sources */,
 				4CFCC7C8214EC8C900600E19 /* NSBundle+MJRefresh.m in Sources */,
+				8F11FE4021C89DD400C5F713 /* MasScrollDemoVC.m in Sources */,
 				4CFCC7BC214EC8C900600E19 /* MJDIYBackFooter.m in Sources */,
 				4CFCC7CE214EC8C900600E19 /* UIScrollView+MJRefresh.m in Sources */,
 				4CFCC7AD214EC8C900600E19 /* MJRefreshStateHeader.m in Sources */,
 				8FAA240C212E4DEC00E99674 /* UIScrollView+PopScrollView.m in Sources */,
+				8F11FE5921C8F45D00C5F713 /* FCBaseModel.m in Sources */,
 				8FC0E1C021A7E6BC00DC4C98 /* UIFont+textFont.m in Sources */,
 				8FC0E1B621A79C5200DC4C98 /* ADScreenManager.m in Sources */,
 				8FE02F3E1FFCEF4100CE62F1 /* NSData+ImageContentType.m in Sources */,
@@ -1349,6 +1425,7 @@
 				4CFCC78C214EC8C800600E19 /* MJRefreshComponent.m in Sources */,
 				4CFCC792214EC8C900600E19 /* MJRefreshHeader.m in Sources */,
 				8FE02EFE1FFCADAC00CE62F1 /* ForkingDogDemoUITests.m in Sources */,
+				8F11FE5E21C8F49300C5F713 /* JokeModels.m in Sources */,
 				4CFCC795214EC8C900600E19 /* MJRefreshAutoGifFooter.m in Sources */,
 				8FE02F531FFCEF4100CE62F1 /* SDWebImageDownloaderOperation.m in Sources */,
 				8FC0E1AC21A79BAA00DC4C98 /* ScreenADViewController.m in Sources */,
@@ -1366,6 +1443,7 @@
 				4CFCC786214EC8C800600E19 /* MJRefreshAutoFooter.m in Sources */,
 				4CFCC7E6214ED44A00600E19 /* CollectionViewHeader.m in Sources */,
 				4CFCC78F214EC8C900600E19 /* MJRefreshFooter.m in Sources */,
+				8F11FE4B21C8BBCB00C5F713 /* UITextView+input.m in Sources */,
 				4CFCC7B9214EC8C900600E19 /* MJDIYAutoFooter.m in Sources */,
 				8FE02F591FFCEF4100CE62F1 /* SDWebImagePrefetcher.m in Sources */,
 				4CFCC7B6214EC8C900600E19 /* MJChiBaoZiHeader.m in Sources */,

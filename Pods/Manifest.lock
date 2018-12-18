@@ -1,4 +1,19 @@
 PODS:
+  - AFNetworking (3.2.1):
+    - AFNetworking/NSURLSession (= 3.2.1)
+    - AFNetworking/Reachability (= 3.2.1)
+    - AFNetworking/Security (= 3.2.1)
+    - AFNetworking/Serialization (= 3.2.1)
+    - AFNetworking/UIKit (= 3.2.1)
+  - AFNetworking/NSURLSession (3.2.1):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (3.2.1)
+  - AFNetworking/Security (3.2.1)
+  - AFNetworking/Serialization (3.2.1)
+  - AFNetworking/UIKit (3.2.1):
+    - AFNetworking/NSURLSession
   - CLPlayer (1.1.3):
     - Masonry
   - FBRetainCycleDetector (0.1.4)
@@ -6,23 +21,31 @@ PODS:
   - Masonry (1.0.2)
   - MLeaksFinder (1.0.0):
     - FBRetainCycleDetector
+  - SVProgressHUD (2.2.5)
+  - YYModel (1.0.4)
   - YYText (1.0.7)
 
 DEPENDENCIES:
+  - AFNetworking (~> 3.2.1)
   - CLPlayer
   - lottie-ios
   - Masonry (~> 1.0.2)
   - MLeaksFinder
+  - SVProgressHUD (~> 2.2.5)
+  - YYModel (~> 1.0.4)
   - YYText (~> 1.0.7)
 
 SPEC CHECKSUMS:
+  AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
   CLPlayer: 9dd2dba2ac8ae97a034f733263f1d307027d604d
   FBRetainCycleDetector: 46f8179bbb1c587deee3ea838a1a3ee02acf5015
   lottie-ios: d699fdee68d7b63e721d949388b015fef1aaa4ac
   Masonry: 7c429b56da9d4ee0bbb3ed77a5ea710d6a5df39e
   MLeaksFinder: 8c435bd2f6d070af18cff082b503b21adc130fc0
+  SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
+  YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
   YYText: 5c461d709e24d55a182d1441c41dc639a18a4849
 
-PODFILE CHECKSUM: c2e6c8a6b281784d1f8d894ec3f0e5e2497d4e73
+PODFILE CHECKSUM: e483449e76825706cfefa7f66a1ae7f88aa861ef
 
 COCOAPODS: 1.4.0
