@@ -114,10 +114,10 @@
 	item3.tag = 2;
     UITabBarItem *item4 = [[UITabBarItem alloc]init];
 	item4.tag = 3;
-    item1.title = @"第1页";
+    item1.title = @"首页";
     item2.title = @"广告";
-    item3.title = @"第3页";
-    item4.title = @"第4页";
+    item3.title = @"笑话";
+    item4.title = @"星球";
 
     [item1 setTitleTextAttributes:@{UITextAttributeTextColor:[UIColor greenColor]} forState:UIControlStateSelected];
     [item2 setTitleTextAttributes:@{UITextAttributeTextColor:[UIColor greenColor]} forState:UIControlStateSelected];

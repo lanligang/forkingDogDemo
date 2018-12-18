@@ -66,7 +66,7 @@
 			 _nameTextLable.text = joke.zuozhe;
 
 			 NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc] initWithData:[htmlStr dataUsingEncoding:NSUnicodeStringEncoding] options:@{NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType,NSCharacterEncodingDocumentAttribute :@(NSUTF8StringEncoding)} documentAttributes:nil error:nil];
-			 [attributedString addAttribute:NSFontAttributeName value:[UIFont systemFontOfSize:13] range:NSMakeRange(0, attributedString.length)];
+			 [attributedString addAttribute:NSFontAttributeName value:[UIFont systemFontOfSize:15.0] range:NSMakeRange(0, attributedString.length)];
 			 [attributedString addAttribute:NSForegroundColorAttributeName value:[UIColor redColor] range:NSMakeRange(0, attributedString.length)];
 			 _containtLable.attributedText = attributedString;
 	 }
@@ -85,6 +85,7 @@
     _userImageView = [[UIImageView alloc]init];
 	_userImageView.layer.cornerRadius = 15.0f;
 	_userImageView.layer.masksToBounds = YES;
+	_userImageView.image = [UIImage imageNamed:@"header_left"];
     _userImageView.backgroundColor = [UIColor grayColor];
  }
  return _userImageView;

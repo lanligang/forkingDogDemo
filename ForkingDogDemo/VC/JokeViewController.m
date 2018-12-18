@@ -16,6 +16,7 @@
 @property (nonatomic,strong)NSMutableArray *dataSource;
 @property (nonatomic,strong)NSMutableDictionary *autoHeightCache;
 @property (nonatomic,strong)UITableView *myTableView;
+@property(nonatomic,assign)NSInteger page;
 
 @end
 
@@ -34,31 +35,41 @@
 	}
 	__weak typeof(self)ws  = self;
 	_myTableView.mj_header = [MJRefreshGifHeader headerWithRefreshingBlock:^{
+		ws.page = 1;
 		[ws requestDatasource];
 	}];
+	_myTableView.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingTarget:self refreshingAction:@selector(loadMoreData)];
 	[_myTableView.mj_header beginRefreshing];
 }
-
+-(void)loadMoreData
+{
+	self.page ++;
+	[self requestDatasource];
+}
 -(void)setJokeId:(NSString *)jokeId
 {
 	_jokeId = jokeId;
 }
 -(void)requestDatasource
 {
-	NSInteger intRandom = 1;
+	NSInteger intRandom = self.page;
 	NSString *url = [NSString stringWithFormat:@"http://khd.funnypicsbox.com/jokes/%@_%@.json",self.jokeId,@(intRandom)];
 	[RequestBaseTool postUrlStr:url
 					  andParms:@{}
 				 andCompletion:^(id obj) {
+					 [self.myTableView.mj_header endRefreshing];
+					 [self.myTableView.mj_footer endRefreshing];
 					 if (obj && [obj isKindOfClass:[NSArray class]]) {
 						 JokeModels *models = [[JokeModels alloc]initWithDictionary:@{@"jsokes":obj}];
-						 [self.dataSource removeAllObjects];
+						 if (self.page == 1) {
+							  [self.dataSource removeAllObjects];
+						 }
 						 [self.dataSource addObjectsFromArray:models.jsokes];
-						 [self.myTableView.mj_header endRefreshing];
 						 [self.myTableView reloadData];
 					 }
 	} Error:^(NSError *errror) {
-
+		 [self.myTableView.mj_header endRefreshing];
+		 [self.myTableView.mj_footer endRefreshing];
 	}];
 }
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
