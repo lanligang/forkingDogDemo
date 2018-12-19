@@ -13,6 +13,7 @@
 
 #import "UIView+LGAnimation.h"
 #import "SnapeViewController.h"
+#import "YZCodeViewController.h"
 
 @interface LgTabBarViewController ()<LgTabBarDelegate,UITabBarControllerDelegate>
 @property (nonatomic, strong) NSMutableArray  *circleViews;
@@ -99,7 +100,7 @@
     ADViewController *vc2 = [[ADViewController alloc]init];
     SnapeViewController *vc3 = [[SnapeViewController alloc]init];
 	
-    UIViewController *vc4 = [[UIViewController alloc]init];
+    YZCodeViewController *vc4 = [[YZCodeViewController alloc]init];
 
     UINavigationController *nav = [[UINavigationController alloc]initWithRootViewController:vc];
    UINavigationController *nav2 = [[UINavigationController alloc]initWithRootViewController:vc2];

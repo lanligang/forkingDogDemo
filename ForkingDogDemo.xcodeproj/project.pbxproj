@@ -117,6 +117,10 @@
 		8F11FE5C21C8F49300C5F713 /* JokeModels.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F11FE5B21C8F49300C5F713 /* JokeModels.m */; };
 		8F11FE5D21C8F49300C5F713 /* JokeModels.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F11FE5B21C8F49300C5F713 /* JokeModels.m */; };
 		8F11FE5E21C8F49300C5F713 /* JokeModels.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F11FE5B21C8F49300C5F713 /* JokeModels.m */; };
+		8F15FF7B21C9E37D002B550D /* YZCodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F15FF7A21C9E37D002B550D /* YZCodeViewController.m */; };
+		8F15FF8221CA427F002B550D /* LGYZCodeImgView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F15FF8121CA427F002B550D /* LGYZCodeImgView.m */; };
+		8F15FF8321CA427F002B550D /* LGYZCodeImgView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F15FF8121CA427F002B550D /* LGYZCodeImgView.m */; };
+		8F15FF8421CA427F002B550D /* LGYZCodeImgView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F15FF8121CA427F002B550D /* LGYZCodeImgView.m */; };
 		8F1740B921C74859001CF990 /* LgPageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F1740B621C74859001CF990 /* LgPageView.m */; };
 		8F1740BA21C74859001CF990 /* LgPageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F1740B621C74859001CF990 /* LgPageView.m */; };
 		8F1740BB21C74859001CF990 /* LgPageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F1740B621C74859001CF990 /* LgPageView.m */; };
@@ -375,6 +379,10 @@
 		8F11FE5621C8F45C00C5F713 /* FCBaseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FCBaseModel.h; sourceTree = "<group>"; };
 		8F11FE5A21C8F49300C5F713 /* JokeModels.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JokeModels.h; sourceTree = "<group>"; };
 		8F11FE5B21C8F49300C5F713 /* JokeModels.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JokeModels.m; sourceTree = "<group>"; };
+		8F15FF7921C9E37D002B550D /* YZCodeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YZCodeViewController.h; sourceTree = "<group>"; };
+		8F15FF7A21C9E37D002B550D /* YZCodeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YZCodeViewController.m; sourceTree = "<group>"; };
+		8F15FF8021CA427F002B550D /* LGYZCodeImgView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LGYZCodeImgView.h; sourceTree = "<group>"; };
+		8F15FF8121CA427F002B550D /* LGYZCodeImgView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LGYZCodeImgView.m; sourceTree = "<group>"; };
 		8F1740B221C74859001CF990 /* LgPageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LgPageView.h; sourceTree = "<group>"; };
 		8F1740B321C74859001CF990 /* LgPageControlViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LgPageControlViewController.h; sourceTree = "<group>"; };
 		8F1740B421C74859001CF990 /* NSObject+LgObserver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+LgObserver.h"; sourceTree = "<group>"; };
@@ -707,6 +715,15 @@
 			path = textInputCategary;
 			sourceTree = "<group>";
 		};
+		8F15FF7C21C9E38D002B550D /* YZCodeView */ = {
+			isa = PBXGroup;
+			children = (
+				8F15FF8021CA427F002B550D /* LGYZCodeImgView.h */,
+				8F15FF8121CA427F002B550D /* LGYZCodeImgView.m */,
+			);
+			path = YZCodeView;
+			sourceTree = "<group>";
+		};
 		8F1740B121C74859001CF990 /* pageControlVc */ = {
 			isa = PBXGroup;
 			children = (
@@ -771,6 +788,7 @@
 				8F1740C621C77024001CF990 /* OpenCloseTableViewCell.m */,
 				8F1740C821C7709F001CF990 /* OpenCloseModel.h */,
 				8F1740C921C7709F001CF990 /* OpenCloseModel.m */,
+				8F15FF7C21C9E38D002B550D /* YZCodeView */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -797,6 +815,8 @@
 				8FCC310821B10FB400A5B924 /* MySCNScene.h */,
 				8FCC310921B10FB400A5B924 /* MySCNScene.m */,
 				8F11FE5121C8E86000C5F713 /* SVHUDMacro.h */,
+				8F15FF7921C9E37D002B550D /* YZCodeViewController.h */,
+				8F15FF7A21C9E37D002B550D /* YZCodeViewController.m */,
 				8F11FE4121C8BBCB00C5F713 /* textInputCategary */,
 			);
 			path = VC;
@@ -1252,12 +1272,14 @@
 				8FCAC28D20006D7F005128BB /* LeftViewController.m in Sources */,
 				8FE02F511FFCEF4100CE62F1 /* SDWebImageDownloaderOperation.m in Sources */,
 				8FE02F4B1FFCEF4100CE62F1 /* SDWebImageDecoder.m in Sources */,
+				8F15FF7B21C9E37D002B550D /* YZCodeViewController.m in Sources */,
 				4CFCC7D6214EC96F00600E19 /* LgHeaderCollectionViewCell.m in Sources */,
 				8FC0E1B421A79C5200DC4C98 /* ADScreenManager.m in Sources */,
 				8FE02F111FFCB21500CE62F1 /* TextTableViewCell.m in Sources */,
 				8FE02F661FFCEF4100CE62F1 /* UIImageView+WebCache.m in Sources */,
 				8FCAC28A200066A8005128BB /* LgMenuViewController.m in Sources */,
 				8FE02EE91FFCADAC00CE62F1 /* main.m in Sources */,
+				8F15FF8221CA427F002B550D /* LGYZCodeImgView.m in Sources */,
 				8F11FE4621C8BBCB00C5F713 /* UITextField+input.m in Sources */,
 				8FCC310A21B10FB400A5B924 /* MySCNScene.m in Sources */,
 				8FE02F4E1FFCEF4100CE62F1 /* SDWebImageDownloader.m in Sources */,
@@ -1361,6 +1383,7 @@
 				4CFCC7B2214EC8C900600E19 /* MJChiBaoZiFooter2.m in Sources */,
 				8FFE017A213CBF2600F9F5B1 /* MyScene.m in Sources */,
 				8FE02F6A1FFCEF4100CE62F1 /* UIView+WebCache.m in Sources */,
+				8F15FF8321CA427F002B550D /* LGYZCodeImgView.m in Sources */,
 				8FE02F671FFCEF4100CE62F1 /* UIImageView+WebCache.m in Sources */,
 				4CFCC7A3214EC8C900600E19 /* MJRefreshBackStateFooter.m in Sources */,
 				8FC0E1B021A79BC400DC4C98 /* UINavigationController+circleDismiss.m in Sources */,
@@ -1433,6 +1456,7 @@
 				4CFCC7B3214EC8C900600E19 /* MJChiBaoZiFooter2.m in Sources */,
 				8FFE017B213CBF2600F9F5B1 /* MyScene.m in Sources */,
 				8FE02F6B1FFCEF4100CE62F1 /* UIView+WebCache.m in Sources */,
+				8F15FF8421CA427F002B550D /* LGYZCodeImgView.m in Sources */,
 				8FE02F681FFCEF4100CE62F1 /* UIImageView+WebCache.m in Sources */,
 				4CFCC7A4214EC8C900600E19 /* MJRefreshBackStateFooter.m in Sources */,
 				8FC0E1B121A79BC400DC4C98 /* UINavigationController+circleDismiss.m in Sources */,
