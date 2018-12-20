@@ -39,7 +39,7 @@
 	}
 	__weak typeof(self)ws  = self;
 	_myTableView.mj_header = [MJRefreshGifHeader headerWithRefreshingBlock:^{
-		ws.startIndex = arc4random() %1000;
+		ws.startIndex =1+ arc4random() %300;
 		ws.page = ws.startIndex;
 		[ws requestDatasource];
 	}];

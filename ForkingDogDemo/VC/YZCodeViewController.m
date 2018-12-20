@@ -94,8 +94,6 @@
 	NSString *file = [[NSBundle mainBundle]pathForResource:@"app_action" ofType:@"png"];
 	if (file) {
 		NSString *md5Code = file.fileMD5Hash;
-		//8c6ddda41bc76e5f2a86add169a623ca
-		//dc30284dce1be0d4116857d61ae0446b
 		NSLog(@"Release的|%@",md5Code);
 	}
 }
