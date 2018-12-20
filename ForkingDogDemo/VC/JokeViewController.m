@@ -13,10 +13,14 @@
 #import "BaseTableViewCell.h"
 
 @interface JokeViewController ()<UITableViewDelegate,UITableViewDataSource>
+
+@property(nonatomic,assign)NSInteger startIndex;
+
 @property (nonatomic,strong)NSMutableArray *dataSource;
 @property (nonatomic,strong)NSMutableDictionary *autoHeightCache;
 @property (nonatomic,strong)UITableView *myTableView;
 @property(nonatomic,assign)NSInteger page;
+
 
 @end
 
@@ -35,7 +39,8 @@
 	}
 	__weak typeof(self)ws  = self;
 	_myTableView.mj_header = [MJRefreshGifHeader headerWithRefreshingBlock:^{
-		ws.page = 1;
+		ws.startIndex = arc4random() %1000;
+		ws.page = ws.startIndex;
 		[ws requestDatasource];
 	}];
 	_myTableView.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingTarget:self refreshingAction:@selector(loadMoreData)];
@@ -61,7 +66,7 @@
 					 [self.myTableView.mj_footer endRefreshing];
 					 if (obj && [obj isKindOfClass:[NSArray class]]) {
 						 JokeModels *models = [[JokeModels alloc]initWithDictionary:@{@"jsokes":obj}];
-						 if (self.page == 1) {
+						 if (self.page == self.startIndex) {
 							  [self.dataSource removeAllObjects];
 						 }
 						 [self.dataSource addObjectsFromArray:models.jsokes];
