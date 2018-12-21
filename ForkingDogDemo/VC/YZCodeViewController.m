@@ -11,8 +11,9 @@
 #import <Masonry.h>
 #import "NSString+Hash.h"
 #import "NSObject+LgObserver.h"
+#import "SVHUDMacro.h"
 
-@interface YZCodeViewController ()<UIGestureRecognizerDelegate>
+@interface YZCodeViewController ()<UIGestureRecognizerDelegate,UIWebViewDelegate>
 {
 	CGPoint _lastPoint;
 	UIView *_tView;
@@ -20,11 +21,15 @@
 	CGFloat _sPointX;
 	UILabel * _stateLable;
 	//难度等级  内部取绝对值
-	CGFloat  _difficultyLevel;
-
+	CGFloat  _difficultyLevel;\
+	UIWebView *_webView;
+	UITextView *_tfV;
 }
 
 @property(nonatomic,assign)BOOL isSuccess;
+//页码
+@property(nonatomic,assign)NSInteger page;
+
 
 @end
 
@@ -32,6 +37,52 @@
 
 - (void)viewDidLoad {
 	[super viewDidLoad];
+	self.navigationItem.title = @"斗破苍穹";
+	UIWebView *webV = [[UIWebView alloc]initWithFrame:CGRectZero];
+	[self.view insertSubview:webV atIndex:0];
+	_tfV = [[UITextView alloc]init];
+	_tfV.font = [UIFont systemFontOfSize:20.0f];
+	[self.view addSubview:_tfV];
+	[_tfV mas_makeConstraints:^(MASConstraintMaker *make) {
+		make.top.mas_equalTo(0);
+		make.left.and.right.equalTo(self.view);
+		make.bottom.mas_equalTo(-30);
+	}];
+	_page = 1;
+	NSString *str = [NSString stringWithFormat:@"http://www.doupobook.com/doupo/%ld.html",(long)_page];
+	NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:str]];
+	webV.delegate = self;
+	_webView = webV;
+	[webV loadRequest:request];
+
+	SV_SHOW;
+	[_tfV.lgOberVer.addObserverKey(@"text") setDidChageMsg:^(id msg) {
+		SV_Dismiss;
+	}];
+
+	NSString *strs[] = {@"上一页",@"下一页"};
+	for (int i = 0; i<2; i++) {
+		UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
+		[self.view addSubview:btn];
+		[btn setTitle:strs[i] forState:UIControlStateNormal];
+		[btn setBackgroundColor:[UIColor blackColor]];
+		btn.tag = i + 100;
+		[btn addTarget:self action:@selector(onClicked:) forControlEvents:UIControlEventTouchUpInside];
+		[btn mas_makeConstraints:^(MASConstraintMaker *make) {
+			make.bottom.mas_equalTo(0);
+			make.top.equalTo(_tfV.mas_bottom);
+			if (i==0) {
+				make.right.mas_equalTo(self.view.mas_centerX).offset(-2);
+				make.left.mas_equalTo(0);
+			}else{
+				make.left.mas_equalTo(self.view.mas_centerX).offset(2);
+				make.right.mas_equalTo(0);
+			}
+			make.bottom.mas_equalTo(0);
+		}];
+	}
+	_tfV.editable = NO;
+	return;
 	_stateLable = [UILabel new];
 	_stateLable.textColor = [UIColor redColor];
 	[self.view addSubview:_stateLable];
@@ -72,12 +123,67 @@
 		NSLog(@"输出 监听 结果|%@",msg);
 	}];
 
+
 	[self.lgOberVer.addObserverKey(@"isSuccess") setDidChageMsg:^(id msg) {
 		NSLog(@"输出是否成功的信息|%@",msg);
 	}];
 
-
 }
+
+
+-(void)onClicked:(UIButton *)btn
+{
+	if (btn.tag == 100) {
+		_page --;
+	}else{
+		_page ++;
+	}
+	if (_page<=0) {
+		_page = 1;
+		return;
+	}
+	SV_SHOW;
+	NSString *str = [NSString stringWithFormat:@"http://www.doupobook.com/doupo/%ld.html",(long)_page];
+	NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:str]];
+	[_webView loadRequest:request];
+}
+
+- (NSString *)getZZwithString:(NSString *)string{
+	NSRegularExpression *regularExpretion=[NSRegularExpression regularExpressionWithPattern:@"<[^>]*>|\n" options:0 error:nil];
+	string = [regularExpretion stringByReplacingMatchesInString:string options:NSMatchingReportProgress range:NSMakeRange(0, string.length) withTemplate:@""];
+	return string;
+}
+-(void)webViewDidFinishLoad:(UIWebView *)webView
+{
+	NSString *htmlNum =  @"document.documentElement.innerHTML";
+	NSString *allHtmlInfo = [webView stringByEvaluatingJavaScriptFromString:htmlNum];
+	NSScanner *theScanner;
+	NSString *text = nil;
+
+	theScanner = [NSScanner scannerWithString:allHtmlInfo];
+
+	while ([theScanner isAtEnd] == NO) {
+			// find start of tag
+		[theScanner scanUpToString:@"<" intoString:NULL] ;
+			// find end of tag
+		[theScanner scanUpToString:@">" intoString:&text] ;
+			// replace the found tag with a space
+			//(you can filter multi-spaces out later if you wish)
+		allHtmlInfo = [allHtmlInfo stringByReplacingOccurrencesOfString:
+					   [NSString stringWithFormat:@"%@>", text]
+															 withString:@""];
+	}
+	NSString *str =  [self getZZwithString:allHtmlInfo];
+	NSArray *strs = [str componentsSeparatedByString:@"输入本网址访问本站，记住了吗？"];
+	str = strs.lastObject;
+	if (str) {
+		str =[str componentsSeparatedByString:@"tuijian();"].firstObject;
+		_tfV.text = str;
+		self.navigationItem.title = [NSString stringWithFormat:@"斗破苍穹(%ld)页",(long)_page];
+	}
+}
+
+
 -(void)gestureDidChange:(UIPanGestureRecognizer *)pan
 {
 	UIWindow *window = [[UIApplication sharedApplication].delegate window];

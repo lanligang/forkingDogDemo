@@ -12,7 +12,7 @@
 #import <Masonry.h>
 #import "BaseTableViewCell.h"
 
-@interface JokeViewController ()<UITableViewDelegate,UITableViewDataSource>
+@interface JokeViewController ()<UITableViewDelegate,UITableViewDataSource,UIWebViewDelegate>
 
 @property(nonatomic,assign)NSInteger startIndex;
 
@@ -20,7 +20,6 @@
 @property (nonatomic,strong)NSMutableDictionary *autoHeightCache;
 @property (nonatomic,strong)UITableView *myTableView;
 @property(nonatomic,assign)NSInteger page;
-
 
 @end
 
@@ -46,8 +45,12 @@
 		[ws requestDatasource];
 	}];
 	_myTableView.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingTarget:self refreshingAction:@selector(loadMoreData)];
+
 	[_myTableView.mj_header beginRefreshing];
+
+
 }
+
 -(void)loadMoreData
 {
 	self.page ++;
