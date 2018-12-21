@@ -36,15 +36,12 @@ SKStoreProductViewControllerDelegate>
 	NSArray *_appIds;
 }
 
-//-(void)viewWillAppear:(BOOL)animated
-//{
-//	[super viewWillAppear:animated];
-//	[self.navigationController setNavigationBarHidden:YES animated:animated];
-//}
-//-(void)viewWillDisappear:(BOOL)animated
-//{
-//	[self.navigationController setNavigationBarHidden:NO animated:animated];
-//}
+-(void)viewWillAppear:(BOOL)animated
+{
+	[super viewWillAppear:animated];
+	[self.navigationController.navigationBar setTranslucent:NO];
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -53,7 +50,6 @@ SKStoreProductViewControllerDelegate>
 
 	[_myTableView mas_makeConstraints:^(MASConstraintMaker *make) {
 		make.edges.mas_equalTo(self.view);
-		make.bottom.mas_equalTo(0);
 	}];
 	_appIds = @[
 				@"989673964",

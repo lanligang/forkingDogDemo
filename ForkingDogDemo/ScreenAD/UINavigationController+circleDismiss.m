@@ -8,6 +8,7 @@
 
 #import "UINavigationController+circleDismiss.h"
 #import <objc/runtime.h>
+#import "CustomNavBar.h"
 
 static char * startView_key = '\0';
 static char * maskLayer_key = '\0';
@@ -194,6 +195,22 @@ static char * isAmimation_key = '\0';
 
 	return CGRectMake(CGRectGetWidth(self.view.bounds)/2.0f, CGRectGetHeight(self.view.bounds)/2.0f, 50, 50);
 }
-
+-(void)configerAlpha:(CGFloat)alpha
+{
+	if ([self.navigationBar isKindOfClass:[CustomNavBar class]]) {
+		CustomNavBar *bar = (CustomNavBar *)self.navigationBar;
+		bar.aAlpha = alpha;
+	}
+}
+-(void)configerColor:(UIColor *)color
+{
+	if ([self.navigationBar isKindOfClass:[CustomNavBar class]]) {
+		CustomNavBar *bar = (CustomNavBar *)self.navigationBar;
+		bar.barTintColor = color;
+		[UIView animateWithDuration:0.1 animations:^{
+			bar.bgView.backgroundColor = color;
+		}];
+	}
+}
 
 @end

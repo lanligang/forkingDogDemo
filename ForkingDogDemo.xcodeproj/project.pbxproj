@@ -166,6 +166,12 @@
 		8F5E639E20035286005E21A4 /* LgTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F5E639D20035286005E21A4 /* LgTabBar.m */; };
 		8F5E63A120035343005E21A4 /* LgTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F5E63A020035343005E21A4 /* LgTabBarViewController.m */; };
 		8F630A8421252612006EA924 /* UIView+LGAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F630A8321252612006EA924 /* UIView+LGAnimation.m */; };
+		8F72B2AC21CC74B300D2D4D5 /* CustomNavBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F72B2A921CC74B200D2D4D5 /* CustomNavBar.m */; };
+		8F72B2AD21CC74B300D2D4D5 /* CustomNavBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F72B2A921CC74B200D2D4D5 /* CustomNavBar.m */; };
+		8F72B2AE21CC74B300D2D4D5 /* CustomNavBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F72B2A921CC74B200D2D4D5 /* CustomNavBar.m */; };
+		8F72B2AF21CC74B300D2D4D5 /* CustomNavVc.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F72B2AB21CC74B300D2D4D5 /* CustomNavVc.m */; };
+		8F72B2B021CC74B300D2D4D5 /* CustomNavVc.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F72B2AB21CC74B300D2D4D5 /* CustomNavVc.m */; };
+		8F72B2B121CC74B300D2D4D5 /* CustomNavVc.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F72B2AB21CC74B300D2D4D5 /* CustomNavVc.m */; };
 		8F76F24E21CB69AA0064E5D5 /* NSString+Hash.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F76F24D21CB69AA0064E5D5 /* NSString+Hash.m */; };
 		8F76F24F21CB69AA0064E5D5 /* NSString+Hash.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F76F24D21CB69AA0064E5D5 /* NSString+Hash.m */; };
 		8F76F25021CB69AA0064E5D5 /* NSString+Hash.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F76F24D21CB69AA0064E5D5 /* NSString+Hash.m */; };
@@ -418,6 +424,10 @@
 		8F5E63A020035343005E21A4 /* LgTabBarViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LgTabBarViewController.m; sourceTree = "<group>"; };
 		8F630A8221252612006EA924 /* UIView+LGAnimation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+LGAnimation.h"; sourceTree = "<group>"; };
 		8F630A8321252612006EA924 /* UIView+LGAnimation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+LGAnimation.m"; sourceTree = "<group>"; };
+		8F72B2A821CC74B200D2D4D5 /* CustomNavVc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomNavVc.h; sourceTree = "<group>"; };
+		8F72B2A921CC74B200D2D4D5 /* CustomNavBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomNavBar.m; sourceTree = "<group>"; };
+		8F72B2AA21CC74B300D2D4D5 /* CustomNavBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomNavBar.h; sourceTree = "<group>"; };
+		8F72B2AB21CC74B300D2D4D5 /* CustomNavVc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomNavVc.m; sourceTree = "<group>"; };
 		8F76F24C21CB69AA0064E5D5 /* NSString+Hash.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+Hash.h"; sourceTree = "<group>"; };
 		8F76F24D21CB69AA0064E5D5 /* NSString+Hash.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+Hash.m"; sourceTree = "<group>"; };
 		8F76F25221CB6A7B0064E5D5 /* app_action.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = app_action.png; sourceTree = "<group>"; };
@@ -805,6 +815,10 @@
 		8F630A8C212587F4006EA924 /* VC */ = {
 			isa = PBXGroup;
 			children = (
+				8F72B2AA21CC74B300D2D4D5 /* CustomNavBar.h */,
+				8F72B2A921CC74B200D2D4D5 /* CustomNavBar.m */,
+				8F72B2A821CC74B200D2D4D5 /* CustomNavVc.h */,
+				8F72B2AB21CC74B300D2D4D5 /* CustomNavVc.m */,
 				8FE02EDC1FFCADAB00CE62F1 /* ViewController.h */,
 				8FE02EDD1FFCADAC00CE62F1 /* ViewController.m */,
 				8FCAC28B20006D7F005128BB /* LeftViewController.h */,
@@ -1308,6 +1322,7 @@
 				8FCC310A21B10FB400A5B924 /* MySCNScene.m in Sources */,
 				8FE02F4E1FFCEF4100CE62F1 /* SDWebImageDownloader.m in Sources */,
 				8FE02F451FFCEF4100CE62F1 /* SDImageCacheConfig.m in Sources */,
+				8F72B2AF21CC74B300D2D4D5 /* CustomNavVc.m in Sources */,
 				8FC0E1A421A78C6B00DC4C98 /* DCCycleScrollViewCell.m in Sources */,
 				8FCAC29320007B99005128BB /* UIViewController+LgMenu.m in Sources */,
 				8F1740CA21C7709F001CF990 /* OpenCloseModel.m in Sources */,
@@ -1326,6 +1341,7 @@
 				4CFCC79C214EC8C900600E19 /* MJRefreshBackGifFooter.m in Sources */,
 				8F1740BC21C74859001CF990 /* NSObject+LgObserver.m in Sources */,
 				8F11FE3E21C89DD400C5F713 /* MasScrollDemoVC.m in Sources */,
+				8F72B2AC21CC74B300D2D4D5 /* CustomNavBar.m in Sources */,
 				4CFCC7AE214EC8C900600E19 /* MJChiBaoZiFooter.m in Sources */,
 				8F11FE5C21C8F49300C5F713 /* JokeModels.m in Sources */,
 				4CFCC784214EC8C800600E19 /* MJRefreshAutoFooter.m in Sources */,
@@ -1388,6 +1404,7 @@
 				4CFCC7C7214EC8C900600E19 /* NSBundle+MJRefresh.m in Sources */,
 				8F11FE3F21C89DD400C5F713 /* MasScrollDemoVC.m in Sources */,
 				4CFCC7BB214EC8C900600E19 /* MJDIYBackFooter.m in Sources */,
+				8F72B2AD21CC74B300D2D4D5 /* CustomNavBar.m in Sources */,
 				4CFCC7CD214EC8C900600E19 /* UIScrollView+MJRefresh.m in Sources */,
 				4CFCC7AC214EC8C900600E19 /* MJRefreshStateHeader.m in Sources */,
 				8FAA240B212E4DEC00E99674 /* UIScrollView+PopScrollView.m in Sources */,
@@ -1417,6 +1434,7 @@
 				8FE02F611FFCEF4100CE62F1 /* UIImage+MultiFormat.m in Sources */,
 				4CFCC785214EC8C800600E19 /* MJRefreshAutoFooter.m in Sources */,
 				4CFCC7E5214ED44A00600E19 /* CollectionViewHeader.m in Sources */,
+				8F72B2B021CC74B300D2D4D5 /* CustomNavVc.m in Sources */,
 				4CFCC78E214EC8C900600E19 /* MJRefreshFooter.m in Sources */,
 				8F11FE4A21C8BBCB00C5F713 /* UITextView+input.m in Sources */,
 				4CFCC7B8214EC8C900600E19 /* MJDIYAutoFooter.m in Sources */,
@@ -1462,6 +1480,7 @@
 				4CFCC7C8214EC8C900600E19 /* NSBundle+MJRefresh.m in Sources */,
 				8F11FE4021C89DD400C5F713 /* MasScrollDemoVC.m in Sources */,
 				4CFCC7BC214EC8C900600E19 /* MJDIYBackFooter.m in Sources */,
+				8F72B2AE21CC74B300D2D4D5 /* CustomNavBar.m in Sources */,
 				4CFCC7CE214EC8C900600E19 /* UIScrollView+MJRefresh.m in Sources */,
 				4CFCC7AD214EC8C900600E19 /* MJRefreshStateHeader.m in Sources */,
 				8FAA240C212E4DEC00E99674 /* UIScrollView+PopScrollView.m in Sources */,
@@ -1491,6 +1510,7 @@
 				8FE02F621FFCEF4100CE62F1 /* UIImage+MultiFormat.m in Sources */,
 				4CFCC786214EC8C800600E19 /* MJRefreshAutoFooter.m in Sources */,
 				4CFCC7E6214ED44A00600E19 /* CollectionViewHeader.m in Sources */,
+				8F72B2B121CC74B300D2D4D5 /* CustomNavVc.m in Sources */,
 				4CFCC78F214EC8C900600E19 /* MJRefreshFooter.m in Sources */,
 				8F11FE4B21C8BBCB00C5F713 /* UITextView+input.m in Sources */,
 				4CFCC7B9214EC8C900600E19 /* MJDIYAutoFooter.m in Sources */,

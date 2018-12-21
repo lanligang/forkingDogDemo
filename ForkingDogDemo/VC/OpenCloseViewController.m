@@ -16,7 +16,6 @@
 @property (nonatomic,strong)NSMutableArray *dataSource;
 @property (nonatomic,strong)NSMutableDictionary *autoHeightCache;
 @property (nonatomic,strong)UITableView *myTableView;
-@property(nonatomic,assign)BOOL isOpen;
 
 @end
 
@@ -30,11 +29,6 @@
 		make.edges.equalTo(self.view);
 	}];
 	[self requestData];
-	if (@available(iOS 11.0, *)) {
-		_myTableView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
-	}else{
-		self.automaticallyAdjustsScrollViewInsets = NO;
-	}
 }
 
 -(void)requestData

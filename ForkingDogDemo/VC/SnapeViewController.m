@@ -13,11 +13,15 @@
 #import "RequestBaseTool.h"
 #import "SVHUDMacro.h"
 #import "LgPageControlViewController.h"
+#import "UINavigationController+circleDismiss.h"
 
 @interface SnapeViewController ()<LgPageControlDelegate>{
 	LgPageControlViewController *_pageVc;
+	LgPageView *_pageView;
 
 }
+@property (nonatomic,strong)NSMutableArray *zongyeshus;
+
 @property (nonatomic,strong)NSMutableArray *dataSource;
 
 @property (nonatomic,strong)NSMutableArray *jokeIds;
@@ -26,10 +30,18 @@
 
 @implementation SnapeViewController
 
+-(void)viewWillAppear:(BOOL)animated
+{
+	[super viewWillAppear:animated];
+	[self.navigationController configerAlpha:1.0f];
+	[self.navigationController configerColor:[[UIColor orangeColor]colorWithAlphaComponent:1.0f]];
+	[self.navigationController.navigationBar setTranslucent:YES];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-
+	self.navigationItem.title = @"笑话大全";
 	NSString *urlStr = @"http://khd.funnypicsbox.com/jokes/lanmu.json";
 	SV_NOHIDDEN
 	[RequestBaseTool getUrlStr:urlStr andParms:nil andCompletion:^(id obj) {
@@ -40,6 +52,7 @@
 				NSDictionary *dic = array[i];
 				[self.dataSource addObject:dic[@"leibie"]];
 				[self.jokeIds addObject:[NSString stringWithFormat:@"%@",dic[@"leibieid"]]];
+				[self.zongyeshus addObject:[NSString stringWithFormat:@"%@",dic[@"zongyeshu"]]];
 			}
 			//刷新表数据
 			[_pageVc reloadData];
@@ -49,16 +62,15 @@
 
 	}];
 
+CGFloat topY =	CGRectGetHeight([UIApplication sharedApplication].statusBarFrame) + CGRectGetHeight(self.navigationController.navigationBar.frame);
 
-	[self.navigationController.navigationBar setTranslucent:NO];
-
-	LgPageView *pageView =[[LgPageView alloc]initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.view.frame), 40.0f)
+	LgPageView *pageView =[[LgPageView alloc]initWithFrame:CGRectMake(0, topY, CGRectGetWidth(self.view.frame), 40.0f)
 											  andTitleFont:[UIFont systemFontOfSize:18.0f]
 										   andSeletedColor:[UIColor redColor]
 											andNormalColor:[UIColor lightGrayColor]
 											  andLineColor:[UIColor redColor]
 											 andLineHeight:3.0f];
-
+	_pageView = pageView;
 	[self.view addSubview:pageView];
 
 	LgPageControlViewController *pageVc = [[LgPageControlViewController alloc]initWithTitleView:pageView andDelegateVc:self];
@@ -70,7 +82,16 @@
 								   CGRectGetWidth(self.view.frame),
 								   CGRectGetHeight(self.view.frame)- CGRectGetMaxY(pageView.frame));
 }
-
+-(void)viewWillLayoutSubviews
+{
+	[super viewWillLayoutSubviews];\
+	CGFloat topY =	CGRectGetHeight([UIApplication sharedApplication].statusBarFrame) + CGRectGetHeight(self.navigationController.navigationBar.frame);
+	_pageView.frame = CGRectMake(0, topY, CGRectGetWidth(self.view.frame), 40.0f);
+	_pageVc.view.frame = CGRectMake(0,
+								   CGRectGetMaxY(_pageView.frame),
+								   CGRectGetWidth(self.view.frame),
+								   CGRectGetHeight(self.view.frame)- CGRectGetMaxY(_pageView.frame));
+}
 -(UIBezierPath *)getBezierPath
 {
 	UIBezierPath *path = [UIBezierPath bezierPathWithRect:CGRectMake(0, 0, 10, 10)];
@@ -107,6 +128,7 @@
 	*vc = ({
 		id aVc =  (UIViewController *)[[NSClassFromString(@"JokeViewController") alloc]init];
 		[aVc setValue:self.jokeIds[index] forKey:@"jokeId"];
+		[aVc setValue:self.zongyeshus[index] forKey:@"maxPage"];
 		aVc;
 	});
 }
@@ -124,6 +146,16 @@
 	 }
 	return _dataSource;
 }
+-(NSMutableArray *)zongyeshus
+{
+	if (!_zongyeshus)
+	 {
+		_zongyeshus = [[NSMutableArray alloc]init];
+	 }
+	return _zongyeshus;
+}
+
+
 -(NSMutableArray *)jokeIds
 {
 	if (!_jokeIds)

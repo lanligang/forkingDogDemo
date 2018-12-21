@@ -37,9 +37,11 @@
 	}else{
 		self.automaticallyAdjustsScrollViewInsets = NO;
 	}
+	NSInteger maxIndex = (self.maxPage == nil ||[self.maxPage isKindOfClass:[NSNull class]]||[self.maxPage isEqualToString:@""])?2: [self.maxPage integerValue];
+	NSLog(@"输出总页数| %@",self.maxPage);
 	__weak typeof(self)ws  = self;
 	_myTableView.mj_header = [MJRefreshGifHeader headerWithRefreshingBlock:^{
-		ws.startIndex =1+ arc4random() %300;
+		ws.startIndex =1+ arc4random() % maxIndex;
 		ws.page = ws.startIndex;
 		[ws requestDatasource];
 	}];
@@ -94,6 +96,12 @@
 }
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+	UIViewController *vc = [[NSClassFromString(@"MasScrollDemoVC") alloc]init];
+	if ((indexPath.row %2) == 0) {
+		[vc setValue:@(1) forKey:@"isHorizontal"];
+	}
+	vc.hidesBottomBarWhenPushed = YES;
+	[self.navigationController pushViewController:vc animated:YES];
 
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section

@@ -85,7 +85,9 @@
 - (void)viewDidLoad {
     
     [super viewDidLoad];
+	self.navigationController.navigationBar.translucent = YES;
     [self setTitleView];
+
     self.view.backgroundColor = [UIColor whiteColor];
     [self.view addSubview:self.myTableView];
     
@@ -134,7 +136,9 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-	
+	UIViewController *vc = [[NSClassFromString(@"OpenCloseViewController") alloc]init];
+	vc.hidesBottomBarWhenPushed = YES;
+	[self.navigationController pushViewController:vc animated:YES];
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section

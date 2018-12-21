@@ -81,6 +81,7 @@
 		_currentAnimation = _circleImgView2;
 	}
 	[self.contentView bringSubviewToFront:_currentAnimation];
+	
 }
 
 -(void)layoutSubviews

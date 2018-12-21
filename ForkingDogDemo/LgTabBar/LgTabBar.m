@@ -8,7 +8,9 @@
 
 #import "LgTabBar.h"
 #import "UIColor+Hex.h"
-@implementation LgTabBar
+@implementation LgTabBar {
+
+}
 
 -(instancetype)initWithFrame:(CGRect)frame
 {
@@ -40,8 +42,9 @@
     
     CGFloat centerY = 15;
     
-    _bigButton.center =(CGPoint){barWidth/2.0f,centerY};
-    
+	if (_bigButton.center.x != barWidth/2.0f) {
+		 _bigButton.center =(CGPoint){barWidth/2.0f,centerY};
+	}
     CGFloat centerBtnWidth = CGRectGetWidth(_bigButton.frame)+10.0f;
     
     CGFloat barItemWidth = (barWidth - centerBtnWidth) / tabBarButtonArray.count;
@@ -99,7 +102,7 @@
 	[_cirCleBezierPath addLineToPoint:point4];
 	[_cirCleBezierPath addLineToPoint:point5];
 	self.circleLayer.path = _cirCleBezierPath.CGPath;
-	_circleLayer.fillColor = [[UIColor colorWithHexString:@"#333333"] colorWithAlphaComponent:1.0f].CGColor;
+	_circleLayer.fillColor = [[UIColor whiteColor] colorWithAlphaComponent:1.0f].CGColor;
 	_circleLayer.shadowColor = [UIColor lightGrayColor].CGColor;
 	_circleLayer.shadowOffset = CGSizeMake(0, -2);
 	_circleLayer.shadowOpacity = 0.3;

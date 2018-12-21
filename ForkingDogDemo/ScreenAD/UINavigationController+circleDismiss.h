@@ -24,5 +24,7 @@
 //收回的动画
 -(void)circleAnimationDismiss;
 
+-(void)configerAlpha:(CGFloat)alpha;
+-(void)configerColor:(UIColor *)color;
 
 @end

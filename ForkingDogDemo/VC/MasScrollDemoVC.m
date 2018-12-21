@@ -9,19 +9,26 @@
 #import "MasScrollDemoVC.h"
 #import <Masonry.h>
 #import "UITextField+input.h"
+#import "UINavigationController+circleDismiss.h"
 
-@interface MasScrollDemoVC ()
+@interface MasScrollDemoVC ()<UIScrollViewDelegate>
 {
 	UIScrollView *_bgScrollView;
 }
 @end
 
 @implementation MasScrollDemoVC
-
+-(void)viewWillAppear:(BOOL)animated
+{
+	[super viewWillAppear:animated];
+	[self.navigationController configerColor:[UIColor orangeColor]];
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
+	[self.navigationController.navigationBar setTranslucent:YES];
 	//针对于在ScrollView 上使用mas 约束
 	_bgScrollView = [UIScrollView new];
+	_bgScrollView.delegate = self;
 	//不超过长度也可以滑动
 	if (_isHorizontal) {
 		_bgScrollView.pagingEnabled = YES;
@@ -29,32 +36,38 @@
 	}else{
 		_bgScrollView.alwaysBounceVertical = YES;
 	}
-	_bgScrollView.backgroundColor = [UIColor blackColor];
+	_bgScrollView.backgroundColor = [UIColor whiteColor];
 
 	[self.view addSubview:_bgScrollView];
+
 
 	[self setUpUI];
 
 }
+-(void)backAction:(id)sender
+{
+	[self.navigationController popViewControllerAnimated:YES];
+}
 //构建UI布局
 -(void)setUpUI
 {
+	UIBarButtonItem *item = [[UIBarButtonItem alloc]initWithTitle:@"< 返回" style:UIBarButtonItemStylePlain target:self action:@selector(backAction:)];
+	[item setTintColor:[UIColor whiteColor]];
+	self.navigationItem.leftBarButtonItem = item;
 
 	UIView *containtView = [UIView new];
 	[_bgScrollView addSubview:containtView];
 	[_bgScrollView mas_makeConstraints:^(MASConstraintMaker *make) {
 		make.edges.equalTo(self.view);
 	}];
-
 	[containtView mas_makeConstraints:^(MASConstraintMaker *make) {
 		make.edges.equalTo(_bgScrollView);
 		if (_isHorizontal) {
-			make.height.equalTo(self.view);
+			make.height.mas_equalTo(100);
 		}else{
 			make.width.equalTo(self.view);
 		}
 	}];
-
 	UIView *lastV = nil;
 	UIColor *colors[6] = {
 		[UIColor redColor],
@@ -108,8 +121,15 @@
 			make.bottom.equalTo(lastV.mas_bottom).offset(10);
 		}
 	}];
-
 }
+
+-(void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate
+{
+	if (decelerate) {
+
+	}
+}
+
 
 /*
 #pragma mark - Navigation

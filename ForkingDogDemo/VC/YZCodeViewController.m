@@ -10,6 +10,7 @@
 #import "LGYZCodeImgView.h"
 #import <Masonry.h>
 #import "NSString+Hash.h"
+#import "NSObject+LgObserver.h"
 
 @interface YZCodeViewController ()<UIGestureRecognizerDelegate>
 {
@@ -30,8 +31,7 @@
 @implementation YZCodeViewController
 
 - (void)viewDidLoad {
-    [super viewDidLoad];
-
+	[super viewDidLoad];
 	_stateLable = [UILabel new];
 	_stateLable.textColor = [UIColor redColor];
 	[self.view addSubview:_stateLable];
@@ -60,17 +60,46 @@
 	UIPanGestureRecognizer *pan = [[UIPanGestureRecognizer alloc]init];
 	[pan addTarget:self action:@selector(gestureDidChange:)];
 	[self.view addGestureRecognizer:pan];
+	self.view.backgroundColor = [UIColor yellowColor];
+
+	[self.view.lgOberVer
+	 .addObserverKey(@"bounds")
+	 .addObserverKey(@"backgroundColor")
+	 .addObserverKey(@"frame")
+	 .addObserverKey(@"transform")
+	 setDidChageMsg:^(id msg) {
+
+		NSLog(@"输出 监听 结果|%@",msg);
+	}];
+
+	[self.lgOberVer.addObserverKey(@"isSuccess") setDidChageMsg:^(id msg) {
+		NSLog(@"输出是否成功的信息|%@",msg);
+	}];
+
+
 }
 -(void)gestureDidChange:(UIPanGestureRecognizer *)pan
 {
-	CGPoint p = [pan locationInView:self.view];
+	UIWindow *window = [[UIApplication sharedApplication].delegate window];
+	CGPoint p = [pan locationInView:window];
+	CGPoint vP = [pan velocityInView:window];
 	if (pan.state == UIGestureRecognizerStateBegan) {
 		_lastPoint = p;
 		_stateLable.text = @"从左向右滑动屏幕";
 	}else if (pan.state == UIGestureRecognizerStateChanged){
+
+		if (fabs(vP.y)>fabs(vP.x)) {
+			//纵向滑动
+			if (fabs(_lastPoint.y - p.y)>0.1) {
+				self.view.bounds = CGRectMake(self.view.bounds.origin.x, self.view.bounds.origin.y + (_lastPoint.y - p.y), CGRectGetWidth(self.view.bounds), CGRectGetHeight(self.view.bounds));
+				_lastPoint = p;
+			}
+		}else{
+			//横向滑动
 			_tView .center = CGPointMake(p.x, _tView.center.y);
-		LGYZCodeImgView *rectV = (LGYZCodeImgView *)_tView;
-		[rectV showLine:YES];
+			LGYZCodeImgView *rectV = (LGYZCodeImgView *)_tView;
+			[rectV showLine:YES];
+		}
 	}else if (pan.state == UIGestureRecognizerStateEnded){
 			if (fabs(_tView .center.x -_sPointX)<= fabs(_difficultyLevel)) {
 				[UIView animateWithDuration:0.2 animations:^{
@@ -78,13 +107,19 @@
 				}];
 				LGYZCodeImgView *rectV = (LGYZCodeImgView *)_tView;
 				[rectV showLine:NO];
-				_stateLable.text = @"真棒👍！！！";
+				self.isSuccess = YES;
 				[self yzCode];
 			}else{
 				[UIView animateWithDuration:0.2 animations:^{
 					_tView.center = _startPoint;
 				}];
-				_stateLable.text = @"请重新滑动";
+				self.isSuccess = NO;
+			}
+			if (fabs(vP.y)>fabs(vP.x)) {
+				[UIView animateWithDuration:atan(fabs(vP.y))*0.4 delay:0 options:UIViewAnimationOptionCurveLinear animations:^{
+					self.view.bounds = CGRectMake(self.view.bounds.origin.x, self.view.bounds.origin.y + - vP.y*0.3f, CGRectGetWidth(self.view.bounds), CGRectGetHeight(self.view.bounds));
+				} completion:^(BOOL finished) {
+				}];
 			}
 	}
 }

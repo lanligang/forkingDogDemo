@@ -14,6 +14,7 @@
 #import "UIView+LGAnimation.h"
 #import "SnapeViewController.h"
 #import "YZCodeViewController.h"
+#import "CustomNavVc.h"
 
 @interface LgTabBarViewController ()<LgTabBarDelegate,UITabBarControllerDelegate>
 @property (nonatomic, strong) NSMutableArray  *circleViews;
@@ -102,10 +103,10 @@
 	
     YZCodeViewController *vc4 = [[YZCodeViewController alloc]init];
 
-    UINavigationController *nav = [[UINavigationController alloc]initWithRootViewController:vc];
-   UINavigationController *nav2 = [[UINavigationController alloc]initWithRootViewController:vc2];
-   UINavigationController *nav3 = [[UINavigationController alloc]initWithRootViewController:vc3];
-   UINavigationController *nav4 = [[UINavigationController alloc]initWithRootViewController:vc4];
+    CustomNavVc *nav = [[CustomNavVc alloc]initWithRootViewController:vc];
+   CustomNavVc *nav2 = [[CustomNavVc alloc]initWithRootViewController:vc2];
+   CustomNavVc *nav3 = [[CustomNavVc alloc]initWithRootViewController:vc3];
+   CustomNavVc *nav4 = [[CustomNavVc alloc]initWithRootViewController:vc4];
 
     UITabBarItem *item1 = [[UITabBarItem alloc]init];
 	item1.tag = 0;
