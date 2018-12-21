@@ -21,10 +21,12 @@
 
 #import "GameViewController.h"
 #import "ADScreenManager.h"
+#import "LgPageControlViewController.h"
+#import "UINavigationController+circleDismiss.h"
 
-
-@interface ViewController ()<UITableViewDelegate,UITableViewDataSource>{
-	ADTableViewCell *_adCell;
+@interface ViewController ()<LgPageControlDelegate>{
+	LgPageControlViewController *_pageVc;
+	LgPageView *_pageView;
 }
 
 @property (nonatomic,strong)UITableView *myTableView;
@@ -32,7 +34,7 @@
 
 @property (nonatomic,strong)NSMutableArray *dataSource;
 
-@property (nonatomic,strong)NSMutableDictionary *autoHeightCache;
+@property (nonatomic,strong)NSMutableDictionary *dic;
 
 
 @end
@@ -88,14 +90,37 @@
 	self.navigationController.navigationBar.translucent = YES;
     [self setTitleView];
 
-    self.view.backgroundColor = [UIColor whiteColor];
-    [self.view addSubview:self.myTableView];
-    
-    [_myTableView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.edges.mas_equalTo(self.view);
-     make.bottom.mas_equalTo(0);
-    }];
+	CGFloat topY =	CGRectGetHeight([UIApplication sharedApplication].statusBarFrame) + CGRectGetHeight(self.navigationController.navigationBar.frame);
+	[self.dataSource addObjectsFromArray:@[@"斗破苍穹",@"斗破苍穹之无上之境",@"斗破苍穹之重生萧炎",@"斗破苍穹2",@"斗破苍穹续集天蚕土豆",@"斗破苍穹之穿越轮回"]];
+	for (NSString *key in self.dataSource) {
+		NSDictionary *aDic = @{
+							   @"minePage":@"1",@"pageCount":@"1624",
+							   @"minePage":@"1",@"pageCount":@"1624",
+							   @"minePage":@"1",@"pageCount":@"1624",
+							   @"minePage":@"1",@"pageCount":@"1624",
+							   @"minePage":@"1",@"pageCount":@"1624",
+							   @"minePage":@"1",@"pageCount":@"1624",
+							   @"minePage":@"1",@"pageCount":@"1624",
+							   };
+		[self.dic setObject:aDic forKey:key];
+	}
+	LgPageView *pageView =[[LgPageView alloc]initWithFrame:CGRectMake(0, topY, CGRectGetWidth(self.view.frame), 40.0f)
+											  andTitleFont:[UIFont systemFontOfSize:18.0f]
+										   andSeletedColor:[UIColor redColor]
+											andNormalColor:[UIColor lightGrayColor]
+											  andLineColor:[UIColor redColor]
+											 andLineHeight:3.0f];
+	_pageView = pageView;
+	[self.view addSubview:pageView];
 
+	LgPageControlViewController *pageVc = [[LgPageControlViewController alloc]initWithTitleView:pageView andDelegateVc:self];
+	pageVc.canClearSubVcCache = YES;
+	pageVc.minClearCount = 2;
+	_pageVc = pageVc;
+	pageVc.view.frame = CGRectMake(0,
+								   CGRectGetMaxY(pageView.frame),
+								   CGRectGetWidth(self.view.frame),
+								   CGRectGetHeight(self.view.frame)- CGRectGetMaxY(pageView.frame));
  UIBarButtonItem *rightItem = [[UIBarButtonItem alloc]initWithImage:[[UIImage imageNamed:@"header_left"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] style:UIBarButtonItemStylePlain target:self action:@selector(openAction:)];
  self.navigationItem.leftBarButtonItem = rightItem;
 	//[ADScreenManager showScreenAmimation];
@@ -104,134 +129,48 @@
 {
    [self openLgMenu];
 }
--(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+#pragma mark LgPageControlDelegate
+
+-(NSInteger)lgPageControl:(LgPageControlViewController *)pageController
 {
-    return 1;
+	return self.dataSource.count;
 }
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+-(UIViewController *)lgPageControl:(LgPageControlViewController *)pageController withIndex:(NSInteger)index
 {
-    return self.dataSource.count;
+	UIViewController *vc = nil;
+	[self vcWithIndex:index andVc:&vc];
+	return vc;
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+-(void)vcWithIndex:(NSInteger)index andVc:(UIViewController **)vc
 {
-    NSString *identifier = @"MixTableViewCell";
-    if (indexPath.row==0||indexPath.row==4) {
-        identifier = @"TextTableViewCell";
-	 }else if (indexPath.row==2||indexPath.row==1||indexPath.row==3){
-	  identifier = @"MasTextCellTableViewCell";
-	 }else if(indexPath.row==5){
-		 ADTableViewCell *adCell = [tableView dequeueReusableCellWithIdentifier:@"ADTableViewCell" forIndexPath:indexPath];
-		 
-		 return adCell;
-	 }else{
-		  identifier = @"TextTableViewCell";
-	 }
-    BaseTableViewCell *cell = nil;
-    cell =  [tableView dequeueReusableCellWithIdentifier:identifier forIndexPath:indexPath];
-    cell.model = self.dataSource[indexPath.row];
-    [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
-    return cell;
+	*vc = ({
+		id aVc =  (UIViewController *)[[NSClassFromString(@"YZCodeViewController") alloc]init];
+		[aVc setValue:self.dataSource[index] forKey:@"title"];
+		aVc;
+	});
 }
 
--(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+-(NSArray *)lgPageTitlesWithLgPageView:(LgPageView *)pageView
 {
-	UIViewController *vc = [[NSClassFromString(@"OpenCloseViewController") alloc]init];
-	vc.hidesBottomBarWhenPushed = YES;
-	[self.navigationController pushViewController:vc animated:YES];
+	return self.dataSource;
 }
 
--(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
-{
-    return CGFLOAT_MIN;
-}
--(CGFloat)tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-	//如果想要预估区头和区尾同样的方法
-	NSString *key = [NSString stringWithFormat:@"%@_%ld",indexPath,(long)tableView.tag];
-	NSNumber * heightNum = self.autoHeightCache[key];
-	if(heightNum)return heightNum.floatValue;
-	return 44.0f;
-}
--(void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-	NSString *key = [NSString stringWithFormat:@"%@_%ld",indexPath,(long)tableView.tag];
-	CGFloat height =  CGRectGetHeight(cell.frame);
-	self.autoHeightCache[key] = @(height);
-	if ([cell isKindOfClass:[ADTableViewCell class]]) {
-		_adCell = (ADTableViewCell *)cell;
-		[_adCell configeBegainAnimation];
-	}
-}
-
--(void)tableView:(UITableView *)tableView didEndDisplayingCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-	if (_adCell) {
-		if ([cell isEqual:_adCell]) {
-			_adCell = nil;
-		}
-	}
-}
-
--(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-	return UITableViewAutomaticDimension;
-}
-
--(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
-{
-    return nil;
-}
-
--(UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section
-{
-    return nil;
-}
-
--(void)scrollViewDidScroll:(UIScrollView *)scrollView
-{
-	if (_adCell) {
-		[_adCell configeAdImgCircle];
-	}
-}
-
-
-#pragma mark Getter
 -(NSMutableArray *)dataSource
 {
-    if (!_dataSource)
-    {
-        _dataSource = [@[@"本来包妹已经预料好，晚会直播为了保证效果，假唱也是正常的，可以接受。巴特，今年这一场，我真的震惊了，上去假唱的部分朋友，怕是我把当成聋子和傻子吧",@"本来包妹已经预料好，晚会直播为了保证效果，假唱也是正常的，可以接受。巴特，今年这一场，我真的震惊了，上去假唱的部分朋友，怕是我把当成聋子和傻子吧",@"本来包妹已经预料好，晚会直播为了保证效果，假唱也是正常的，可以接受。巴特，今年这一场，我真的震惊了，上去假唱的部分朋友，怕是我把当成聋子和傻子吧",@"本来包妹已经预料好，晚会直播为了保证效果，假唱也是正常的，可以接受。巴特，今年这一场，我真的震惊了，上去假唱的部分朋友，怕是我把当成聋子和傻子吧",@"本来包妹已经预料好，晚会直播为了保证效果，假唱也是正常的，可以接受。巴特，今年这一场，我真的震惊了，上去假唱的部分朋友，怕是我把当成聋子和傻子吧",@"本来包妹已经预料好，晚会直播为了保证效果，假唱也是正常的，可以接受。巴特，今年这一场，我真的震惊了，上去假唱的部分朋友，怕是我把当成聋子和傻子吧",@"本来包妹已经预料好，晚会直播为了保证效果，假唱也是正常的，可以接受。巴特，今年这一场，我真的震惊了，上去假唱的部分朋友，怕是我把当成聋子和傻子吧",@"本来包妹已经预料好，晚会直播为了保证效果，假唱也是正常的，可以接受。巴特，今年这一场，我真的震惊了，上去假唱的部分朋友，怕是我把当成聋子和傻子吧",
-								 @"在使用mas 自动计算高度的时候 可以避免一些不太会使用xib的人的一些麻烦  关键的一句代码必须要有 敲黑板 划重点‘ make.bottom.equalTo(self.contentView.mas_bottom).offset(-10);  ’ 晚会直播为了保证效果，假唱也是正常的，可以接受。巴特，今年这一场，我真的震惊了，上去假唱的部分朋",
-								 @"做好xib约束,用此库计算cell的高度,其中需要注意的一点是label的高度自适应需要增加一句做好xib约束,用此库计算cell的高度,其中需要注意的一点是label的高度自适应需要增加一句代码:  self.testLabel.preferredMaxLayoutWidth = [UIScreen 做好xib约束,用此库计算cell的高度,其中需要注意的一点是label的高度自适应需要增加一句代码:  self.testLabel.preferredMaxLayoutWidth = [UIScreen 做好xib约束,用此库计算cell的高度,其中需要注意的一点是label的高度自适应需要增加一句代码:  self.testLabel.preferredMaxLayoutWidth = [UIScreen 做好xib约束,用此库计算cell的高度,其中需要注意的一点是label的高度自适应需要增加一句代码:  self.testLabel.preferredMaxLayoutWidth = [UIScreen 代码:  self.testLabel.preferredMaxLayoutWidth = [UIScreen ",@"做好xib约束,用此库计算cell的高度,其中需要注意的一点是label的高度自适应需要增加一句代码:  self.testLabel.preferredMaxLayoutWidth = [UIScreen 做好xib约束,用此库计算cell的高度,其中需要注意的一点是label的高度自适应需要增加一句代码:  self.testLabel.preferredMaxLayoutWidth = [UIScreen 做好xib约束,用此库计算cell的高度,其中需要注意的一点是label的高度自适应需要增加一句代码:  self.testLabel.preferredMaxLayoutWidth = [UIScreen ",@"做好xib约束,用此库计算cell的高度,其中需要注意的一点是label的高度自适应需要增加一句代码:  self.testLabel.preferredMaxLayoutWidth = [UIScreen 做好xib约束,用此库计算cell的高度,其中需要注意的一点是label的高度自适应需要增加一句代码:  self.testLabel.preferredMaxLayoutWidth = [UIScreen ",@"经预料好，晚会直播为了保证效果，假唱也是正常的，可以接受。巴特，今年这一场，我真的震惊了，上去假唱的部分朋友，怕是我把经预料好，晚会直播为了保证效果，假唱也是正常的，可以接受。巴特，今年这一场，我真的震惊了，上去假唱的部分朋友，怕是我把经预料好，晚会直播为了保证效果，假唱也是正常的，可以接受。巴特，今年这一场，我真的震惊了，上去假唱的部分朋友，怕是我把经预料好，晚会直播为了保证效果，假唱也是正常的，可以接受。巴特，今年这一场，我真的震惊了，上去假唱的部分朋友，怕是我把",@"经预料好，晚会直播为了保证效果，假唱也是正常的，可以接受。巴特，今年这一场，我真的震惊了，上去假唱的部分朋友，怕是我把经预料好，晚会直播为了保证效果，假唱也是正常的，可以接受。巴特，今年这一场，我真的震惊了，上去假唱的部分朋友，怕是我把经预料好，晚会直播为了保证效果，假唱也是正常的，可以接受。巴特，今年这一场，我真的震惊了，上去假唱的部分朋友，怕是我把经预料好，晚会直播为了保证效果，假唱也是正常的，可以接受。巴特，今年这一场，我真的震惊了，上去假唱的部分朋友，怕是我把经预料好，晚会直播为了保证效果，假唱也是正常的，可以接受。巴特，今年这一场，我真的震惊了，上去假唱的部分朋友，怕是我把经预料好，晚会直播为了保证效果，假唱也是正常的，可以接受。巴特，今年这一场，我真的震惊了，上去假唱的部分朋友，怕是我把经预料好，晚会直播为了保证效果，假唱也是正常的，可以接受。巴特，今年这一场，我真的震惊了，上去假唱的部分朋友，怕是我把经预料好，晚会直播为了保证效果，假唱也是正常的，可以接受。巴特，今年这一场，我真的震惊了，上去假唱的部分朋友，怕是我把经预料好，晚会直播为了保证效果，假唱也是正常的，可以接受。巴特，今年这一场，我真的震惊了，上去假唱的部分朋友，怕是我把经预料好，晚会直播为了保证效果，假唱也是正常的，可以接受。巴特，今年这一场，我真的震惊了，上去假唱的部分朋友，怕是我把",@"经预料好，晚会直播为了保证效果，假唱也是正常的，可以接受。巴特，今年这一场，我真的震惊了，上去假唱的部分朋友，怕是我把经预料好，晚会直播为了保证效果，假唱也是正常的，可以接受。巴特，今年这一场，我真的震惊了，上去假唱的部分朋友，怕是我把经预料好，晚会直播为了保证效果，假唱也是正常的，可以接受。巴特，今年这一场，我真的震惊了，上去假唱的部分朋友，怕是我把经预料好，晚会直播为了保证效果，假唱也是正常的，可以接受。巴特，今年这一场，我真的震惊了，上去假唱的部分朋友，怕是我把经预料好，晚会直播为了保证效果，假唱也是正常的，可以接受。巴特，今年这一场，我真的震惊了，上去假唱的部分朋友，怕是我把经预料好，晚会直播为了保证效果，假唱也是正常的，可以接受。巴特，今年这一场，我真的震惊了，上去假唱的部分朋友，怕是我把经预料好，晚会直播为了保证效果，假唱也是正常的，可以接受。巴特，今年这一场，我真的震惊了，上去假唱的部分朋友，怕是我把经预料好，晚会直播为了保证效果，假唱也是正常的，可以接受。巴特，今年这一场，我真的震惊了，上去假唱的部分朋友，怕是我把经预料好，晚会直播为了保证效果，假唱也是正常的，可以接受。巴特，今年这一场，我真的震惊了，上去假唱的部分朋友，怕是我把"] mutableCopy];
-    }
-    return _dataSource;
+	if (!_dataSource)
+	 {
+		_dataSource = [[NSMutableArray alloc]init];
+	 }
+	return _dataSource;
 }
-
-
--(UITableView *)myTableView
+-(NSMutableDictionary *)dic
 {
-    if (!_myTableView)
-    {
-        _myTableView = [[UITableView alloc]init];
-        _myTableView.delegate = self;
-        _myTableView.dataSource = self;
-        [_myTableView registerNib:[UINib nibWithNibName:@"TextTableViewCell" bundle:nil] forCellReuseIdentifier:@"TextTableViewCell"];
-        [_myTableView registerNib:[UINib nibWithNibName:@"MixTableViewCell" bundle:nil] forCellReuseIdentifier:@"MixTableViewCell"];
-	      [_myTableView registerClass:[MasTextCellTableViewCell class] forCellReuseIdentifier:@"MasTextCellTableViewCell"];
-		[_myTableView registerClass:[ADTableViewCell class] forCellReuseIdentifier:@"ADTableViewCell"];
-	 
-    }
-    return _myTableView;
-}
-
--(NSMutableDictionary *)autoHeightCache
-{
-	if (!_autoHeightCache)
-	{
-		_autoHeightCache = [[NSMutableDictionary alloc]init];
-	}
-	return _autoHeightCache;
+	if (!_dic)
+	 {
+		_dic = [[NSMutableDictionary alloc]init];
+	 }
+	return _dic;
 }
 
 

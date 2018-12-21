@@ -12,6 +12,7 @@
 #import "NSString+Hash.h"
 #import "NSObject+LgObserver.h"
 #import "SVHUDMacro.h"
+#import "UIColor+Hex.h"
 
 @interface YZCodeViewController ()<UIGestureRecognizerDelegate,UIWebViewDelegate>
 {
@@ -48,13 +49,15 @@
 		make.left.and.right.equalTo(self.view);
 		make.bottom.mas_equalTo(-30);
 	}];
-	_page = 1;
-	NSString *str = [NSString stringWithFormat:@"http://www.doupobook.com/doupo/%ld.html",(long)_page];
+	_page = 5355;
+	
+	NSString *str = [NSString stringWithFormat:@"http://www.doupobook.com/yuanzun/%ld.html",(long)_page];
 	NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:str]];
 	webV.delegate = self;
 	_webView = webV;
 	[webV loadRequest:request];
-
+	_tfV.backgroundColor = [UIColor colorWithHexString:@"#F8F8FF"];
+	_tfV.textColor = [UIColor colorWithHexString:@"332818"];
 	SV_SHOW;
 	[_tfV.lgOberVer.addObserverKey(@"text") setDidChageMsg:^(id msg) {
 		SV_Dismiss;
@@ -138,12 +141,12 @@
 	}else{
 		_page ++;
 	}
-	if (_page<=0) {
-		_page = 1;
+	if (_page<=5354) {
+		_page = 5355;
 		return;
 	}
 	SV_SHOW;
-	NSString *str = [NSString stringWithFormat:@"http://www.doupobook.com/doupo/%ld.html",(long)_page];
+	NSString *str = [NSString stringWithFormat:@"http://www.doupobook.com/yuanzun/%ld.html",(long)_page];
 	NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:str]];
 	[_webView loadRequest:request];
 }
