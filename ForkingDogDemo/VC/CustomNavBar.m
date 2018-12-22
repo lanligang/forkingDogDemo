@@ -7,8 +7,14 @@
 //
 
 #import "CustomNavBar.h"
+#import "UIColor+Hex.h"
 
-@implementation CustomNavBar
+@implementation CustomNavBar{
+	CAGradientLayer *_alayer;
+	CADisplayLink *_disLink;
+	CGFloat _point;
+	CGFloat _speed;
+}
 
 -(instancetype)init
 {
@@ -18,12 +24,27 @@
 		self.barStyle = UIBarStyleBlack;
 		[self setShadowImage:[UIImage new]];
 		[self setBackgroundImage:[UIImage new] forBarMetrics:UIBarMetricsDefault];
-		_colorStr1 = @"#FFD700";
-		_colorStr2 = @"#7FFFAA";
+		_speed = 0.005;
+		_point = 0.1;
+		_colorStr1 = @"#EE82EE";
+		_colorStr2 = @"#FFE4B5";
+		CAGradientLayer *layer =	[CustomNavBar setGradualChangingColor:self.bgView fromColor:_colorStr1 toColor:_colorStr2];
+		CADisplayLink *link = [CADisplayLink displayLinkWithTarget:self selector:@selector(onTime)];
+		[link addToRunLoop:[NSRunLoop mainRunLoop] forMode:NSRunLoopCommonModes];
+		[self.bgView.layer addSublayer:layer];
+		layer.colors = @[(__bridge id)[UIColor colorWithHexString:_colorStr1].CGColor,(__bridge id)[UIColor colorWithHexString:_colorStr2].CGColor];
+		_alayer = layer;
 	}
 	return self;
 }
-
+-(void)onTime
+{
+	if (_point <0.1||_point>0.9) {
+		_speed = -_speed;
+	}
+	_point += _speed;
+	_alayer.locations = @[@0,@(_point),@1];
+}
 -(void)setAAlpha:(CGFloat)aAlpha
 {
 	_aAlpha = aAlpha;
@@ -46,14 +67,7 @@
 		}
 	}
  {
-	CAGradientLayer *layer =	[CustomNavBar setGradualChangingColor:self.bgView fromColor:_colorStr1 toColor:_colorStr2];
-	[self.bgView.layer.sublayers enumerateObjectsUsingBlock:^(__kindof CALayer * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-		if ([obj isKindOfClass:[CAGradientLayer class]]) {
-			[obj removeFromSuperlayer];
-			*stop = YES;
-		}
-	}];
-	[self.bgView.layer addSublayer:layer];
+	 _alayer.frame = CGRectMake(0, 0, CGRectGetWidth(self.bgView.frame), CGRectGetHeight(self.bgView.frame));
  }
 }
 	//绘制渐变色颜色的方法
@@ -68,10 +82,10 @@
 
 		//  设置渐变颜色方向，左上点为(0,0), 右下点为(1,1)
 	gradientLayer.startPoint = CGPointMake(0, 0);
-	gradientLayer.endPoint = CGPointMake(1, 0);
+	gradientLayer.endPoint = CGPointMake(1, 1);
 
 		//  设置颜色变化点，取值范围 0.0~1.0
-	gradientLayer.locations = @[@0,@1];
+	gradientLayer.locations = @[@0,@0.1,@1];
 
 	return gradientLayer;
 }
