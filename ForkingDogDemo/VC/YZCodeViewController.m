@@ -13,6 +13,8 @@
 #import "NSObject+LgObserver.h"
 #import "SVHUDMacro.h"
 #import "UIColor+Hex.h"
+#import "RequestBaseTool.h"
+#import <YYText.h>
 
 @interface YZCodeViewController ()<UIGestureRecognizerDelegate,UIWebViewDelegate>
 {
@@ -31,6 +33,9 @@
 //页码
 @property(nonatomic,assign)NSInteger page;
 
+@property (nonatomic,assign)NSInteger maxPage;
+
+
 
 @end
 
@@ -38,9 +43,12 @@
 
 - (void)viewDidLoad {
 	[super viewDidLoad];
-	self.navigationItem.title = @"斗破苍穹";
-	UIWebView *webV = [[UIWebView alloc]initWithFrame:CGRectZero];
-	[self.view insertSubview:webV atIndex:0];
+	
+	if (!self.minePage) {
+		self.navTitle = @"斗破苍穹";
+		[self setValuesForKeysWithDictionary:@{@"minePage":@"1",@"pageMax":@"1624",@"name":@"doupo"}];
+	}
+	self.navigationItem.title = self.navTitle;
 	_tfV = [[UITextView alloc]init];
 	_tfV.font = [UIFont systemFontOfSize:20.0f];
 	[self.view addSubview:_tfV];
@@ -49,21 +57,19 @@
 		make.left.and.right.equalTo(self.view);
 		make.bottom.mas_equalTo(-30);
 	}];
-	_page = 5355;
+	_page = [self.minePage integerValue];
+	_maxPage = [self.pageMax integerValue];
 	
-	NSString *str = [NSString stringWithFormat:@"http://www.doupobook.com/yuanzun/%ld.html",(long)_page];
-	NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:str]];
-	webV.delegate = self;
-	_webView = webV;
-	[webV loadRequest:request];
-	_tfV.backgroundColor = [UIColor colorWithHexString:@"#F8F8FF"];
-	_tfV.textColor = [UIColor colorWithHexString:@"332818"];
+	NSString *str = [NSString stringWithFormat:@"http://www.doupobook.com/%@/%ld.html",self.name,(long)_page];
+	[self requestWithUrl:str];
+	_tfV.backgroundColor = [UIColor blackColor];
+	_tfV.textColor = [UIColor colorWithHexString:@"ffffff"];
 	SV_SHOW;
-	[_tfV.lgOberVer.addObserverKey(@"text") setDidChageMsg:^(id msg) {
+	[_tfV.lgOberVer.addObserverKey(@"attributedText") setDidChageMsg:^(id msg) {
 		SV_Dismiss;
 	}];
 
-	NSString *strs[] = {@"上一页",@"下一页"};
+	NSString *strs[] = {@"上一章",@"下一章"};
 	for (int i = 0; i<2; i++) {
 		UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
 		[self.view addSubview:btn];
@@ -85,54 +91,18 @@
 		}];
 	}
 	_tfV.editable = NO;
-	return;
-	_stateLable = [UILabel new];
-	_stateLable.textColor = [UIColor redColor];
-	[self.view addSubview:_stateLable];
-	_stateLable.textAlignment = NSTextAlignmentCenter;
-	_stateLable.text = @"从左向右滑动屏幕";
-	[_stateLable mas_makeConstraints:^(MASConstraintMaker *make) {
-		make.centerX.mas_equalTo(0);
-		make.height.mas_equalTo(35.0f);
-		make.top.mas_equalTo(40.0f);
-	}];
-
-	_difficultyLevel = 4.0f;
-
-	LGYZCodeImgView *topCodeV = [[LGYZCodeImgView alloc]initWithFrame:CGRectMake(0, 0, 200, 200)];
-	[self.view addSubview:topCodeV];
-	topCodeV.center = self.view.center;
-	[topCodeV configerWithType:LgYZCodeBottom andImg:[UIImage imageNamed:@"aaaa"]];
-
-	LGYZCodeImgView *bCodeV = [[LGYZCodeImgView alloc]initWithFrame:CGRectMake(0, 0, 200, 200)];
-	[self.view addSubview:bCodeV];
-	bCodeV.center = CGPointMake(self.view.center.x - 100 - 100*0.5, self.view.center.y);
-	[bCodeV configerWithType:LgYZCOdeTop andImg:[UIImage imageNamed:@"aaaa"]];
-	_tView = bCodeV;
-	_startPoint = _tView.center;
-	_sPointX = topCodeV.center.x;
-	UIPanGestureRecognizer *pan = [[UIPanGestureRecognizer alloc]init];
-	[pan addTarget:self action:@selector(gestureDidChange:)];
-	[self.view addGestureRecognizer:pan];
-	self.view.backgroundColor = [UIColor yellowColor];
-
-	[self.view.lgOberVer
-	 .addObserverKey(@"bounds")
-	 .addObserverKey(@"backgroundColor")
-	 .addObserverKey(@"frame")
-	 .addObserverKey(@"transform")
-	 setDidChageMsg:^(id msg) {
-
-		NSLog(@"输出 监听 结果|%@",msg);
-	}];
-
-
-	[self.lgOberVer.addObserverKey(@"isSuccess") setDidChageMsg:^(id msg) {
-		NSLog(@"输出是否成功的信息|%@",msg);
-	}];
 
 }
-
+-(void)requestWithUrl:(NSString *)url
+{
+	[RequestBaseTool getUrlStr:url andParms:@{} andCompletion:^(id obj) {
+		if ([obj isKindOfClass:[NSString class]]) {
+			[self changeTextWithHtmlStr:obj];
+		}
+	} Error:^(NSError *errror) {
+		NSLog(@"%@",errror);
+	}];
+}
 
 -(void)onClicked:(UIButton *)btn
 {
@@ -141,14 +111,14 @@
 	}else{
 		_page ++;
 	}
-	if (_page<=5354) {
-		_page = 5355;
+	if (_page< [_minePage integerValue]) {
+		_page = [_minePage integerValue];
 		return;
 	}
 	SV_SHOW;
-	NSString *str = [NSString stringWithFormat:@"http://www.doupobook.com/yuanzun/%ld.html",(long)_page];
-	NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:str]];
-	[_webView loadRequest:request];
+	
+	NSString *str = [NSString stringWithFormat:@"http://www.doupobook.com/%@/%ld.html",self.name,(long)_page];
+	[self requestWithUrl:str];
 }
 
 - (NSString *)getZZwithString:(NSString *)string{
@@ -156,13 +126,12 @@
 	string = [regularExpretion stringByReplacingMatchesInString:string options:NSMatchingReportProgress range:NSMakeRange(0, string.length) withTemplate:@""];
 	return string;
 }
--(void)webViewDidFinishLoad:(UIWebView *)webView
+-(void)changeTextWithHtmlStr:(NSString *)htmlStr
 {
-	NSString *htmlNum =  @"document.documentElement.innerHTML";
-	NSString *allHtmlInfo = [webView stringByEvaluatingJavaScriptFromString:htmlNum];
+	NSString *allHtmlInfo = htmlStr;
 	NSScanner *theScanner;
 	NSString *text = nil;
-
+	
 	theScanner = [NSScanner scannerWithString:allHtmlInfo];
 
 	while ([theScanner isAtEnd] == NO) {
@@ -181,67 +150,15 @@
 	str = strs.lastObject;
 	if (str) {
 		str =[str componentsSeparatedByString:@"tuijian();"].firstObject;
-		_tfV.text = str;
-		self.navigationItem.title = [NSString stringWithFormat:@"斗破苍穹(%ld)页",(long)_page];
+		
+		NSMutableAttributedString *abs = [[NSMutableAttributedString alloc]initWithString:str];
+		abs.yy_color = [UIColor whiteColor];
+		abs.yy_lineSpacing = 15.0f;
+		abs.yy_font = [UIFont systemFontOfSize:20.0f];
+		_tfV.attributedText = abs;
+		self.navigationItem.title = [NSString stringWithFormat:@"%@(%ld)页",self.navTitle,((long)_page - self.minePage.integerValue+1)];
 	}
 }
-
-
--(void)gestureDidChange:(UIPanGestureRecognizer *)pan
-{
-	UIWindow *window = [[UIApplication sharedApplication].delegate window];
-	CGPoint p = [pan locationInView:window];
-	CGPoint vP = [pan velocityInView:window];
-	if (pan.state == UIGestureRecognizerStateBegan) {
-		_lastPoint = p;
-		_stateLable.text = @"从左向右滑动屏幕";
-	}else if (pan.state == UIGestureRecognizerStateChanged){
-
-		if (fabs(vP.y)>fabs(vP.x)) {
-			//纵向滑动
-			if (fabs(_lastPoint.y - p.y)>0.1) {
-				self.view.bounds = CGRectMake(self.view.bounds.origin.x, self.view.bounds.origin.y + (_lastPoint.y - p.y), CGRectGetWidth(self.view.bounds), CGRectGetHeight(self.view.bounds));
-				_lastPoint = p;
-			}
-		}else{
-			//横向滑动
-			_tView .center = CGPointMake(p.x, _tView.center.y);
-			LGYZCodeImgView *rectV = (LGYZCodeImgView *)_tView;
-			[rectV showLine:YES];
-		}
-	}else if (pan.state == UIGestureRecognizerStateEnded){
-			if (fabs(_tView .center.x -_sPointX)<= fabs(_difficultyLevel)) {
-				[UIView animateWithDuration:0.2 animations:^{
-					_tView .center = CGPointMake(_sPointX, _tView.center.y);
-				}];
-				LGYZCodeImgView *rectV = (LGYZCodeImgView *)_tView;
-				[rectV showLine:NO];
-				self.isSuccess = YES;
-				[self yzCode];
-			}else{
-				[UIView animateWithDuration:0.2 animations:^{
-					_tView.center = _startPoint;
-				}];
-				self.isSuccess = NO;
-			}
-			if (fabs(vP.y)>fabs(vP.x)) {
-				[UIView animateWithDuration:atan(fabs(vP.y))*0.4 delay:0 options:UIViewAnimationOptionCurveLinear animations:^{
-					self.view.bounds = CGRectMake(self.view.bounds.origin.x, self.view.bounds.origin.y + - vP.y*0.3f, CGRectGetWidth(self.view.bounds), CGRectGetHeight(self.view.bounds));
-				} completion:^(BOOL finished) {
-				}];
-			}
-	}
-}
-
--(void)yzCode
-{
-	NSString *file = [[NSBundle mainBundle]pathForResource:@"app_action" ofType:@"png"];
-	if (file) {
-		NSString *md5Code = file.fileMD5Hash;
-		NSLog(@"Release的|%@",md5Code);
-	}
-}
-
 
 /*
 #pragma mark - Navigation

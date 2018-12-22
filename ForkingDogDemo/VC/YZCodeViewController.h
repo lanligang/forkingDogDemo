@@ -11,10 +11,10 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface YZCodeViewController : UIViewController
-
-@property(nonatomic,assign)NSString *linkUrl;
+@property (nonatomic,strong)NSString *navTitle;
 @property (nonatomic,strong)NSString *name;
 @property (nonatomic,strong)NSString *minePage;
+@property (nonatomic,strong)NSString *pageMax;
 
 @end
 

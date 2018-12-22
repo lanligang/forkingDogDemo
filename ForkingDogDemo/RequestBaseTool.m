@@ -188,7 +188,13 @@
             else
             {
                 id comp =  [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingMutableContainers error:nil];
-                compoletion(comp,nil);
+				
+				if (comp) {
+					compoletion(comp,nil);
+				}else{
+					NSString *str = [[NSString alloc]initWithData:responseObject encoding:NSUTF8StringEncoding];
+					compoletion(str,nil);
+				}
             }
         } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
             if (error)

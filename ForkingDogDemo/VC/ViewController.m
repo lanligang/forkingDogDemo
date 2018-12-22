@@ -34,7 +34,7 @@
 
 @property (nonatomic,strong)NSMutableArray *dataSource;
 
-@property (nonatomic,strong)NSMutableDictionary *dic;
+@property (nonatomic,strong)NSMutableArray *dicArray;
 
 
 @end
@@ -92,18 +92,15 @@
 
 	CGFloat topY =	CGRectGetHeight([UIApplication sharedApplication].statusBarFrame) + CGRectGetHeight(self.navigationController.navigationBar.frame);
 	[self.dataSource addObjectsFromArray:@[@"斗破苍穹",@"斗破苍穹之无上之境",@"斗破苍穹之重生萧炎",@"斗破苍穹2",@"斗破苍穹续集天蚕土豆",@"斗破苍穹之穿越轮回"]];
-	for (NSString *key in self.dataSource) {
-		NSDictionary *aDic = @{
-							   @"minePage":@"1",@"pageCount":@"1624",
-							   @"minePage":@"1",@"pageCount":@"1624",
-							   @"minePage":@"1",@"pageCount":@"1624",
-							   @"minePage":@"1",@"pageCount":@"1624",
-							   @"minePage":@"1",@"pageCount":@"1624",
-							   @"minePage":@"1",@"pageCount":@"1624",
-							   @"minePage":@"1",@"pageCount":@"1624",
-							   };
-		[self.dic setObject:aDic forKey:key];
-	}
+	NSArray *array = @[@{@"minePage":@"1",@"pageMax":@"1624",@"name":@"doupo"},
+	  @{@"minePage":@"5361",@"pageMax":@"23450",@"name":@"wushang"},
+	  @{@"minePage":@"6923",@"pageMax":@"7397",@"name":@"xiaoyan"},
+	  @{@"minePage":@"6884",@"pageMax":@"6922",@"name":@"dpcq2"},
+	  @{@"minePage":@"7398",@"pageMax":@"7410",@"name":@"tudou"},
+	  @{@"minePage":@"7412",@"pageMax":@"8262",@"name":@"lunhui"}
+	  ];
+	[self.dicArray addObjectsFromArray:array];
+	
 	LgPageView *pageView =[[LgPageView alloc]initWithFrame:CGRectMake(0, topY, CGRectGetWidth(self.view.frame), 40.0f)
 											  andTitleFont:[UIFont systemFontOfSize:18.0f]
 										   andSeletedColor:[UIColor redColor]
@@ -114,7 +111,7 @@
 	[self.view addSubview:pageView];
 
 	LgPageControlViewController *pageVc = [[LgPageControlViewController alloc]initWithTitleView:pageView andDelegateVc:self];
-	pageVc.canClearSubVcCache = YES;
+	pageVc.canClearSubVcCache = NO;
 	pageVc.minClearCount = 2;
 	_pageVc = pageVc;
 	pageVc.view.frame = CGRectMake(0,
@@ -146,7 +143,8 @@
 {
 	*vc = ({
 		id aVc =  (UIViewController *)[[NSClassFromString(@"YZCodeViewController") alloc]init];
-		[aVc setValue:self.dataSource[index] forKey:@"title"];
+		[aVc setValue:self.dataSource[index] forKey:@"navTitle"];
+		[aVc setValuesForKeysWithDictionary:self.dicArray[index]];
 		aVc;
 	});
 }
@@ -164,13 +162,13 @@
 	 }
 	return _dataSource;
 }
--(NSMutableDictionary *)dic
+-(NSMutableArray *)dicArray
 {
-	if (!_dic)
+	if (!_dicArray)
 	 {
-		_dic = [[NSMutableDictionary alloc]init];
+		_dicArray = [[NSMutableArray alloc]init];
 	 }
-	return _dic;
+	return _dicArray;
 }
 
 

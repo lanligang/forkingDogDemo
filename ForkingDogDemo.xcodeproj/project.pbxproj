@@ -1663,7 +1663,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = K8349CLJKN;
+				DEVELOPMENT_TEAM = 4SR2P5NBA9;
 				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)";
 				GCC_PREFIX_HEADER = "$(SRCROOT)/ForkingDogDemo/PrefixHeader.pch";
 				HEADER_SEARCH_PATHS = (
@@ -1701,7 +1701,7 @@
 					"\"UIKit\"",
 					"-ObjC",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = CustomRefresh.ForkingDogDem321321312;
+				PRODUCT_BUNDLE_IDENTIFIER = CustomRefresh.ForkingDogDem321321;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1713,7 +1713,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = K8349CLJKN;
+				DEVELOPMENT_TEAM = 4SR2P5NBA9;
 				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)";
 				GCC_PREFIX_HEADER = "$(SRCROOT)/ForkingDogDemo/PrefixHeader.pch";
 				HEADER_SEARCH_PATHS = (
@@ -1751,7 +1751,7 @@
 					"\"UIKit\"",
 					"-ObjC",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = CustomRefresh.ForkingDogDem321321312;
+				PRODUCT_BUNDLE_IDENTIFIER = CustomRefresh.ForkingDogDem321321;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
