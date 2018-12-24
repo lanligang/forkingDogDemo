@@ -15,6 +15,8 @@
 #import "UIColor+Hex.h"
 #import "RequestBaseTool.h"
 #import <YYText.h>
+#import "PopCalendarView.h"
+#import "CalendarModel.h"
 
 @interface YZCodeViewController ()<UIGestureRecognizerDelegate,UIWebViewDelegate>
 {
@@ -100,12 +102,13 @@
 			[self changeTextWithHtmlStr:obj];
 		}
 	} Error:^(NSError *errror) {
-		NSLog(@"%@",errror);
 	}];
 }
 
 -(void)onClicked:(UIButton *)btn
 {
+	[PopCalendarView showWithType:CalendarMiddleType andMonthCount:200];
+	return;
 	if (btn.tag == 100) {
 		_page --;
 	}else{

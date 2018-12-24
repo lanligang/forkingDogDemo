@@ -11,6 +11,7 @@
 #import "JokeModels.h"
 #import <Masonry.h>
 #import "BaseTableViewCell.h"
+#import "PopCalendarView.h"
 
 @interface JokeViewController ()<UITableViewDelegate,UITableViewDataSource,UIWebViewDelegate>
 
@@ -99,6 +100,10 @@
 }
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+	if (indexPath.row == 0) {
+		[PopCalendarView showWithType:CalendarMiddleType andMonthCount:1000];
+		return;
+	}
 	UIViewController *vc = [[NSClassFromString(@"MasScrollDemoVC") alloc]init];
 	if ((indexPath.row %2) == 0) {
 		[vc setValue:@(1) forKey:@"isHorizontal"];
