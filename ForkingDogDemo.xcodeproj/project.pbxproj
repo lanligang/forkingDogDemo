@@ -11,6 +11,7 @@
 		4CD83D3721286DB00041EF99 /* UIView+ViewFrameScreen.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CD83D3621286DB00041EF99 /* UIView+ViewFrameScreen.m */; };
 		4CD83D3F212872D10041EF99 /* ADViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CD83D3E212872D10041EF99 /* ADViewController.m */; };
 		4CD83D4221287D8A0041EF99 /* ADCircleImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CD83D4121287D8A0041EF99 /* ADCircleImageView.m */; };
+		4CF6819321DCC23600C8B316 /* ObjcMethod.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CF6819221DCC23600C8B316 /* ObjcMethod.m */; };
 		4CFCC744214EC2CA00600E19 /* UIColor+Hex.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CFCC743214EC2CA00600E19 /* UIColor+Hex.m */; };
 		4CFCC745214EC2CA00600E19 /* UIColor+Hex.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CFCC743214EC2CA00600E19 /* UIColor+Hex.m */; };
 		4CFCC746214EC2CA00600E19 /* UIColor+Hex.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CFCC743214EC2CA00600E19 /* UIColor+Hex.m */; };
@@ -324,6 +325,8 @@
 		4CD83D3E212872D10041EF99 /* ADViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ADViewController.m; sourceTree = "<group>"; };
 		4CD83D4021287D8A0041EF99 /* ADCircleImageView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ADCircleImageView.h; sourceTree = "<group>"; };
 		4CD83D4121287D8A0041EF99 /* ADCircleImageView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ADCircleImageView.m; sourceTree = "<group>"; };
+		4CF6819121DCC23600C8B316 /* ObjcMethod.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ObjcMethod.h; sourceTree = "<group>"; };
+		4CF6819221DCC23600C8B316 /* ObjcMethod.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ObjcMethod.m; sourceTree = "<group>"; };
 		4CFCC742214EC2CA00600E19 /* UIColor+Hex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Hex.h"; sourceTree = "<group>"; };
 		4CFCC743214EC2CA00600E19 /* UIColor+Hex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Hex.m"; sourceTree = "<group>"; };
 		4CFCC74A214EC8C800600E19 /* MJRefreshAutoFooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefreshAutoFooter.h; sourceTree = "<group>"; };
@@ -835,6 +838,8 @@
 				8F1740C621C77024001CF990 /* OpenCloseTableViewCell.m */,
 				8F1740C821C7709F001CF990 /* OpenCloseModel.h */,
 				8F1740C921C7709F001CF990 /* OpenCloseModel.m */,
+				4CF6819121DCC23600C8B316 /* ObjcMethod.h */,
+				4CF6819221DCC23600C8B316 /* ObjcMethod.m */,
 				8F15FF7C21C9E38D002B550D /* YZCodeView */,
 			);
 			path = View;
@@ -1377,6 +1382,7 @@
 				8FE02F541FFCEF4100CE62F1 /* SDWebImageManager.m in Sources */,
 				4CFCC7E4214ED44A00600E19 /* CollectionViewHeader.m in Sources */,
 				4CFCC78A214EC8C800600E19 /* MJRefreshComponent.m in Sources */,
+				4CF6819321DCC23600C8B316 /* ObjcMethod.m in Sources */,
 				4CFCC7A2214EC8C900600E19 /* MJRefreshBackStateFooter.m in Sources */,
 				4CFCC7C3214EC8C900600E19 /* MJRefreshConst.m in Sources */,
 				4CFCC78D214EC8C900600E19 /* MJRefreshFooter.m in Sources */,
@@ -1702,7 +1708,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = K8349CLJKN;
+				DEVELOPMENT_TEAM = 4SR2P5NBA9;
 				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)";
 				GCC_PREFIX_HEADER = "$(SRCROOT)/ForkingDogDemo/PrefixHeader.pch";
 				HEADER_SEARCH_PATHS = (
@@ -1740,7 +1746,7 @@
 					"\"UIKit\"",
 					"-ObjC",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = CustomRefresh.Forkin;
+				PRODUCT_BUNDLE_IDENTIFIER = CustomRefresh.Forking.dog123;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1754,7 +1760,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = K8349CLJKN;
+				DEVELOPMENT_TEAM = 4SR2P5NBA9;
 				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)";
 				GCC_PREFIX_HEADER = "$(SRCROOT)/ForkingDogDemo/PrefixHeader.pch";
 				HEADER_SEARCH_PATHS = (
@@ -1792,7 +1798,7 @@
 					"\"UIKit\"",
 					"-ObjC",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = CustomRefresh.Forkin;
+				PRODUCT_BUNDLE_IDENTIFIER = CustomRefresh.Forking.dog123;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = "1,2";

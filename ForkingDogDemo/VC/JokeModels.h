@@ -24,6 +24,14 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic,strong)NSString *shenhuifuneirong;
 @property (nonatomic,strong)NSString *shenhuifuid;
 @property (nonatomic,strong)NSString *Id;
+@property (nonatomic,assign)NSInteger num1;
+@property (nonatomic,assign)double num2;
+@property (nonatomic,assign)int num3;
+@property (nonatomic,assign)CGFloat num4;
+@property (nonatomic,assign)float num5;
+@property (nonatomic,assign)char * char6;
+@property (nonatomic,strong)JokeModel *array;
+
 @end
 
 @interface JokeModels : FCBaseModel

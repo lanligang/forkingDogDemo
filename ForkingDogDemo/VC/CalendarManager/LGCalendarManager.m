@@ -159,6 +159,8 @@
 		calendarItem.holiday = @"光棍节";
 	 } else if(components.month == 12 && components.day == 25) {
 		calendarItem.holiday = @"圣诞节";
+	 }else 	if(components.month == 10 && components.day == 24){
+		 calendarItem.holiday = @"程序员节";
 	 }
 }
 - (NSDate *)componentsToDate:(NSDateComponents *)components

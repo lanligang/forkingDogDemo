@@ -24,6 +24,9 @@
 #import "LgPageControlViewController.h"
 #import "UINavigationController+circleDismiss.h"
 
+#import "ObjcMethod.h"
+#import "JokeModels.h"
+
 @interface ViewController ()<LgPageControlDelegate>{
 	LgPageControlViewController *_pageVc;
 	LgPageView *_pageView;
@@ -87,6 +90,8 @@
 - (void)viewDidLoad {
     
     [super viewDidLoad];
+	
+	[ObjcMethod getPropertyListWithClass:JokeModel.class];
 	self.navigationController.navigationBar.translucent = YES;
     [self setTitleView];
 
