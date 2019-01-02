@@ -24,7 +24,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic,strong)NSString *shenhuifuneirong;
 @property (nonatomic,strong)NSString *shenhuifuid;
 @property (nonatomic,strong)NSString *Id;
-@property (nonatomic,assign)BOOL isABC;
+@property (nonatomic,assign)BOOL is_ABC;
 
 
 @end

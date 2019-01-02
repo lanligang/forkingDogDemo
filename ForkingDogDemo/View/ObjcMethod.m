@@ -80,10 +80,10 @@
 						}
 					}
 					if (name&&code) {
+						NSLog(@"输出name ---- |%@",name);
 						[propertyList addObject:@{@"name":name,@"type":code}];
 					}
 				}
-				
 				//重新赋值当前类型
 			    NSObject *obj = [[currentClass alloc]init];
 				currentClass = obj.superclass;
@@ -93,8 +93,6 @@
 	}
 	return propertyList;
 }
-
-
 
 
 @end
