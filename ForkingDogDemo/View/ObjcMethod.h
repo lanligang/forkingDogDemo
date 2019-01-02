@@ -27,7 +27,8 @@
 +(BOOL)metaChangeMethodWithClass:(Class)aClass andSel:(SEL)aSel andOtherSel:(SEL)otherSel;
 
 /** 获取一个类的属性 以及类型
- * 基本数据类型 字符形式 ‘int,double,float,char,NSInteger’
+ * 基本数据类型 字符形式 ‘int,double,float,char,NSInteger,BOOL’
+ * 其他类型都以 class 的String 类型表示
  */
 +(NSArray *)getPropertyListWithClass:(Class)aClass;
 

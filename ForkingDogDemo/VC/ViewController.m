@@ -91,7 +91,8 @@
     
     [super viewDidLoad];
 	
-	[ObjcMethod getPropertyListWithClass:JokeModel.class];
+	NSArray *propertyList  = [ObjcMethod getPropertyListWithClass:JokeModel.class];
+	NSLog(@"输出得到的结果|%@",propertyList);
 	self.navigationController.navigationBar.translucent = YES;
     [self setTitleView];
 

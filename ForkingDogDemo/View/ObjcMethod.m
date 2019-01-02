@@ -72,16 +72,23 @@
 								code = @"NSInteger";
 							}else if ([typeName isEqualToString:@"T*"]){
 								code = @"char";
+							}else if ([typeName isEqualToString:@"TB"]){
+								code = @"BOOL";
+							}else{
+								NSLog(@"未知类型输出|%@",typeName);
 							}
 						}
 					}
-					[propertyList addObject:@{@"name":name,@"type":code}];
+					if (name&&code) {
+						[propertyList addObject:@{@"name":name,@"type":code}];
+					}
 				}
-				free(propertys);
+				
 				//重新赋值当前类型
 			    NSObject *obj = [[currentClass alloc]init];
 				currentClass = obj.superclass;
 				className = [NSString stringWithFormat:@"%@",currentClass];
+				free(propertys);
 			}
 	}
 	return propertyList;
