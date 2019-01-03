@@ -76,7 +76,9 @@ return UITableViewAutomaticDimension;
 
 
 ![图片来自官方](https://github.com/airbnb/lottie-ios/raw/master/_Gifs/Examples2.gif)
+> ---------------------------------------->
 [官方地址](https://github.com/airbnb/lottie-ios)
+
 [素材下载地址](https://www.lottiefiles.com/)
 
 * 下载下来是 json 文件 也可以 使用 AE 软件来制作动画的 json 文件
