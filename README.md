@@ -69,9 +69,6 @@ return UITableViewAutomaticDimension;
 
 ![新加的cell](ad.gif)
 
-|下拉刷新修改过的文件名|-----|-------|
-|--- |--- |--- |
-||||
 
 *  考试要考的哦 ！
 > QQ 1176281703  QQ群 637387838
@@ -79,12 +76,17 @@ return UITableViewAutomaticDimension;
 
 
 ![图片来自官方](https://github.com/airbnb/lottie-ios/raw/master/_Gifs/Examples2.gif)
-地址：https://github.com/airbnb/lottie-ios
-素材下载地址：https://www.lottiefiles.com/
-下载下来是 json 文件
-oc 语言使用 pod 安装 
+[官方地址](https://github.com/airbnb/lottie-ios)
+[素材下载地址](https://www.lottiefiles.com/)
+
+* 下载下来是 json 文件 也可以 使用 AE 软件来制作动画的 json 文件
+
+* oc 语言使用 pod 安装 
+```
 pod 'lottie-ios'
+```
 pod  install 命令 完成后
+
 导入头文件
 ```
 #import <lottie-ios/Lottie/LOTAnimationView.h>
