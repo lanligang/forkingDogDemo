@@ -7,7 +7,7 @@
 //
 
 #import "ObjcMethod.h"
-
+#import <objc/runtime.h>
 @implementation ObjcMethod
 +(BOOL)changeMethodWithClass:(Class)aClass andSel:(SEL)aSel andOtherSel:(SEL)otherSel
 {
